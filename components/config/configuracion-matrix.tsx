@@ -286,9 +286,24 @@ function ConfigGeneralTab() {
   )
 }
 
-// Sub-pestaña: Usuarios y Roles (contiene las 3 pestañas originales)
+// Sub-pestaña: Usuarios y Roles (contiene las 3 pestañas originales) — solo administrador
 function UsuariosRolesTab() {
+  const { isOwner } = useAuth()
   const [activeTab, setActiveTab] = useState("profiles")
+
+  if (!isOwner()) {
+    return (
+      <div className="p-6 flex flex-col items-center justify-center min-h-[280px] text-center">
+        <div className="glass-box rounded-2xl p-8 max-w-md">
+          <AlertTriangle className="w-12 h-12 text-amber-500 mx-auto mb-4" />
+          <h3 className="text-lg font-semibold text-slate-800 mb-2">Acceso restringido</h3>
+          <p className="text-slate-600">
+            Solo el administrador puede crear, modificar y eliminar usuarios y perfiles.
+          </p>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="p-6">

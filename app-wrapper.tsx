@@ -849,7 +849,7 @@ function App() {
             )}
           </button>
 
-          {isMasterAdmin() && (
+          {isOwner() && (
             <button
               onClick={(e) => { if (sidebarCollapsed) e.stopPropagation(); setActiveMatrix("configuracion"); }}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group mt-4 border-t border-white/30 pt-4 backdrop-blur-sm ${activeMatrix === "configuracion"

@@ -1,10 +1,12 @@
 
 import React, { useState, useEffect } from "react"
 import { useAuth } from "../../contexts/auth-context"
-import { mockDatabase, mockFirestore } from "../../lib/mock-data"
+import { mockDatabase, mockFirestore } from "../../lib/mock-firebase"
 import { Modal } from "../ui/modal"
 import { Input } from "../ui/input"
 import { Select } from "../ui/input"
+import { Button } from "../ui/button"
+import { Save, X } from "lucide-react"
 
 // Modal para crear/editar usuario
 export function UserFormModal({ isOpen, onClose, user, onSave }: any) {
@@ -185,6 +187,15 @@ export function UserFormModal({ isOpen, onClose, user, onSave }: any) {
                             </label>
                         ))}
                     </div>
+                </div>
+
+                <div className="flex justify-end gap-3 pt-6 border-t border-slate-200">
+                    <Button type="button" variant="secondary" onClick={onClose} iconLeft={<X className="w-4 h-4" />}>
+                        Cancelar
+                    </Button>
+                    <Button type="submit" variant="primary" iconLeft={<Save className="w-4 h-4" />}>
+                        {user ? "Guardar cambios" : "Crear usuario"}
+                    </Button>
                 </div>
             </form>
         </Modal>
