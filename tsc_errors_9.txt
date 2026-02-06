@@ -1,0 +1,1027 @@
+﻿app-wrapper.tsx(954,80): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ sm: string; md: string; lg: string; xl: string; "2xl": string; "3xl": string; "4xl": string; "5xl": string; "6xl": string; full: string; }'.
+app-wrapper.tsx(1272,3): error TS7031: Binding element 'value' implicitly has an 'any' type.
+app-wrapper.tsx(1273,3): error TS7031: Binding element 'onChange' implicitly has an 'any' type.
+app-wrapper.tsx(1616,7): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+app-wrapper.tsx(1623,5): error TS7053: Element implicitly has an 'any' type because expression of type '"SIN DISE├æO"' can't be used to index type '{}'.
+  Property 'SIN DISE├æO' does not exist on type '{}'.
+app-wrapper.tsx(1632,12): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(1633,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(1640,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(1648,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(1650,29): error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(1650,38): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(1651,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(1652,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(1762,49): error TS2345: Argument of type '{ dise├▒adorAsignado: string; urlImagen: string; talla: string; notas: string; }' is not assignable to parameter of type 'null | undefined'.
+app-wrapper.tsx(1766,48): error TS7006: Parameter 'pedido' implicitly has an 'any' type.
+app-wrapper.tsx(1777,34): error TS2339: Property 'urlImagen' does not exist on type 'never'.
+app-wrapper.tsx(1778,30): error TS2339: Property 'talla' does not exist on type 'never'.
+app-wrapper.tsx(1779,42): error TS2339: Property 'dise├▒adorAsignado' does not exist on type 'never'.
+app-wrapper.tsx(1780,30): error TS2339: Property 'notas' does not exist on type 'never'.
+app-wrapper.tsx(1827,29): error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(1827,43): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(2073,31): error TS2322: Type 'string[]' is not assignable to type 'never[]'.
+  Type 'string' is not assignable to type 'never'.
+app-wrapper.tsx(2655,29): error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(2655,43): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(2709,31): error TS7006: Parameter 'pedidos' implicitly has an 'any' type.
+app-wrapper.tsx(2709,40): error TS7006: Parameter 'titulo' implicitly has an 'any' type.
+app-wrapper.tsx(2709,48): error TS7006: Parameter 'seccionKey' implicitly has an 'any' type.
+app-wrapper.tsx(2711,27): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ limaCallao: boolean; provincia: boolean; }'.
+app-wrapper.tsx(2711,75): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ limaCallao: boolean; provincia: boolean; }'.
+app-wrapper.tsx(2720,88): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ limaCallao: boolean; provincia: boolean; }'.
+app-wrapper.tsx(3330,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(3332,5): error TS7053: Element implicitly has an 'any' type because expression of type '"SIN ASIGNAR"' can't be used to index type '{}'.
+  Property 'SIN ASIGNAR' does not exist on type '{}'.
+app-wrapper.tsx(3336,12): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(3337,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(3344,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(3352,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(3468,36): error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(3468,50): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(3536,31): error TS7006: Parameter 'pedidos' implicitly has an 'any' type.
+app-wrapper.tsx(3536,40): error TS7006: Parameter 'titulo' implicitly has an 'any' type.
+app-wrapper.tsx(3536,48): error TS7006: Parameter 'seccionKey' implicitly has an 'any' type.
+app-wrapper.tsx(3538,27): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ listos: boolean; pausa: boolean; }'.
+app-wrapper.tsx(3538,75): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ listos: boolean; pausa: boolean; }'.
+app-wrapper.tsx(3549,88): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ listos: boolean; pausa: boolean; }'.
+app-wrapper.tsx(3900,37): error TS2339: Property 'id' does not exist on type 'any[]'.
+app-wrapper.tsx(3903,37): error TS2339: Property 'cliente' does not exist on type 'any[]'.
+app-wrapper.tsx(3906,37): error TS2339: Property 'productos' does not exist on type 'any[]'.
+app-wrapper.tsx(3909,37): error TS2339: Property 'operador' does not exist on type 'any[]'.
+app-wrapper.tsx(3912,37): error TS2339: Property 'estado' does not exist on type 'any[]'.
+app-wrapper.tsx(3915,37): error TS2339: Property 'acciones' does not exist on type 'any[]'.
+app-wrapper.tsx(3940,43): error TS2339: Property 'id' does not exist on type 'any[]'.
+app-wrapper.tsx(3943,43): error TS2339: Property 'cliente' does not exist on type 'any[]'.
+app-wrapper.tsx(3948,43): error TS2339: Property 'productos' does not exist on type 'any[]'.
+app-wrapper.tsx(3953,43): error TS2339: Property 'operador' does not exist on type 'any[]'.
+app-wrapper.tsx(3958,43): error TS2339: Property 'estado' does not exist on type 'any[]'.
+app-wrapper.tsx(3963,43): error TS2339: Property 'acciones' does not exist on type 'any[]'.
+app-wrapper.tsx(4105,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(4107,5): error TS7053: Element implicitly has an 'any' type because expression of type '"OTROS"' can't be used to index type '{}'.
+  Property 'OTROS' does not exist on type '{}'.
+app-wrapper.tsx(4113,12): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(4114,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(4121,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(4123,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(4131,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(4133,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(4246,32): error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(4246,46): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(4507,33): error TS2322: Type 'string[]' is not assignable to type 'never[]'.
+  Type 'string' is not assignable to type 'never'.
+app-wrapper.tsx(4742,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(4744,5): error TS7053: Element implicitly has an 'any' type because expression of type '"TERMINADOS"' can't be used to index type '{}'.
+  Property 'TERMINADOS' does not exist on type '{}'.
+app-wrapper.tsx(4745,5): error TS7053: Element implicitly has an 'any' type because expression of type '"INGRESADOS"' can't be used to index type '{}'.
+  Property 'INGRESADOS' does not exist on type '{}'.
+app-wrapper.tsx(4749,12): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(4750,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(4757,11): error TS7053: Element implicitly has an 'any' type because expression of type '"INGRESADOS"' can't be used to index type '{}'.
+  Property 'INGRESADOS' does not exist on type '{}'.
+app-wrapper.tsx(4758,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(4766,11): error TS7053: Element implicitly has an 'any' type because expression of type '"TERMINADOS"' can't be used to index type '{}'.
+  Property 'TERMINADOS' does not exist on type '{}'.
+app-wrapper.tsx(4767,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(4870,34): error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(4870,48): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(5100,31): error TS2322: Type 'string[]' is not assignable to type 'never[]'.
+  Type 'string' is not assignable to type 'never'.
+app-wrapper.tsx(5341,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(5343,5): error TS7053: Element implicitly has an 'any' type because expression of type '"SIN ASIGNAR"' can't be used to index type '{}'.
+  Property 'SIN ASIGNAR' does not exist on type '{}'.
+app-wrapper.tsx(5347,12): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(5348,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(5355,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(5363,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(5474,30): error TS2362: The left-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(5474,48): error TS2363: The right-hand side of an arithmetic operation must be of type 'any', 'number', 'bigint' or an enum type.
+app-wrapper.tsx(5706,31): error TS2322: Type 'string[]' is not assignable to type 'never[]'.
+  Type 'string' is not assignable to type 'never'.
+app-wrapper.tsx(6282,35): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ PAREJAS: string[]; "CASACAS DE EQUIPOS": string[]; "CASACAS GEEKS": string[]; PIJAMAS: string[]; "POR MAYOR": string[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ PAREJAS: string[]; "CASACAS DE EQUIPOS": string[]; "CASACAS GEEKS": string[]; PIJAMAS: string[]; "POR MAYOR": string[]; }'.
+app-wrapper.tsx(6283,31): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ PAREJAS: string[]; "CASACAS DE EQUIPOS": string[]; "CASACAS GEEKS": string[]; PIJAMAS: string[]; "POR MAYOR": string[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ PAREJAS: string[]; "CASACAS DE EQUIPOS": string[]; "CASACAS GEEKS": string[]; PIJAMAS: string[]; "POR MAYOR": string[]; }'.
+app-wrapper.tsx(6372,7): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ id: string; productoId: string; cantidad: number; precioSeleccionado: number; varianteId: string; imagenReferencial: null; }'.
+  No index signature with a parameter of type 'string' was found on type '{ id: string; productoId: string; cantidad: number; precioSeleccionado: number; varianteId: string; imagenReferencial: null; }'.
+app-wrapper.tsx(6406,37): error TS7006: Parameter 'productIndex' implicitly has an 'any' type.
+app-wrapper.tsx(6406,51): error TS7006: Parameter 'prendaIndex' implicitly has an 'any' type.
+app-wrapper.tsx(6406,64): error TS7006: Parameter 'field' implicitly has an 'any' type.
+app-wrapper.tsx(6406,71): error TS7006: Parameter 'value' implicitly has an 'any' type.
+app-wrapper.tsx(6408,60): error TS2339: Property 'detallesPrenda' does not exist on type '{ id: string; productoId: string; cantidad: number; precioSeleccionado: number; varianteId: string; imagenReferencial: null; }'.
+app-wrapper.tsx(6420,34): error TS2304: Cannot find name 'inventoryData'.
+app-wrapper.tsx(6480,31): error TS7006: Parameter 'index' implicitly has an 'any' type.
+app-wrapper.tsx(6480,38): error TS7006: Parameter 'field' implicitly has an 'any' type.
+app-wrapper.tsx(6480,45): error TS7006: Parameter 'value' implicitly has an 'any' type.
+app-wrapper.tsx(6482,5): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ id: string; regaloId: string; cantidad: number; }'.
+app-wrapper.tsx(6485,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ id: string; regaloId: string; cantidad: number; }'.
+app-wrapper.tsx(6626,39): error TS7006: Parameter 'index' implicitly has an 'any' type.
+app-wrapper.tsx(6626,46): error TS7006: Parameter 'field' implicitly has an 'any' type.
+app-wrapper.tsx(6626,53): error TS7006: Parameter 'file' implicitly has an 'any' type.
+app-wrapper.tsx(6628,5): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ id: string; productoId: string; cantidad: number; precioSeleccionado: number; varianteId: string; imagenReferencial: null; }'.
+app-wrapper.tsx(6639,53): error TS2339: Property 'clienteContacto' does not exist on type '{}'.
+app-wrapper.tsx(6641,17): error TS2339: Property 'clienteContacto' does not exist on type '{}'.
+app-wrapper.tsx(6643,17): error TS2339: Property 'clienteContactoSecundario' does not exist on type '{}'.
+app-wrapper.tsx(6644,51): error TS2339: Property 'clienteNombre' does not exist on type '{}'.
+app-wrapper.tsx(6645,54): error TS2339: Property 'clienteApellidos' does not exist on type '{}'.
+app-wrapper.tsx(6646,51): error TS2339: Property 'clienteTipoDocumento' does not exist on type '{}'.
+app-wrapper.tsx(6648,17): error TS2339: Property 'clienteNumeroDocumento' does not exist on type '{}'.
+app-wrapper.tsx(6649,50): error TS2339: Property 'clienteDepartamento' does not exist on type '{}'.
+app-wrapper.tsx(6651,17): error TS2339: Property 'clienteProvincia' does not exist on type '{}'.
+app-wrapper.tsx(6653,17): error TS2339: Property 'clienteDistritoReal' does not exist on type '{}'.
+app-wrapper.tsx(6656,41): error TS2339: Property 'canalVenta' does not exist on type '{}'.
+app-wrapper.tsx(6657,40): error TS2339: Property 'activador' does not exist on type '{}'.
+app-wrapper.tsx(6658,44): error TS2339: Property 'lineaProducto' does not exist on type '{}'.
+app-wrapper.tsx(6660,17): error TS2339: Property 'whatsappOrigen' does not exist on type '{}'.
+app-wrapper.tsx(6661,39): error TS2339: Property 'vendedor' does not exist on type '{}'.
+app-wrapper.tsx(6663,17): error TS2339: Property 'productosGenerales' does not exist on type '{}'.
+app-wrapper.tsx(6668,53): error TS2339: Property 'envioContacto' does not exist on type '{}'.
+app-wrapper.tsx(6670,19): error TS2339: Property 'envioContacto' does not exist on type '{}'.
+app-wrapper.tsx(6672,19): error TS2339: Property 'envioContactoSecundario' does not exist on type '{}'.
+app-wrapper.tsx(6674,19): error TS2339: Property 'envioNombreCliente' does not exist on type '{}'.
+app-wrapper.tsx(6676,19): error TS2339: Property 'envioTipoDocumento' does not exist on type '{}'.
+app-wrapper.tsx(6678,19): error TS2339: Property 'envioNumeroDocumento' does not exist on type '{}'.
+app-wrapper.tsx(6679,50): error TS2339: Property 'envioDepartamento' does not exist on type '{}'.
+app-wrapper.tsx(6681,19): error TS2339: Property 'envioProvincia' does not exist on type '{}'.
+app-wrapper.tsx(6683,19): error TS2339: Property 'envioDistrito' does not exist on type '{}'.
+app-wrapper.tsx(6688,19): error TS2339: Property 'envioDireccionLima' does not exist on type '{}'.
+app-wrapper.tsx(6691,19): error TS2339: Property 'agenciaEnvio' does not exist on type '{}'.
+app-wrapper.tsx(6699,19): error TS2339: Property 'envioDireccionLima' does not exist on type '{}'.
+app-wrapper.tsx(6702,19): error TS2339: Property 'agenciaEnvio' does not exist on type '{}'.
+app-wrapper.tsx(6707,47): error TS2339: Property 'montoAdelanto' does not exist on type '{}'.
+app-wrapper.tsx(6713,17): error TS2339: Property 'montoTotal' does not exist on type '{}'.
+app-wrapper.tsx(6847,9): error TS2322: Type 'Date' is not assignable to type 'null'.
+app-wrapper.tsx(6904,18): error TS2339: Property 'id' does not exist on type '{ productos: { productoId: any; cantidad: number; }[]; montoTotal: number; montoAdelanto: number; montoPendiente: number; fechaEnvio: string | null; createdAt: Date | undefined; updatedAt: Date | undefined; ... 64 more ...; instruccionesEmpaquetado: string; }'.
+app-wrapper.tsx(6909,18): error TS2339: Property 'clienteId' does not exist on type '{ productos: { productoId: any; cantidad: number; }[]; montoTotal: number; montoAdelanto: number; montoPendiente: number; fechaEnvio: string | null; createdAt: Date | undefined; updatedAt: Date | undefined; ... 64 more ...; instruccionesEmpaquetado: string; }'.
+app-wrapper.tsx(7907,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ orden: any[]; }'.
+app-wrapper.tsx(8089,40): error TS7006: Parameter 'rowData' implicitly has an 'any' type.
+app-wrapper.tsx(8089,49): error TS7006: Parameter 'mapeo' implicitly has an 'any' type.
+app-wrapper.tsx(8089,56): error TS7006: Parameter 'identificador' implicitly has an 'any' type.
+app-wrapper.tsx(8089,71): error TS7006: Parameter 'identificadorValor' implicitly has an 'any' type.
+app-wrapper.tsx(8097,38): error TS2339: Property 'get' does not exist on type 'never'.
+app-wrapper.tsx(8123,7): error TS7034: Variable 'pedido' implicitly has type 'any' in some locations where its type cannot be determined.
+app-wrapper.tsx(8139,62): error TS18046: 'config' is of type 'unknown'.
+app-wrapper.tsx(8142,13): error TS18046: 'config' is of type 'unknown'.
+app-wrapper.tsx(8145,13): error TS2322: Type '{}' is not assignable to type 'string | number | boolean | Date | null'.
+app-wrapper.tsx(8157,17): error TS2322: Type 'string | undefined' is not assignable to type 'string | number | boolean | Date | null'.
+  Type 'undefined' is not assignable to type 'string | number | boolean | Date | null'.
+app-wrapper.tsx(8163,32): error TS7005: Variable 'pedido' implicitly has an 'any' type.
+app-wrapper.tsx(8163,40): error TS18046: 'config' is of type 'unknown'.
+app-wrapper.tsx(8194,62): error TS18046: 'config' is of type 'unknown'.
+app-wrapper.tsx(8197,13): error TS18046: 'config' is of type 'unknown'.
+app-wrapper.tsx(8200,13): error TS2322: Type '{}' is not assignable to type 'string | number | boolean | Date | null'.
+app-wrapper.tsx(8212,17): error TS2322: Type 'string | undefined' is not assignable to type 'string | number | boolean | Date | null'.
+  Type 'undefined' is not assignable to type 'string | number | boolean | Date | null'.
+app-wrapper.tsx(8218,32): error TS7005: Variable 'pedido' implicitly has an 'any' type.
+app-wrapper.tsx(8218,40): error TS18046: 'config' is of type 'unknown'.
+app-wrapper.tsx(8229,17): error TS2339: Property 'id' does not exist on type '{ clienteNombre: string; clienteApellidos: string; clienteContacto: string; clienteContactoSecundario: string; clienteCorreo: string; clienteTipoDocumento: string; clienteNumeroDocumento: string; ... 48 more ...; historialModificaciones: never[]; }'.
+app-wrapper.tsx(8229,31): error TS2339: Property 'numeroPedido' does not exist on type '{ clienteNombre: string; clienteApellidos: string; clienteContacto: string; clienteContactoSecundario: string; clienteCorreo: string; clienteTipoDocumento: string; clienteNumeroDocumento: string; ... 48 more ...; historialModificaciones: never[]; }'.
+app-wrapper.tsx(8230,14): error TS2339: Property 'id' does not exist on type '{ clienteNombre: string; clienteApellidos: string; clienteContacto: string; clienteContactoSecundario: string; clienteCorreo: string; clienteTipoDocumento: string; clienteNumeroDocumento: string; ... 48 more ...; historialModificaciones: never[]; }'.
+app-wrapper.tsx(8231,14): error TS2339: Property 'numeroPedido' does not exist on type '{ clienteNombre: string; clienteApellidos: string; clienteContacto: string; clienteContactoSecundario: string; clienteCorreo: string; clienteTipoDocumento: string; clienteNumeroDocumento: string; ... 48 more ...; historialModificaciones: never[]; }'.
+app-wrapper.tsx(8231,36): error TS2339: Property 'id' does not exist on type '{ clienteNombre: string; clienteApellidos: string; clienteContacto: string; clienteContactoSecundario: string; clienteCorreo: string; clienteTipoDocumento: string; clienteNumeroDocumento: string; ... 48 more ...; historialModificaciones: never[]; }'.
+app-wrapper.tsx(8232,24): error TS2339: Property 'id' does not exist on type '{ clienteNombre: string; clienteApellidos: string; clienteContacto: string; clienteContactoSecundario: string; clienteCorreo: string; clienteTipoDocumento: string; clienteNumeroDocumento: string; ... 48 more ...; historialModificaciones: never[]; }'.
+app-wrapper.tsx(8233,14): error TS2339: Property 'id' does not exist on type '{ clienteNombre: string; clienteApellidos: string; clienteContacto: string; clienteContactoSecundario: string; clienteCorreo: string; clienteTipoDocumento: string; clienteNumeroDocumento: string; ... 48 more ...; historialModificaciones: never[]; }'.
+app-wrapper.tsx(8233,26): error TS2339: Property 'numeroPedido' does not exist on type '{ clienteNombre: string; clienteApellidos: string; clienteContacto: string; clienteContactoSecundario: string; clienteCorreo: string; clienteTipoDocumento: string; clienteNumeroDocumento: string; ... 48 more ...; historialModificaciones: never[]; }'.
+app-wrapper.tsx(8234,24): error TS2339: Property 'numeroPedido' does not exist on type '{ clienteNombre: string; clienteApellidos: string; clienteContacto: string; clienteContactoSecundario: string; clienteCorreo: string; clienteTipoDocumento: string; clienteNumeroDocumento: string; ... 48 more ...; historialModificaciones: never[]; }'.
+app-wrapper.tsx(8235,14): error TS2339: Property 'numeroPedido' does not exist on type '{ clienteNombre: string; clienteApellidos: string; clienteContacto: string; clienteContactoSecundario: string; clienteCorreo: string; clienteTipoDocumento: string; clienteNumeroDocumento: string; ... 48 more ...; historialModificaciones: never[]; }'.
+app-wrapper.tsx(8235,36): error TS2339: Property 'id' does not exist on type '{ clienteNombre: string; clienteApellidos: string; clienteContacto: string; clienteContactoSecundario: string; clienteCorreo: string; clienteTipoDocumento: string; clienteNumeroDocumento: string; ... 48 more ...; historialModificaciones: never[]; }'.
+app-wrapper.tsx(8240,7): error TS2322: Type '{ timestamp: Date; usuarioId: string; usuarioEmail: string; accion: string; detalle: string; }' is not assignable to type 'never'.
+app-wrapper.tsx(8258,38): error TS7006: Parameter 'pedidos' implicitly has an 'any' type.
+app-wrapper.tsx(8302,42): error TS7006: Parameter 'file' implicitly has an 'any' type.
+app-wrapper.tsx(8321,17): error TS7034: Variable 'headers' implicitly has type 'any[]' in some locations where its type cannot be determined.
+app-wrapper.tsx(8326,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(8327,15): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(8328,37): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(8330,15): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(8338,13): error TS7005: Variable 'headers' implicitly has an 'any[]' type.
+app-wrapper.tsx(8339,15): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(8346,21): error TS7005: Variable 'headers' implicitly has an 'any[]' type.
+app-wrapper.tsx(8385,34): error TS18046: 'row' is of type 'unknown'.
+app-wrapper.tsx(8394,44): error TS2339: Property 'some' does not exist on type '{}'.
+app-wrapper.tsx(8403,30): error TS2571: Object is of type 'unknown'.
+app-wrapper.tsx(8404,17): error TS7034: Variable 'headers' implicitly has type 'any[]' in some locations where its type cannot be determined.
+app-wrapper.tsx(8406,17): error TS7034: Variable 'headerOriginalIndices' implicitly has type 'any[]' in some locations where its type cannot be determined.
+app-wrapper.tsx(8408,11): error TS2571: Object is of type 'unknown'.
+app-wrapper.tsx(8413,17): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+app-wrapper.tsx(8414,15): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+app-wrapper.tsx(8415,44): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+app-wrapper.tsx(8417,15): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{}'.
+  No index signature with a parameter of type 'string' was found on type '{}'.
+app-wrapper.tsx(8431,13): error TS7005: Variable 'headers' implicitly has an 'any[]' type.
+app-wrapper.tsx(8432,40): error TS7005: Variable 'headerOriginalIndices' implicitly has an 'any[]' type.
+app-wrapper.tsx(8433,15): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(8441,21): error TS7005: Variable 'headers' implicitly has an 'any[]' type.
+app-wrapper.tsx(8517,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(8651,99): error TS18046: 'data' is of type 'unknown'.
+app-wrapper.tsx(8708,113): error TS2345: Argument of type 'Map<any, any>' is not assignable to parameter of type 'null | undefined'.
+app-wrapper.tsx(8986,21): error TS7034: Variable 'duplicados' implicitly has type 'any[]' in some locations where its type cannot be determined.
+app-wrapper.tsx(8989,23): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(8990,26): error TS7005: Variable 'duplicados' implicitly has an 'any[]' type.
+app-wrapper.tsx(8994,21): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9010,24): error TS7005: Variable 'duplicados' implicitly has an 'any[]' type.
+app-wrapper.tsx(9332,3): error TS2304: Cannot find name 'activeTab'.
+app-wrapper.tsx(9684,12): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9685,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9696,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9697,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9698,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9703,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9718,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9719,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9722,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9723,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9736,12): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9737,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9748,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9749,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9750,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9755,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9770,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9771,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9774,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9775,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(9803,44): error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+app-wrapper.tsx(10064,44): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ PAREJAS: string[]; "CASACAS DE EQUIPOS": string[]; "CASACAS GEEKS": string[]; PIJAMAS: string[]; "POR MAYOR": string[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ PAREJAS: string[]; "CASACAS DE EQUIPOS": string[]; "CASACAS GEEKS": string[]; PIJAMAS: string[]; "POR MAYOR": string[]; }'.
+app-wrapper.tsx(10065,23): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ PAREJAS: string[]; "CASACAS DE EQUIPOS": string[]; "CASACAS GEEKS": string[]; PIJAMAS: string[]; "POR MAYOR": string[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ PAREJAS: string[]; "CASACAS DE EQUIPOS": string[]; "CASACAS GEEKS": string[]; PIJAMAS: string[]; "POR MAYOR": string[]; }'.
+app-wrapper.tsx(10371,21): error TS2322: Type 'string' is not assignable to type 'number'.
+app-wrapper.tsx(10596,49): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(10598,11): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(10599,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(10603,5): error TS7053: Element implicitly has an 'any' type because expression of type '"TOTAL PREN."' can't be used to index type '{}'.
+  Property 'TOTAL PREN.' does not exist on type '{}'.
+app-wrapper.tsx(10607,38): error TS7006: Parameter 'e' implicitly has an 'any' type.
+app-wrapper.tsx(10633,33): error TS2345: Argument of type 'number' is not assignable to parameter of type 'string'.
+app-wrapper.tsx(10637,42): error TS2322: Type '{ tipoPrenda: string; color: string; talla: string; cantidad: number; costoUnitario: number; }' is not assignable to type 'null'.
+app-wrapper.tsx(10644,41): error TS2339: Property 'tipoPrenda' does not exist on type 'never'.
+app-wrapper.tsx(10644,88): error TS2339: Property 'color' does not exist on type 'never'.
+app-wrapper.tsx(10644,130): error TS2339: Property 'talla' does not exist on type 'never'.
+app-wrapper.tsx(10648,39): error TS2339: Property 'tipoPrenda' does not exist on type 'never'.
+app-wrapper.tsx(10649,34): error TS2339: Property 'color' does not exist on type 'never'.
+app-wrapper.tsx(10650,34): error TS2339: Property 'talla' does not exist on type 'never'.
+app-wrapper.tsx(10665,9): error TS2698: Spread types may only be created from object types.
+app-wrapper.tsx(10667,31): error TS2339: Property 'cantidad' does not exist on type 'never'.
+app-wrapper.tsx(10686,40): error TS7006: Parameter 'e' implicitly has an 'any' type.
+app-wrapper.tsx(10751,20): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(10754,77): error TS7053: Element implicitly has an 'any' type because expression of type '"TOTAL PREN."' can't be used to index type '{}'.
+  Property 'TOTAL PREN.' does not exist on type '{}'.
+app-wrapper.tsx(10920,95): error TS2339: Property 'tipoPrenda' does not exist on type 'never'.
+app-wrapper.tsx(10920,140): error TS2339: Property 'color' does not exist on type 'never'.
+app-wrapper.tsx(10920,186): error TS2339: Property 'talla' does not exist on type 'never'.
+app-wrapper.tsx(10920,239): error TS2339: Property 'cantidad' does not exist on type 'never'.
+app-wrapper.tsx(10977,9): error TS7034: Variable 'condicionesSalida' implicitly has type 'any[]' in some locations where its type cannot be determined.
+app-wrapper.tsx(10978,9): error TS7034: Variable 'condicionesEntrada' implicitly has type 'any[]' in some locations where its type cannot be determined.
+app-wrapper.tsx(11128,14): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ventas: string; dise├▒o: string; cobranza: string; pre_estampado: string; estampado: string; empaquetado: string; reparto: string; finalizados: string; corte: string; confeccion: string; limpieza: string; registro: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ventas: string; dise├▒o: string; cobranza: string; pre_estampado: string; estampado: string; empaquetado: string; reparto: string; finalizados: string; corte: string; confeccion: string; limpieza: string; registro: string; }'.
+app-wrapper.tsx(11131,23): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ventas: string; dise├▒o: string; cobranza: string; pre_estampado: string; estampado: string; empaquetado: string; reparto: string; finalizados: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ventas: string; dise├▒o: string; cobranza: string; pre_estampado: string; estampado: string; empaquetado: string; reparto: string; finalizados: string; }'.
+app-wrapper.tsx(11134,26): error TS7005: Variable 'condicionesSalida' implicitly has an 'any[]' type.
+app-wrapper.tsx(11135,27): error TS7005: Variable 'condicionesEntrada' implicitly has an 'any[]' type.
+app-wrapper.tsx(11167,14): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ventas: string; dise├▒o: string; cobranza: string; pre_estampado: string; estampado: string; empaquetado: string; reparto: string; finalizados: string; corte: string; confeccion: string; limpieza: string; registro: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ventas: string; dise├▒o: string; cobranza: string; pre_estampado: string; estampado: string; empaquetado: string; reparto: string; finalizados: string; corte: string; confeccion: string; limpieza: string; registro: string; }'.
+app-wrapper.tsx(11366,27): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ ShoppingCart: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; ... 60 more ...; TrendingUp: ForwardRefExoticComponent<...>; }'.
+app-wrapper.tsx(11520,17): error TS2339: Property 'tipo' does not exist on type '{}'.
+app-wrapper.tsx(11525,17): error TS2339: Property 'inventarioId' does not exist on type '{}'.
+app-wrapper.tsx(11529,17): error TS2339: Property 'etapaDestinoId' does not exist on type '{}'.
+app-wrapper.tsx(11545,32): error TS2339: Property 'inventarioId' does not exist on type '{}'.
+app-wrapper.tsx(11549,32): error TS2339: Property 'saltarAutomatico' does not exist on type '{}'.
+app-wrapper.tsx(11551,34): error TS2339: Property 'etapaDestinoId' does not exist on type '{}'.
+app-wrapper.tsx(11799,9): error TS2353: Object literal may only specify known properties, and 'orden' does not exist in type 'SetStateAction<{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }>'.
+app-wrapper.tsx(11812,17): error TS2339: Property 'nombre' does not exist on type '{}'.
+app-wrapper.tsx(11820,19): error TS2339: Property 'nombre' does not exist on type '{}'.
+app-wrapper.tsx(11829,19): error TS2339: Property 'tipoObligatoria' does not exist on type '{}'.
+app-wrapper.tsx(11853,19): error TS2339: Property 'flujoId' does not exist on type '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; condicionesSalida: any[]; condicionesEntrada: any[]; fechaModificacion: Date; }'.
+app-wrapper.tsx(11854,19): error TS2339: Property 'orden' does not exist on type '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; condicionesSalida: any[]; condicionesEntrada: any[]; fechaModificacion: Date; }'.
+app-wrapper.tsx(11855,19): error TS2339: Property 'fechaCreacion' does not exist on type '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; condicionesSalida: any[]; condicionesEntrada: any[]; fechaModificacion: Date; }'.
+app-wrapper.tsx(11858,19): error TS2339: Property 'id' does not exist on type '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; condicionesSalida: any[]; condicionesEntrada: any[]; fechaModificacion: Date; }'.
+app-wrapper.tsx(11859,19): error TS2339: Property 'flujoId' does not exist on type '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; condicionesSalida: any[]; condicionesEntrada: any[]; fechaModificacion: Date; }'.
+app-wrapper.tsx(11860,19): error TS2339: Property 'orden' does not exist on type '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; condicionesSalida: any[]; condicionesEntrada: any[]; fechaModificacion: Date; }'.
+app-wrapper.tsx(11860,36): error TS2339: Property 'orden' does not exist on type '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }'.
+app-wrapper.tsx(11861,19): error TS2339: Property 'fechaCreacion' does not exist on type '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; condicionesSalida: any[]; condicionesEntrada: any[]; fechaModificacion: Date; }'.
+app-wrapper.tsx(11924,51): error TS2345: Argument of type '(prev: { nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }) => { tipoObligatoria: string | null; obligatoria: any; ... 4 more ...; moduloPermisos: string; }' is not assignable to parameter of type 'SetStateAction<{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }>'.
+  Type '(prev: { nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }) => { tipoObligatoria: string | null; obligatoria: any; ... 4 more ...; moduloPermisos: string; }' is not assignable to type '(prevState: { nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }) => { nombre: string; descripcion: string; ... 4 more ...; tipoObligatoria: null; }'.
+    Call signature return types '{ tipoObligatoria: string | null; obligatoria: any; nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; }' and '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }' are incompatible.
+      The types of 'tipoObligatoria' are incompatible between these types.
+        Type 'string | null' is not assignable to type 'null'.
+          Type 'string' is not assignable to type 'null'.
+app-wrapper.tsx(11937,51): error TS2345: Argument of type '(prev: { nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }) => { tipoObligatoria: string | null; obligatoria: any; ... 4 more ...; moduloPermisos: string; }' is not assignable to parameter of type 'SetStateAction<{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }>'.
+  Type '(prev: { nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }) => { tipoObligatoria: string | null; obligatoria: any; ... 4 more ...; moduloPermisos: string; }' is not assignable to type '(prevState: { nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }) => { nombre: string; descripcion: string; ... 4 more ...; tipoObligatoria: null; }'.
+    Call signature return types '{ tipoObligatoria: string | null; obligatoria: any; nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; }' and '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }' are incompatible.
+      The types of 'tipoObligatoria' are incompatible between these types.
+        Type 'string | null' is not assignable to type 'null'.
+          Type 'string' is not assignable to type 'null'.
+app-wrapper.tsx(12092,17): error TS2339: Property 'nombre' does not exist on type '{}'.
+app-wrapper.tsx(12098,19): error TS2339: Property 'nombre' does not exist on type '{}'.
+app-wrapper.tsx(12119,19): error TS2339: Property 'fechaCreacion' does not exist on type '{ nombre: string; descripcion: string; activo: boolean; orden: number; color: string; icono: string; fechaModificacion: Date; }'.
+app-wrapper.tsx(12120,19): error TS2339: Property 'creadoPor' does not exist on type '{ nombre: string; descripcion: string; activo: boolean; orden: number; color: string; icono: string; fechaModificacion: Date; }'.
+app-wrapper.tsx(12123,19): error TS2339: Property 'id' does not exist on type '{ nombre: string; descripcion: string; activo: boolean; orden: number; color: string; icono: string; fechaModificacion: Date; }'.
+app-wrapper.tsx(12124,19): error TS2339: Property 'fechaCreacion' does not exist on type '{ nombre: string; descripcion: string; activo: boolean; orden: number; color: string; icono: string; fechaModificacion: Date; }'.
+app-wrapper.tsx(12125,19): error TS2339: Property 'creadoPor' does not exist on type '{ nombre: string; descripcion: string; activo: boolean; orden: number; color: string; icono: string; fechaModificacion: Date; }'.
+app-wrapper.tsx(12126,19): error TS2339: Property 'etapas' does not exist on type '{ nombre: string; descripcion: string; activo: boolean; orden: number; color: string; icono: string; fechaModificacion: Date; }'.
+app-wrapper.tsx(12327,27): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ ShoppingCart: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; ... 60 more ...; TrendingUp: ForwardRefExoticComponent<...>; }'.
+app-wrapper.tsx(12546,22): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ventas: string; dise├▒o: string; cobranza: string; pre_estampado: string; estampado: string; empaquetado: string; reparto: string; finalizados: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ventas: string; dise├▒o: string; cobranza: string; pre_estampado: string; estampado: string; empaquetado: string; reparto: string; finalizados: string; }'.
+app-wrapper.tsx(12582,34): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ dise├▒o: string; cobranza: string; pre_estampado: string; estampado: string; empaquetado: string; reparto: string; finalizados: string; ventas: string; }'.
+app-wrapper.tsx(12663,27): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ ShoppingCart: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; ... 60 more ...; TrendingUp: ForwardRefExoticComponent<...>; }'.
+app-wrapper.tsx(12751,22): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ corte: string; confeccion: string; limpieza: string; registro: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ corte: string; confeccion: string; limpieza: string; registro: string; }'.
+app-wrapper.tsx(12779,34): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ corte: string; confeccion: string; limpieza: string; registro: string; }'.
+app-wrapper.tsx(13020,24): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ ventas: { name: string; actions: string[]; }; dise├▒o: { name: string; actions: string[]; }; cobranza: { name: string; actions: string[]; }; inventarios: { name: string; actions: string[]; }; preparacion: { name: string; actions: string[]; }; estampado: { ...; }; empaquetado: { ...; }; reparto: { ...; }; finalizado...'.
+app-wrapper.tsx(13097,41): error TS7006: Parameter 'module' implicitly has an 'any' type.
+app-wrapper.tsx(13097,49): error TS7006: Parameter 'action' implicitly has an 'any' type.
+app-wrapper.tsx(13097,57): error TS7006: Parameter 'checked' implicitly has an 'any' type.
+app-wrapper.tsx(13135,37): error TS2339: Property 'actions' does not exist on type 'never'.
+app-wrapper.tsx(13143,17): error TS2339: Property 'name' does not exist on type '{}'.
+app-wrapper.tsx(13228,65): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+app-wrapper.tsx(13467,17): error TS2339: Property 'email' does not exist on type '{}'.
+app-wrapper.tsx(13469,17): error TS2339: Property 'email' does not exist on type '{}'.
+app-wrapper.tsx(13473,17): error TS2339: Property 'name' does not exist on type '{}'.
+app-wrapper.tsx(13477,17): error TS2339: Property 'password' does not exist on type '{}'.
+app-wrapper.tsx(13500,20): error TS2339: Property 'password' does not exist on type '{ email: string; name: string; phone: string; status: string; profiles: never[]; customPermissions: never[]; specialPermissions: never[]; updatedAt: Date; createdBy: any; }'.
+app-wrapper.tsx(13504,18): error TS2339: Property 'password' does not exist on type '{ email: string; name: string; phone: string; status: string; profiles: never[]; customPermissions: never[]; specialPermissions: never[]; updatedAt: Date; createdBy: any; }'.
+app-wrapper.tsx(13505,18): error TS2339: Property 'createdAt' does not exist on type '{ email: string; name: string; phone: string; status: string; profiles: never[]; customPermissions: never[]; specialPermissions: never[]; updatedAt: Date; createdBy: any; }'.
+app-wrapper.tsx(13522,41): error TS7006: Parameter 'module' implicitly has an 'any' type.
+app-wrapper.tsx(13522,49): error TS7006: Parameter 'action' implicitly has an 'any' type.
+app-wrapper.tsx(13522,57): error TS7006: Parameter 'checked' implicitly has an 'any' type.
+app-wrapper.tsx(13547,37): error TS2339: Property 'actions' does not exist on type 'never'.
+app-wrapper.tsx(13565,11): error TS7034: Variable 'allPermissions' implicitly has type 'any[]' in some locations where its type cannot be determined.
+app-wrapper.tsx(13573,32): error TS7005: Variable 'allPermissions' implicitly has an 'any[]' type.
+app-wrapper.tsx(13581,85): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+app-wrapper.tsx(13588,28): error TS7005: Variable 'allPermissions' implicitly has an 'any[]' type.
+app-wrapper.tsx(13596,27): error TS7005: Variable 'allPermissions' implicitly has an 'any[]' type.
+app-wrapper.tsx(13669,55): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+app-wrapper.tsx(13716,65): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+app-wrapper.tsx(13734,22): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ ventas: { name: string; actions: string[]; }; dise├▒o: { name: string; actions: string[]; }; cobranza: { name: string; actions: string[]; }; inventarios: { name: string; actions: string[]; }; preparacion: { name: string; actions: string[]; }; estampado: { ...; }; empaquetado: { ...; }; reparto: { ...; }; finalizado...'.
+app-wrapper.tsx(13951,12): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(13952,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(13969,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(13970,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(13971,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(13975,12): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(13975,69): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(13976,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(14028,62): error TS2322: Type 'unknown' is not assignable to type 'ReactNode'.
+app-wrapper.tsx(14263,7): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(14263,26): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+app-wrapper.tsx(14733,34): error TS7006: Parameter 'item' implicitly has an 'any' type.
+app-wrapper.tsx(14733,40): error TS7006: Parameter 'inventarioId' implicitly has an 'any' type.
+app-wrapper.tsx(14736,7): error TS2322: Type 'any' is not assignable to type 'never'.
+app-wrapper.tsx(14737,9): error TS2698: Spread types may only be created from object types.
+app-wrapper.tsx(14756,17): error TS2345: Argument of type '(prev: { nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }) => { ...; }' is not assignable to parameter of type 'SetStateAction<{ nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }>'.
+  Type '(prev: { nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }) => { ...; }' is not assignable to type '(prevState: { nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }) => { ...; }'.
+    Call signature return types '{ componentes: { id: string; itemInventarioId: string; inventarioId: string; cantidad: number; nombre: string; }[]; nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; ... 4 more ...; activo: boolean; }' and '{ nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }' are incompatible.
+      The types of 'componentes' are incompatible between these types.
+        Type '{ id: string; itemInventarioId: string; inventarioId: string; cantidad: number; nombre: string; }[]' is not assignable to type 'never[]'.
+          Type '{ id: string; itemInventarioId: string; inventarioId: string; cantidad: number; nombre: string; }' is not assignable to type 'never'.
+app-wrapper.tsx(14778,39): error TS7006: Parameter 'index' implicitly has an 'any' type.
+app-wrapper.tsx(14778,46): error TS7006: Parameter 'field' implicitly has an 'any' type.
+app-wrapper.tsx(14778,53): error TS7006: Parameter 'value' implicitly has an 'any' type.
+app-wrapper.tsx(14780,5): error TS2322: Type 'any' is not assignable to type 'never'.
+app-wrapper.tsx(14780,34): error TS2698: Spread types may only be created from object types.
+app-wrapper.tsx(14817,35): error TS7006: Parameter 'precioId' implicitly has an 'any' type.
+app-wrapper.tsx(14817,45): error TS7006: Parameter 'field' implicitly has an 'any' type.
+app-wrapper.tsx(14817,52): error TS7006: Parameter 'value' implicitly has an 'any' type.
+app-wrapper.tsx(14837,17): error TS2345: Argument of type '(prev: { nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }) => { ...; }' is not assignable to parameter of type 'SetStateAction<{ nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }>'.
+  Type '(prev: { nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }) => { ...; }' is not assignable to type '(prevState: { nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }) => { ...; }'.
+    Call signature return types '{ variantes: { id: string; nombre: string; costoAdicional: number; precioAdicional: number; }[]; nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { ...; }[]; activo: boolean; }' and '{ nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }' are incompatible.
+      The types of 'variantes' are incompatible between these types.
+        Type '{ id: string; nombre: string; costoAdicional: number; precioAdicional: number; }[]' is not assignable to type 'never[]'.
+          Type '{ id: string; nombre: string; costoAdicional: number; precioAdicional: number; }' is not assignable to type 'never'.
+app-wrapper.tsx(14858,37): error TS7006: Parameter 'varianteId' implicitly has an 'any' type.
+app-wrapper.tsx(14858,49): error TS7006: Parameter 'field' implicitly has an 'any' type.
+app-wrapper.tsx(14858,56): error TS7006: Parameter 'value' implicitly has an 'any' type.
+app-wrapper.tsx(14862,17): error TS2345: Argument of type '(prev: { nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }) => { ...; }' is not assignable to parameter of type 'SetStateAction<{ nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }>'.
+  Type '(prev: { nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }) => { ...; }' is not assignable to type '(prevState: { nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }) => { ...; }'.
+    Call signature return types '{ variantes: any[]; nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; activo: boolean; }' and '{ nombre: string; descripcion: string; imagen: string; categoria: string; tipo: string; itemInventarioId: string; inventarioId: string; componentes: never[]; precios: { id: string; nombre: string; valor: number; activo: boolean; habilitado: boolean; }[]; variantes: never[]; activo: boolean; }' are incompatible.
+      The types of 'variantes' are incompatible between these types.
+        Type 'any[]' is not assignable to type 'never[]'.
+          Type 'any' is not assignable to type 'never'.
+app-wrapper.tsx(14874,21): error TS2339: Property 'nombre' does not exist on type '{}'.
+app-wrapper.tsx(14877,21): error TS2339: Property 'itemInventarioId' does not exist on type '{}'.
+app-wrapper.tsx(14880,21): error TS2339: Property 'componentes' does not exist on type '{}'.
+app-wrapper.tsx(14883,21): error TS2339: Property 'precios' does not exist on type '{}'.
+app-wrapper.tsx(14886,21): error TS2339: Property 'precios' does not exist on type '{}'.
+app-wrapper.tsx(15675,24): error TS2339: Property 'dise├▒o' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; } | { corte: number; confeccion: number; limpieza: number; registro: number; }'.
+  Property 'dise├▒o' does not exist on type '{ corte: number; confeccion: number; limpieza: number; registro: number; }'.
+app-wrapper.tsx(15676,26): error TS2339: Property 'cobranza' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; } | { corte: number; confeccion: number; limpieza: number; registro: number; }'.
+  Property 'cobranza' does not exist on type '{ corte: number; confeccion: number; limpieza: number; registro: number; }'.
+app-wrapper.tsx(15677,29): error TS2339: Property 'preparacion' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; } | { corte: number; confeccion: number; limpieza: number; registro: number; }'.
+  Property 'preparacion' does not exist on type '{ corte: number; confeccion: number; limpieza: number; registro: number; }'.
+app-wrapper.tsx(15678,27): error TS2339: Property 'estampado' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; } | { corte: number; confeccion: number; limpieza: number; registro: number; }'.
+  Property 'estampado' does not exist on type '{ corte: number; confeccion: number; limpieza: number; registro: number; }'.
+app-wrapper.tsx(15679,29): error TS2339: Property 'empaquetado' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; } | { corte: number; confeccion: number; limpieza: number; registro: number; }'.
+  Property 'empaquetado' does not exist on type '{ corte: number; confeccion: number; limpieza: number; registro: number; }'.
+app-wrapper.tsx(15680,25): error TS2339: Property 'reparto' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; } | { corte: number; confeccion: number; limpieza: number; registro: number; }'.
+  Property 'reparto' does not exist on type '{ corte: number; confeccion: number; limpieza: number; registro: number; }'.
+app-wrapper.tsx(15681,29): error TS2339: Property 'finalizados' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; } | { corte: number; confeccion: number; limpieza: number; registro: number; }'.
+  Property 'finalizados' does not exist on type '{ corte: number; confeccion: number; limpieza: number; registro: number; }'.
+app-wrapper.tsx(15682,23): error TS2339: Property 'corte' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; } | { corte: number; confeccion: number; limpieza: number; registro: number; }'.
+  Property 'corte' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; }'.
+app-wrapper.tsx(15683,28): error TS2339: Property 'confeccion' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; } | { corte: number; confeccion: number; limpieza: number; registro: number; }'.
+  Property 'confeccion' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; }'.
+app-wrapper.tsx(15684,26): error TS2339: Property 'limpieza' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; } | { corte: number; confeccion: number; limpieza: number; registro: number; }'.
+  Property 'limpieza' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; }'.
+app-wrapper.tsx(15685,26): error TS2339: Property 'registro' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; } | { corte: number; confeccion: number; limpieza: number; registro: number; }'.
+  Property 'registro' does not exist on type '{ dise├▒o: number; cobranza: number; preparacion: number; estampado: number; empaquetado: number; reparto: number; finalizados: number; }'.
+app-wrapper.tsx(16025,50): error TS2345: Argument of type 'null' is not assignable to parameter of type 'SetStateAction<string>'.
+app-wrapper.tsx(16045,49): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ ShoppingCart: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; ... 54 more ...; Move: ForwardRefExoticComponent<...>; }'.
+components/modals/config-columnas-etapa-modal.tsx(87,82): error TS2339: Property 'orden' does not exist on type 'never'.
+components/modals/config-columnas-etapa-modal.tsx(87,92): error TS2339: Property 'orden' does not exist on type 'never'.
+components/modals/config-columnas-etapa-modal.tsx(90,32): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ dise├▒o: { id: boolean; fecha: boolean; cliente: boolean; productos: boolean; dise├▒ador: boolean; estado: boolean; fechaEntrada: boolean; acciones: boolean; clienteNombre: boolean; clienteApellidos: boolean; ... 13 more ...; notasDise├▒o: boolean; }; ... 5 more ...; finalizados: { ...; }; }'.
+components/modals/config-columnas-etapa-modal.tsx(95,52): error TS2339: Property 'campo' does not exist on type 'never'.
+components/modals/config-columnas-etapa-modal.tsx(96,42): error TS2339: Property 'campo' does not exist on type 'never'.
+components/modals/config-columnas-etapa-modal.tsx(97,27): error TS2339: Property 'visible' does not exist on type 'never'.
+components/modals/config-columnas-etapa-modal.tsx(100,90): error TS2339: Property 'campo' does not exist on type 'never'.
+components/modals/config-columnas-etapa-modal.tsx(101,84): error TS2339: Property 'orden' does not exist on type 'never'.
+components/modals/config-columnas-etapa-modal.tsx(104,17): error TS2698: Spread types may only be created from object types.
+components/modals/config-columnas-etapa-modal.tsx(191,13): error TS2740: Type '{}' is missing the following properties from type '{ dise├▒o: { id: boolean; fecha: boolean; cliente: boolean; productos: boolean; dise├▒ador: boolean; estado: boolean; fechaEntrada: boolean; acciones: boolean; clienteNombre: boolean; clienteApellidos: boolean; ... 13 more ...; notasDise├▒o: boolean; }; ... 5 more ...; finalizados: { ...; }; }': dise├▒o, cobranza, preparacion, estampado, and 3 more.
+components/modals/config-columnas-etapa-modal.tsx(193,9): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ dise├▒o: { id: boolean; fecha: boolean; cliente: boolean; productos: boolean; dise├▒ador: boolean; estado: boolean; fechaEntrada: boolean; acciones: boolean; clienteNombre: boolean; clienteApellidos: boolean; ... 13 more ...; notasDise├▒o: boolean; }; ... 5 more ...; finalizados: { ...; }; }'.
+components/modals/config-columnas-etapa-modal.tsx(202,86): error TS2339: Property 'orden' does not exist on type 'never'.
+components/modals/config-columnas-etapa-modal.tsx(202,96): error TS2339: Property 'orden' does not exist on type 'never'.
+components/modals/config-columnas-etapa-modal.tsx(204,17): error TS2698: Spread types may only be created from object types.
+components/modals/config-columnas-etapa-modal.tsx(205,34): error TS2339: Property 'visible' does not exist on type 'never'.
+components/modals/config-columnas-etapa-modal.tsx(206,45): error TS2339: Property 'orden' does not exist on type 'never'.
+components/modals/etapa-form-modal.tsx(45,70): error TS2339: Property 'flujoId' does not exist on type 'never'.
+components/modals/etapa-form-modal.tsx(71,24): error TS2339: Property 'nombre' does not exist on type 'never'.
+components/modals/etapa-form-modal.tsx(72,26): error TS2339: Property 'flujoId' does not exist on type 'never'.
+components/modals/etapa-form-modal.tsx(73,26): error TS2339: Property 'id' does not exist on type 'never'.
+components/modals/etapa-form-modal.tsx(82,70): error TS2339: Property 'flujoId' does not exist on type 'never'.
+components/modals/etapa-form-modal.tsx(82,95): error TS2339: Property 'id' does not exist on type 'never'.
+components/modals/etapa-form-modal.tsx(83,59): error TS2339: Property 'tipoObligatoria' does not exist on type 'never'.
+components/modals/etapa-form-modal.tsx(116,87): error TS2339: Property 'flujoId' does not exist on type 'never'.
+components/modals/flow-components.tsx(278,32): error TS2339: Property 'flujoId' does not exist on type 'never'.
+components/modals/flow-components.tsx(278,57): error TS2339: Property 'id' does not exist on type 'never'.
+components/modals/flow-components.tsx(279,36): error TS2339: Property 'orden' does not exist on type 'never'.
+components/modals/flow-components.tsx(279,53): error TS2339: Property 'orden' does not exist on type 'never'.
+components/modals/flow-components.tsx(511,83): error TS2339: Property 'id' does not exist on type 'never'.
+components/modals/flow-components.tsx(511,128): error TS2339: Property 'nombre' does not exist on type 'never'.
+components/modals/importar-base-datos-modal.tsx(27,42): error TS7031: Binding element 'isOpen' implicitly has an 'any' type.
+components/modals/importar-base-datos-modal.tsx(27,50): error TS7031: Binding element 'onClose' implicitly has an 'any' type.
+components/modals/importar-base-datos-modal.tsx(27,59): error TS7031: Binding element 'onImportComplete' implicitly has an 'any' type.
+components/modals/importar-base-datos-modal.tsx(61,53): error TS18046: 'error' is of type 'unknown'.
+components/modals/importar-base-datos-modal.tsx(107,23): error TS2339: Property 'id' does not exist on type 'never'.
+components/modals/importar-base-datos-modal.tsx(107,53): error TS2339: Property 'id' does not exist on type 'never'.
+components/modals/importar-base-datos-modal.tsx(108,23): error TS2339: Property 'numeroPedido' does not exist on type 'never'.
+components/modals/importar-base-datos-modal.tsx(108,63): error TS2339: Property 'numeroPedido' does not exist on type 'never'.
+components/modals/importar-base-datos-modal.tsx(127,21): error TS2554: Expected 4 arguments, but got 5.
+components/modals/importar-base-datos-modal.tsx(129,32): error TS2698: Spread types may only be created from object types.
+components/modals/importar-base-datos-modal.tsx(271,90): error TS7006: Parameter 'campo' implicitly has an 'any' type.
+components/tabs/cobranza-tab.tsx(13,5): error TS2305: Module '"../../lib/business-logic"' has no exported member 'updateOrderField'.
+components/tabs/cobranza-tab.tsx(41,38): error TS2339: Property 'orden' does not exist on type '{ id: boolean; cliente: boolean; total: boolean; adelanto: boolean; pago1: boolean; pago2: boolean; saldo: boolean; estado: boolean; acciones: boolean; clienteNombre: boolean; clienteContacto: boolean; ... 9 more ...; anadidosDL: boolean; }'.
+components/tabs/cobranza-tab.tsx(44,82): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(44,92): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(50,21): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ id: boolean; cliente: boolean; total: boolean; adelanto: boolean; pago1: boolean; pago2: boolean; saldo: boolean; estado: boolean; acciones: boolean; clienteNombre: boolean; clienteContacto: boolean; ... 9 more ...; anadidosDL: boolean; }'.
+components/tabs/cobranza-tab.tsx(50,32): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(51,28): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ id: boolean; cliente: boolean; total: boolean; adelanto: boolean; pago1: boolean; pago2: boolean; saldo: boolean; estado: boolean; acciones: boolean; clienteNombre: boolean; clienteContacto: boolean; ... 9 more ...; anadidosDL: boolean; }'.
+components/tabs/cobranza-tab.tsx(51,39): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(54,65): error TS2339: Property 'orden' does not exist on type '{ id: boolean; cliente: boolean; total: boolean; adelanto: boolean; pago1: boolean; pago2: boolean; saldo: boolean; estado: boolean; acciones: boolean; clienteNombre: boolean; clienteContacto: boolean; ... 9 more ...; anadidosDL: boolean; }'.
+components/tabs/cobranza-tab.tsx(56,32): error TS2339: Property 'visible' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(57,29): error TS2339: Property 'categoria' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(58,29): error TS2339: Property 'categoria' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(61,28): error TS2339: Property 'visible' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(65,76): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(66,76): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(71,26): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(71,36): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(77,21): error TS2339: Property 'categoria' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(78,21): error TS2339: Property 'categoria' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(79,21): error TS2339: Property 'visible' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(94,24): error TS2339: Property 'flujoId' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(94,57): error TS2339: Property 'moduloPermisos' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(97,48): error TS2339: Property 'condicionesEntrada' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(97,84): error TS2339: Property 'condicionesEntrada' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(99,79): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(102,78): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(105,66): error TS2339: Property 'nombre' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(106,60): error TS2339: Property 'moduloPermisos' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(108,46): error TS2339: Property 'moduloPermisos' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(110,70): error TS2339: Property 'condicionesEntrada' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(155,67): error TS2339: Property 'estadoGeneral' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(216,36): error TS2339: Property 'cobranza' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(230,46): error TS2339: Property 'montoTotal' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(230,61): error TS2339: Property 'montoAdelanto' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(230,80): error TS2339: Property 'cobranza' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(230,107): error TS2339: Property 'cobranza' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(253,20): error TS2339: Property 'flujoId' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(253,53): error TS2339: Property 'moduloPermisos' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(267,44): error TS2339: Property 'condicionesSalida' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(267,79): error TS2339: Property 'condicionesSalida' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(269,55): error TS2339: Property 'condicionesSalida' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(291,44): error TS2339: Property 'condicionesSalida' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(291,79): error TS2339: Property 'condicionesSalida' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(292,50): error TS2339: Property 'condicionesSalida' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(481,54): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(484,50): error TS2339: Property 'nombre' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(510,80): error TS2339: Property 'editable' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(511,78): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(512,76): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(516,74): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(522,110): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(525,99): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(562,86): error TS2339: Property 'opciones' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(566,110): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(568,115): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(570,83): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(570,122): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/cobranza-tab.tsx(571,86): error TS2339: Property 'opciones' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(14,5): error TS2305: Module '"../../lib/business-logic"' has no exported member 'updateOrderField'.
+components/tabs/diseno-tab.tsx(46,38): error TS2339: Property 'orden' does not exist on type '{ id: boolean; fecha: boolean; cliente: boolean; productos: boolean; dise├▒ador: boolean; estado: boolean; fechaEntrada: boolean; acciones: boolean; clienteNombre: boolean; clienteApellidos: boolean; ... 13 more ...; notasDise├▒o: boolean; }'.
+components/tabs/diseno-tab.tsx(49,82): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(49,92): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(55,21): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ id: boolean; fecha: boolean; cliente: boolean; productos: boolean; dise├▒ador: boolean; estado: boolean; fechaEntrada: boolean; acciones: boolean; clienteNombre: boolean; clienteApellidos: boolean; ... 13 more ...; notasDise├▒o: boolean; }'.
+components/tabs/diseno-tab.tsx(55,32): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(56,28): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ id: boolean; fecha: boolean; cliente: boolean; productos: boolean; dise├▒ador: boolean; estado: boolean; fechaEntrada: boolean; acciones: boolean; clienteNombre: boolean; clienteApellidos: boolean; ... 13 more ...; notasDise├▒o: boolean; }'.
+components/tabs/diseno-tab.tsx(56,39): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(59,65): error TS2339: Property 'orden' does not exist on type '{ id: boolean; fecha: boolean; cliente: boolean; productos: boolean; dise├▒ador: boolean; estado: boolean; fechaEntrada: boolean; acciones: boolean; clienteNombre: boolean; clienteApellidos: boolean; ... 13 more ...; notasDise├▒o: boolean; }'.
+components/tabs/diseno-tab.tsx(61,32): error TS2339: Property 'visible' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(62,29): error TS2339: Property 'categoria' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(63,29): error TS2339: Property 'categoria' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(66,28): error TS2339: Property 'visible' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(70,76): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(71,76): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(76,26): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(76,36): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(82,21): error TS2339: Property 'categoria' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(83,21): error TS2339: Property 'categoria' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(84,21): error TS2339: Property 'visible' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(138,36): error TS2339: Property 'dise├▒o' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(161,38): error TS2339: Property 'dise├▒o' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(166,41): error TS2339: Property 'dise├▒o' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(174,40): error TS2339: Property 'dise├▒o' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(241,20): error TS2339: Property 'flujoId' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(241,53): error TS2339: Property 'moduloPermisos' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(251,40): error TS2339: Property 'condicionesSalida' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(251,73): error TS2339: Property 'condicionesSalida' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(264,62): error TS2339: Property 'condicionesSalida' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(553,50): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(556,46): error TS2339: Property 'nombre' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(580,72): error TS2339: Property 'editable' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(583,73): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(584,73): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(585,69): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(586,70): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(590,66): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(636,78): error TS2339: Property 'opciones' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(638,79): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(642,107): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(645,78): error TS2339: Property 'opciones' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(651,107): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/diseno-tab.tsx(653,75): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(25,24): error TS7031: Binding element 'columna' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(25,33): error TS7031: Binding element 'onEditar' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(25,43): error TS7031: Binding element 'onEliminar' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(92,29): error TS7031: Binding element 'isOpen' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(92,37): error TS7031: Binding element 'onClose' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(92,46): error TS7031: Binding element 'columna' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(92,55): error TS7031: Binding element 'onSave' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(127,84): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(187,27): error TS7006: Parameter 'e' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(195,24): error TS7006: Parameter 'prev' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(203,35): error TS7006: Parameter 'e' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(209,19): error TS7006: Parameter 'o' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(210,22): error TS7006: Parameter 'o' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(214,27): error TS7006: Parameter 'e' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(227,26): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(227,69): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(369,70): error TS7006: Parameter 'fmt' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(457,38): error TS7031: Binding element 'onColumnasChange' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(474,77): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(474,94): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(478,28): error TS7006: Parameter 'event' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(494,17): error TS2322: Type 'any[]' is not assignable to type 'never[]'.
+  Type 'any' is not assignable to type 'never'.
+components/tabs/gestion-columnas-tab.tsx(502,41): error TS7006: Parameter 'datos' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(506,79): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(509,25): error TS2698: Spread types may only be created from object types.
+components/tabs/gestion-columnas-tab.tsx(513,21): error TS2322: Type 'any' is not assignable to type 'never'.
+components/tabs/gestion-columnas-tab.tsx(525,51): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+components/tabs/gestion-columnas-tab.tsx(530,90): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(530,107): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(537,53): error TS18046: 'error' is of type 'unknown'.
+components/tabs/gestion-columnas-tab.tsx(541,42): error TS7006: Parameter 'id' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(545,75): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(547,57): error TS2339: Property 'esSistema' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(552,64): error TS2339: Property 'delete' does not exist on type '{ update: (data: any) => Promise<void>; }'.
+components/tabs/gestion-columnas-tab.tsx(555,94): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(555,111): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/gestion-columnas-tab.tsx(560,54): error TS18046: 'error' is of type 'unknown'.
+components/tabs/gestion-columnas-tab.tsx(675,56): error TS7006: Parameter 'col' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(59,31): error TS7006: Parameter 'reporte' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(67,32): error TS7006: Parameter 'fila' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(92,26): error TS7006: Parameter 'reporte' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(92,35): error TS7006: Parameter 'tipoReporte' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(126,37): error TS7006: Parameter 'col' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(130,32): error TS7006: Parameter 'fila' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(200,86): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(200,96): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(205,77): error TS7006: Parameter 'snapshot' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(206,52): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(212,33): error TS7006: Parameter 'e' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(295,36): error TS2339: Property 'createdAt' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(318,50): error TS2339: Property 'canalVenta' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(319,58): error TS2339: Property 'lineaProducto' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(320,62): error TS2339: Property 'whatsappOrigen' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(321,56): error TS2339: Property 'vendedor' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(322,58): error TS2339: Property 'activador' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(324,21): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(324,36): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(324,52): error TS7006: Parameter 'prod' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(328,28): error TS2339: Property 'createdAt' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(329,45): error TS2339: Property 'createdAt' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(347,64): error TS2339: Property 'departamento' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(348,58): error TS2339: Property 'provincia' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(349,56): error TS2339: Property 'distrito' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(353,21): error TS2339: Property 'clienteNombre' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(354,19): error TS2339: Property 'clienteContacto' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(355,19): error TS2339: Property 'numeroPedido' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(356,19): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(398,85): error TS2339: Property 'montoTotal' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(404,85): error TS2339: Property 'montoAdelanto' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(411,54): error TS2339: Property 'montoTotal' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(412,57): error TS2339: Property 'montoAdelanto' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(413,55): error TS2339: Property 'cobranza' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(413,95): error TS2339: Property 'cobranza' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(414,41): error TS2339: Property 'montoPendiente' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(414,91): error TS2339: Property 'montoPendiente' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(424,32): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(424,66): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(424,87): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(425,40): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(425,58): error TS7006: Parameter 'subSum' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(425,66): error TS7006: Parameter 'productoEnPedido' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(426,87): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(429,50): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(429,87): error TS2339: Property 'componentes' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(430,79): error TS2339: Property 'componentes' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(431,42): error TS7006: Parameter 'count' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(431,49): error TS7006: Parameter 'componente' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(434,57): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(442,57): error TS2339: Property 'cantidad' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(453,31): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(453,60): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(453,76): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(454,44): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(454,62): error TS7006: Parameter 's' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(454,65): error TS7006: Parameter 'item' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(456,58): error TS2339: Property 'cantidad' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(471,34): error TS2339: Property 'lineaProducto' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(472,18): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(473,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(484,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(485,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(485,65): error TS2339: Property 'montoTotal' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(486,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(486,66): error TS2339: Property 'montoAdelanto' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(487,51): error TS2339: Property 'montoTotal' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(488,54): error TS2339: Property 'montoAdelanto' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(489,52): error TS2339: Property 'cobranza' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(489,97): error TS2339: Property 'cobranza' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(490,38): error TS2339: Property 'montoPendiente' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(490,93): error TS2339: Property 'montoPendiente' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(491,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(493,20): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(493,40): error TS7006: Parameter 'productoEnPedido' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(494,75): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(497,38): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(497,75): error TS2339: Property 'componentes' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(498,67): error TS2339: Property 'componentes' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(499,30): error TS7006: Parameter 'count' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(499,37): error TS7006: Parameter 'componente' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(502,45): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(506,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(507,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(509,25): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(509,45): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(510,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(510,69): error TS2339: Property 'cantidad' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(511,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(511,71): error TS2339: Property 'cantidad' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(515,56): error TS18046: 'a' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(515,78): error TS18046: 'b' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(522,37): error TS2339: Property 'vendedor' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(523,18): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(524,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(535,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(536,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(536,72): error TS2339: Property 'montoTotal' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(537,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(537,73): error TS2339: Property 'montoAdelanto' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(538,51): error TS2339: Property 'montoTotal' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(539,54): error TS2339: Property 'montoAdelanto' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(540,52): error TS2339: Property 'cobranza' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(540,97): error TS2339: Property 'cobranza' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(541,38): error TS2339: Property 'montoPendiente' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(541,93): error TS2339: Property 'montoPendiente' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(542,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(544,20): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(544,40): error TS7006: Parameter 'productoEnPedido' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(545,75): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(548,38): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(548,75): error TS2339: Property 'componentes' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(549,67): error TS2339: Property 'componentes' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(550,30): error TS7006: Parameter 'count' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(550,37): error TS7006: Parameter 'componente' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(553,45): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(557,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(558,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(560,25): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(560,45): error TS2339: Property 'productos' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(561,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(561,76): error TS2339: Property 'cantidad' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(562,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(562,78): error TS2339: Property 'cantidad' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(566,60): error TS18046: 'a' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(566,85): error TS18046: 'b' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(569,39): error TS7006: Parameter 'pedidoId' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(580,76): error TS2339: Property 'delete' does not exist on type '{ update: (data: any) => Promise<void>; }'.
+components/tabs/pedidos-tab.tsx(584,57): error TS18046: 'error' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(605,51): error TS18046: 'error' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(614,46): error TS2339: Property 'visible' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(614,73): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(614,90): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(618,86): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(618,96): error TS2339: Property 'orden' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(703,50): error TS2740: Type '{ type: string; name: string; value: string; onChange: (e: any) => void; className: string; }' is missing the following properties from type '{ [x: string]: any; label: any; id: any; type?: string | undefined; value: any; onChange: any; placeholder: any; required: any; icon: any; error: any; className?: string | undefined; }': label, id, placeholder, required, and 2 more.
+components/tabs/pedidos-tab.tsx(711,50): error TS2740: Type '{ type: string; name: string; value: string; onChange: (e: any) => void; className: string; }' is missing the following properties from type '{ [x: string]: any; label: any; id: any; type?: string | undefined; value: any; onChange: any; placeholder: any; required: any; icon: any; error: any; className?: string | undefined; }': label, id, placeholder, required, and 2 more.
+components/tabs/pedidos-tab.tsx(724,50): error TS2739: Type '{ type: string; name: string; value: string; onChange: (e: any) => void; placeholder: string; className: string; }' is missing the following properties from type '{ [x: string]: any; label: any; id: any; type?: string | undefined; value: any; onChange: any; placeholder: any; required: any; icon: any; error: any; className?: string | undefined; }': label, id, required, icon, error
+components/tabs/pedidos-tab.tsx(728,64): error TS7006: Parameter 'e' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(759,54): error TS2740: Type '{ children: (Element | Element[])[]; name: string; value: string; onValueChange: (val: any) => void; }' is missing the following properties from type '{ [x: string]: any; label: any; id: any; value: any; onChange: any; onValueChange: any; children: any; options: any; placeholder: any; required: any; error: any; className?: string | undefined; }': label, id, onChange, options, and 3 more.
+components/tabs/pedidos-tab.tsx(762,73): error TS7006: Parameter 'val' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(770,54): error TS2740: Type '{ children: (Element | Element[])[]; name: string; value: string; onValueChange: (val: any) => void; }' is missing the following properties from type '{ [x: string]: any; label: any; id: any; value: any; onChange: any; onValueChange: any; children: any; options: any; placeholder: any; required: any; error: any; className?: string | undefined; }': label, id, onChange, options, and 3 more.
+components/tabs/pedidos-tab.tsx(773,73): error TS7006: Parameter 'val' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(781,54): error TS2740: Type '{ children: (Element | Element[])[]; name: string; value: string; onValueChange: (val: any) => void; }' is missing the following properties from type '{ [x: string]: any; label: any; id: any; value: any; onChange: any; onValueChange: any; children: any; options: any; placeholder: any; required: any; error: any; className?: string | undefined; }': label, id, onChange, options, and 3 more.
+components/tabs/pedidos-tab.tsx(784,73): error TS7006: Parameter 'val' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(792,54): error TS2740: Type '{ children: (Element | Element[])[]; name: string; value: string; onValueChange: (val: any) => void; }' is missing the following properties from type '{ [x: string]: any; label: any; id: any; value: any; onChange: any; onValueChange: any; children: any; options: any; placeholder: any; required: any; error: any; className?: string | undefined; }': label, id, onChange, options, and 3 more.
+components/tabs/pedidos-tab.tsx(795,73): error TS7006: Parameter 'val' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(867,135): error TS18046: 'linea' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(868,135): error TS18046: 'linea' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(870,81): error TS18046: 'linea' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(873,81): error TS18046: 'linea' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(876,81): error TS18046: 'linea' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(878,135): error TS18046: 'linea' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(879,135): error TS18046: 'linea' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(905,70): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(908,66): error TS2339: Property 'nombre' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(928,102): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(930,85): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(933,129): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(937,123): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(937,137): error TS2339: Property 'formato' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(938,97): error TS2339: Property 'campo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(944,90): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(948,86): error TS2339: Property 'editable' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(951,102): error TS7006: Parameter 'nuevoValor' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(954,105): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(956,112): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(958,112): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(963,104): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(971,131): error TS18046: 'error' is of type 'unknown'.
+components/tabs/pedidos-tab.tsx(974,99): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(974,137): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(974,178): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(974,217): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(975,102): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(975,129): error TS2339: Property 'opciones' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(975,148): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(986,141): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(993,122): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(1010,99): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(1011,165): error TS2339: Property 'nombre' does not exist on type 'never'.
+components/tabs/pedidos-tab.tsx(1059,14): error TS2741: Property 'onImportComplete' is missing in type '{ isOpen: boolean; onClose: () => void; }' but required in type '{ isOpen: any; onClose: any; onImportComplete: any; }'.
+components/tabs/ventas-tab.tsx(68,77): error TS7006: Parameter 'snapshot' implicitly has an 'any' type.
+components/tabs/ventas-tab.tsx(69,52): error TS7006: Parameter 'doc' implicitly has an 'any' type.
+components/tabs/ventas-tab.tsx(104,76): error TS2339: Property 'delete' does not exist on type '{ update: (data: any) => Promise<void>; }'.
+components/tabs/ventas-tab.tsx(330,87): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(333,50): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(333,87): error TS2339: Property 'componentes' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(334,79): error TS2339: Property 'componentes' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(338,57): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(400,75): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(403,38): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(403,75): error TS2339: Property 'componentes' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(404,67): error TS2339: Property 'componentes' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(408,45): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(453,75): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(456,38): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(456,75): error TS2339: Property 'componentes' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(457,67): error TS2339: Property 'componentes' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(461,45): error TS2339: Property 'tipo' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(741,33): error TS2322: Type '{ label: string; name: string; value: string; onChange: (e: any) => void; options: { value: string; label: string; }[]; placeholder: string; className: string; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'placeholder' does not exist on type 'IntrinsicAttributes & SelectProps'.
+components/tabs/ventas-tab.tsx(750,33): error TS2322: Type '{ label: string; name: string; value: string; onChange: (e: any) => void; options: { value: string; label: string; }[]; placeholder: string; className: string; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'placeholder' does not exist on type 'IntrinsicAttributes & SelectProps'.
+components/tabs/ventas-tab.tsx(763,33): error TS2322: Type '{ label: string; name: string; value: string; onChange: (e: any) => void; options: any; placeholder: string; disabled: boolean; className: string; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'placeholder' does not exist on type 'IntrinsicAttributes & SelectProps'.
+components/tabs/ventas-tab.tsx(773,33): error TS2322: Type '{ label: string; name: string; value: string; onChange: (e: any) => void; options: { value: string; label: string; }[]; placeholder: string; className: string; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'placeholder' does not exist on type 'IntrinsicAttributes & SelectProps'.
+components/tabs/ventas-tab.tsx(782,33): error TS2322: Type '{ label: string; name: string; value: string; onChange: (e: any) => void; options: { value: string; label: string; }[]; placeholder: string; className: string; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'placeholder' does not exist on type 'IntrinsicAttributes & SelectProps'.
+components/tabs/ventas-tab.tsx(790,79): error TS2339: Property 'activo' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(790,110): error TS2339: Property 'id' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(790,123): error TS2339: Property 'nombre' does not exist on type 'never'.
+components/tabs/ventas-tab.tsx(791,33): error TS2322: Type '{ label: string; name: string; value: string; onChange: (e: any) => void; options: { value: any; label: any; }[]; placeholder: string; className: string; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'placeholder' does not exist on type 'IntrinsicAttributes & SelectProps'.
+components/tabs/ventas-tab.tsx(800,33): error TS2322: Type '{ label: string; name: string; value: string; onChange: (e: any) => void; options: { value: string; label: string; }[]; placeholder: string; className: string; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'placeholder' does not exist on type 'IntrinsicAttributes & SelectProps'.
+components/tabs/ventas-tab.tsx(809,33): error TS2322: Type '{ label: string; name: string; value: string; onChange: (e: any) => void; options: { value: string; label: string; }[]; placeholder: string; className: string; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'placeholder' does not exist on type 'IntrinsicAttributes & SelectProps'.
+components/tabs/ventas-tab.tsx(818,33): error TS2322: Type '{ label: string; name: string; value: string; onChange: (e: any) => void; options: { value: string; label: string; }[]; placeholder: string; disabled: boolean; className: string; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'placeholder' does not exist on type 'IntrinsicAttributes & SelectProps'.
+components/tabs/ventas-tab.tsx(828,33): error TS2322: Type '{ label: string; name: string; value: string; onChange: (e: any) => void; options: { value: string; label: string; }[]; placeholder: string; disabled: boolean; className: string; }' is not assignable to type 'IntrinsicAttributes & SelectProps'.
+  Property 'placeholder' does not exist on type 'IntrinsicAttributes & SelectProps'.
+components/ui/accordion.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/alert-dialog.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/alert-dialog.tsx(7,10): error TS2305: Module '"@/components/ui/button"' has no exported member 'buttonVariants'.
+components/ui/alert.tsx(4,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/avatar.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/badge.tsx(4,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/breadcrumb.tsx(5,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/calendar.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/calendar.tsx(8,10): error TS2305: Module '"@/components/ui/button"' has no exported member 'buttonVariants'.
+components/ui/card.tsx(3,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/carousel.tsx(9,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/carousel.tsx(207,7): error TS2322: Type 'string' is not assignable to type '"md" | "lg" | "sm" | undefined'.
+components/ui/carousel.tsx(236,7): error TS2322: Type 'string' is not assignable to type '"md" | "lg" | "sm" | undefined'.
+components/ui/chart.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/checkbox.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/command.tsx(8,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/context-menu.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/dialog.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/drawer.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/dropdown-menu.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/form.tsx(15,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/hover-card.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/input-otp.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/input.tsx(58,63): error TS2339: Property 'placeholder' does not exist on type 'SelectProps'.
+components/ui/label.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/menubar.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/navigation-menu.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/pagination.tsx(4,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/pagination.tsx(5,23): error TS2305: Module '"@/components/ui/button"' has no exported member 'buttonVariants'.
+components/ui/pagination.tsx(45,3): error TS2322: Type '"icon"' is not assignable to type '"md" | "lg" | "sm"'.
+components/ui/pagination.tsx(68,5): error TS2322: Type '"default"' is not assignable to type '"md" | "lg" | "sm" | undefined'.
+components/ui/pagination.tsx(84,5): error TS2322: Type '"default"' is not assignable to type '"md" | "lg" | "sm" | undefined'.
+components/ui/popover.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/progress.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/radio-group.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/resizable.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/scroll-area.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/select.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/separator.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/sheet.tsx(8,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/sidebar.tsx(9,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/sidebar.tsx(273,7): error TS2322: Type '"icon"' is not assignable to type '"md" | "lg" | "sm" | undefined'.
+components/ui/sidebar.tsx(341,7): error TS2322: Type '{ label?: string | undefined; icon?: ReactNode; error?: string | undefined; rows?: number | undefined; accept?: string | undefined; alt?: string | undefined; autoComplete?: HTMLInputAutoCompleteAttribute | undefined; ... 307 more ...; className: any; }' is not assignable to type 'IntrinsicAttributes & InputProps'.
+  Property 'ref' does not exist on type 'IntrinsicAttributes & InputProps'.
+components/ui/skeleton.tsx(1,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/slider.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/standard-forms.tsx(5,5): error TS7031: Binding element 'label' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(6,5): error TS7031: Binding element 'id' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(8,5): error TS7031: Binding element 'value' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(9,5): error TS7031: Binding element 'onChange' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(10,5): error TS7031: Binding element 'placeholder' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(11,5): error TS7031: Binding element 'required' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(12,5): error TS7031: Binding element 'icon' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(13,5): error TS7031: Binding element 'error' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(59,5): error TS7031: Binding element 'label' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(60,5): error TS7031: Binding element 'id' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(61,5): error TS7031: Binding element 'value' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(62,5): error TS7031: Binding element 'onChange' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(63,5): error TS7031: Binding element 'onValueChange' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(64,5): error TS7031: Binding element 'children' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(65,5): error TS7031: Binding element 'options' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(66,5): error TS7031: Binding element 'placeholder' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(67,5): error TS7031: Binding element 'required' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(68,5): error TS7031: Binding element 'error' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(74,33): error TS7006: Parameter 'e' implicitly has an 'any' type.
+components/ui/standard-forms.tsx(96,55): error TS7006: Parameter 'opt' implicitly has an 'any' type.
+components/ui/summary-card.tsx(3,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/summary-card.tsx(5,31): error TS7031: Binding element 'title' implicitly has an 'any' type.
+components/ui/summary-card.tsx(5,38): error TS7031: Binding element 'value' implicitly has an 'any' type.
+components/ui/summary-card.tsx(5,45): error TS7031: Binding element 'icon' implicitly has an 'any' type.
+components/ui/summary-card.tsx(5,51): error TS7031: Binding element 'className' implicitly has an 'any' type.
+components/ui/switch.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/table.tsx(3,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/tabs.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/textarea.tsx(3,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/toast.tsx(8,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/toggle-group.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/toggle.tsx(7,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+components/ui/tooltip.tsx(6,10): error TS2305: Module '"@/lib/utils"' has no exported member 'cn'.
+contexts/auth-context.tsx(73,28): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ ventas: { name: string; actions: string[]; }; dise├▒o: { name: string; actions: string[]; }; cobranza: { name: string; actions: string[]; }; inventarios: { name: string; actions: string[]; }; preparacion: { name: string; actions: string[]; }; estampado: { ...; }; empaquetado: { ...; }; reparto: { ...; }; finalizado...'.
+contexts/auth-context.tsx(130,26): error TS7006: Parameter 'email' implicitly has an 'any' type.
+contexts/auth-context.tsx(130,33): error TS7006: Parameter 'password' implicitly has an 'any' type.
+contexts/auth-context.tsx(154,45): error TS18046: 'error' is of type 'unknown'.
+contexts/auth-context.tsx(168,28): error TS7006: Parameter 'module' implicitly has an 'any' type.
+contexts/auth-context.tsx(168,36): error TS7006: Parameter 'action' implicitly has an 'any' type.
+contexts/auth-context.tsx(179,35): error TS7006: Parameter 'permission' implicitly has an 'any' type.
+contexts/auth-context.tsx(191,24): error TS7006: Parameter 'module' implicitly has an 'any' type.
+contexts/auth-context.tsx(191,32): error TS7006: Parameter 'action' implicitly has an 'any' type.
+contexts/auth-context.tsx(208,22): error TS7006: Parameter 'role' implicitly has an 'any' type.
+contexts/auth-context.tsx(222,13): error TS2322: Type '{ currentUser: any; userData: any; loadingAuth: boolean; hasRole: (role: any) => any; isAdmin: () => boolean; hasPermission: (module: any, action: any) => any; hasSpecialPermission: (permission: any) => boolean; ... 6 more ...; refreshPermissions: () => void; }' is not assignable to type 'null'.
+lib/business-logic.ts(2,10): error TS2305: Module '"./constants"' has no exported member 'MATRIZ_COMPOSICION'.
+lib/business-logic.ts(2,30): error TS2305: Module '"./constants"' has no exported member 'MAPEO_DESGLOSE_PRODUCTOS'.
+lib/business-logic.ts(230,51): error TS2339: Property 'id' does not exist on type 'never'.
+lib/business-logic.ts(231,26): error TS2339: Property 'condicionesEntrada' does not exist on type 'never'.
+lib/business-logic.ts(232,25): error TS2339: Property 'condicionesEntrada' does not exist on type 'never'.
+lib/business-logic.ts(257,30): error TS2345: Argument of type '{ id: string; nombre: string; activo: boolean; orden: number; icono: string; color: string; etapas: string[]; fechaCreacion: Date; fechaModificacion: Date; creadoPor: string; }' is not assignable to parameter of type 'never'.
+lib/business-logic.ts(261,30): error TS2345: Argument of type '{ id: string; flujoId: string; nombre: string; icono: any; color: string; orden: number; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: string | null; condicionesSalida: never[]; condicionesEntrada: never[]; fechaCreacion: Date; fechaModificacion: Date; }' is not assignable to parameter of type 'never'.
+lib/business-logic.ts(310,53): error TS2339: Property 'id' does not exist on type 'never'.
+lib/business-logic.ts(312,10): error TS2339: Property 'costoTotal' does not exist on type 'never'.
+lib/business-logic.ts(313,10): error TS2339: Property 'fechaModificacion' does not exist on type 'never'.
+lib/business-logic.ts(315,14): error TS2339: Property 'tipo' does not exist on type 'never'.
+lib/business-logic.ts(315,40): error TS2339: Property 'itemInventarioId' does not exist on type 'never'.
+lib/business-logic.ts(316,24): error TS2339: Property 'inventarioId' does not exist on type 'never'.
+lib/business-logic.ts(317,81): error TS2339: Property 'itemInventarioId' does not exist on type 'never'.
+lib/business-logic.ts(329,48): error TS2339: Property 'id' does not exist on type 'never'.
+lib/business-logic.ts(333,35): error TS2698: Spread types may only be created from object types.
+lib/business-logic.ts(337,46): error TS2339: Property 'historialModificaciones' does not exist on type 'never'.
+lib/business-logic.ts(381,64): error TS2339: Property 'id' does not exist on type 'never'.
+lib/business-logic.ts(382,33): error TS2339: Property 'nombre' does not exist on type 'never'.
+lib/business-logic.ts(384,40): error TS2339: Property 'precios' does not exist on type 'never'.
+lib/business-logic.ts(585,23): error TS2339: Property 'categoria' does not exist on type 'never'.
+lib/business-logic.ts(603,66): error TS2339: Property 'campo' does not exist on type 'never'.
+lib/business-logic.ts(604,46): error TS2339: Property 'campo' does not exist on type 'never'.
+lib/business-logic.ts(604,63): error TS2339: Property 'tipo' does not exist on type 'never'.
+lib/business-logic.ts(604,81): error TS2339: Property 'nombre' does not exist on type 'never'.
+lib/business-logic.ts(607,98): error TS2339: Property 'nombre' does not exist on type 'never'.
+lib/business-logic.ts(607,136): error TS2339: Property 'campo' does not exist on type 'never'.
+lib/business-logic.ts(607,154): error TS2339: Property 'campo' does not exist on type 'never'.
+lib/business-logic.ts(609,66): error TS2339: Property 'campo' does not exist on type 'never'.
+lib/business-logic.ts(610,44): error TS2339: Property 'campo' does not exist on type 'never'.
+lib/business-logic.ts(610,61): error TS2339: Property 'tipo' does not exist on type 'never'.
+lib/business-logic.ts(610,79): error TS2339: Property 'nombre' does not exist on type 'never'.
+lib/business-logic.ts(686,46): error TS2339: Property 'id' does not exist on type 'never'.
+lib/business-logic.ts(688,13): error TS2322: Type '{ clienteNombre: string; clienteApellidos: string; clienteContacto: string; createdAt: Date; montoTotal: number; montoAdelanto: number; montoPendiente: number; status: string; estadoGeneral: string; ... 9 more ...; historialModificaciones: never[]; }' is not assignable to type 'undefined'.
+lib/business-logic.ts(696,52): error TS18048: 'p' is possibly 'undefined'.
+lib/mock-data.ts(314,27): error TS7006: Parameter 'id' implicitly has an 'any' type.
+lib/mock-data.ts(314,31): error TS7006: Parameter 'nombre' implicitly has an 'any' type.
+lib/mock-data.ts(314,39): error TS7006: Parameter 'campo' implicitly has an 'any' type.
+lib/mock-data.ts(314,46): error TS7006: Parameter 'tipo' implicitly has an 'any' type.
+lib/mock-data.ts(314,52): error TS7006: Parameter 'categoria' implicitly has an 'any' type.
+lib/mock-data.ts(314,63): error TS7006: Parameter 'orden' implicitly has an 'any' type.
+lib/mock-data.ts(338,132): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(339,116): error TS2345: Argument of type 'string[]' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(352,132): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(353,133): error TS2345: Argument of type '"currency"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(354,121): error TS2345: Argument of type '"{montoTotal} - {montoAdelanto} - SUM({cobranza.pago1}, {cobranza.pago2})"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(355,135): error TS2345: Argument of type '"currency"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(356,129): error TS2345: Argument of type 'string[]' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(359,161): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(361,128): error TS2345: Argument of type 'string[]' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(363,158): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(366,136): error TS2345: Argument of type 'string[]' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(367,129): error TS2345: Argument of type '"currency"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(368,129): error TS2345: Argument of type '"currency"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(369,166): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(372,181): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(374,148): error TS2345: Argument of type 'string[]' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(375,178): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(378,173): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(380,140): error TS2345: Argument of type 'string[]' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(381,170): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(384,181): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(386,148): error TS2345: Argument of type 'string[]' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(387,178): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(390,165): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(392,132): error TS2345: Argument of type 'string[]' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(393,162): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(394,158): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(397,138): error TS2345: Argument of type '"IF({dise├▒o.fechaEntrada} AND {dise├▒o.fechaSalida}, ({dise├▒o.fechaSalida} - {dise├▒o.fechaEntrada}) / 24, null)"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(398,144): error TS2345: Argument of type '"IF({cobranza.fechaEntrada} AND {cobranza.fechaSalida}, ({cobranza.fechaSalida} - {cobranza.fechaEntrada}) / 24, null)"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(399,153): error TS2345: Argument of type '"IF({preparacion.fechaEntrada} AND {preparacion.fechaSalida}, ({preparacion.fechaSalida} - {preparacion.fechaEntrada}) / 24, null)"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(400,147): error TS2345: Argument of type '"IF({estampado.fechaEntrada} AND {estampado.fechaSalida}, ({estampado.fechaSalida} - {estampado.fechaEntrada}) / 24, null)"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(401,153): error TS2345: Argument of type '"IF({empaquetado.fechaEntrada} AND {empaquetado.fechaSalida}, ({empaquetado.fechaSalida} - {empaquetado.fechaEntrada}) / 24, null)"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(402,141): error TS2345: Argument of type '"IF({reparto.fechaEntrada} AND {reparto.fechaSalida}, ({reparto.fechaSalida} - {reparto.fechaEntrada}) / 24, null)"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(403,135): error TS2345: Argument of type '"SUM({tiempos.dise├▒o}, {tiempos.cobranza}, {tiempos.preparacion}, {tiempos.estampado}, {tiempos.empaquetado}, {tiempos.reparto})"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(410,142): error TS2345: Argument of type 'string[]' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(425,134): error TS2345: Argument of type 'string[]' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(442,142): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(445,142): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(448,142): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(451,142): error TS2345: Argument of type '"date"' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(455,136): error TS2345: Argument of type 'string[]' is not assignable to parameter of type 'null | undefined'.
+lib/mock-data.ts(462,5): error TS2322: Type 'any[]' is not assignable to type 'never[]'.
+  Type 'any' is not assignable to type 'never'.
+lib/mock-data.ts(467,18): error TS7006: Parameter 'path' implicitly has an 'any' type.
+lib/mock-data.ts(483,43): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+lib/mock-data.ts(487,55): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+lib/mock-data.ts(491,63): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+lib/mock-data.ts(497,44): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+lib/mock-data.ts(499,41): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+lib/mock-data.ts(523,64): error TS2339: Property 'id' does not exist on type 'never'.
+lib/mock-data.ts(525,46): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+lib/mock-data.ts(528,72): error TS2339: Property 'id' does not exist on type 'never'.
+lib/mock-data.ts(530,25): error TS2322: Type 'any' is not assignable to type 'never'.
+lib/mock-data.ts(539,45): error TS2345: Argument of type 'any' is not assignable to parameter of type 'never'.
+lib/mock-data.ts(544,22): error TS7006: Parameter 'callback' implicitly has an 'any' type.
+lib/mock-data.ts(585,15): error TS7006: Parameter 'docId' implicitly has an 'any' type.
+lib/mock-data.ts(586,28): error TS7006: Parameter 'data' implicitly has an 'any' type.
+lib/mock-data.ts(606,11): error TS7006: Parameter 'collectionName' implicitly has an 'any' type.
+lib/mock-data.ts(606,27): error TS7006: Parameter 'docId' implicitly has an 'any' type.
+lib/mock-data.ts(607,24): error TS7006: Parameter 'data' implicitly has an 'any' type.

@@ -1,0 +1,74 @@
+﻿app-wrapper.tsx(8191,13): error TS2322: Type '{}' is not assignable to type 'string | number | boolean | Date | null'.
+app-wrapper.tsx(8203,17): error TS2322: Type 'string | undefined' is not assignable to type 'string | number | boolean | Date | null'.
+  Type 'undefined' is not assignable to type 'string | number | boolean | Date | null'.
+app-wrapper.tsx(8246,13): error TS2322: Type '{}' is not assignable to type 'string | number | boolean | Date | null'.
+app-wrapper.tsx(8258,17): error TS2322: Type 'string | undefined' is not assignable to type 'string | number | boolean | Date | null'.
+  Type 'undefined' is not assignable to type 'string | number | boolean | Date | null'.
+app-wrapper.tsx(8440,44): error TS2339: Property 'some' does not exist on type '{}'.
+app-wrapper.tsx(8449,30): error TS2571: Object is of type 'unknown'.
+app-wrapper.tsx(8454,11): error TS2571: Object is of type 'unknown'.
+app-wrapper.tsx(8697,99): error TS18046: 'data' is of type 'unknown'.
+app-wrapper.tsx(9845,44): error TS2345: Argument of type 'string' is not assignable to parameter of type 'number'.
+app-wrapper.tsx(10106,44): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ PAREJAS: string[]; "CASACAS DE EQUIPOS": string[]; "CASACAS GEEKS": string[]; PIJAMAS: string[]; "POR MAYOR": string[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ PAREJAS: string[]; "CASACAS DE EQUIPOS": string[]; "CASACAS GEEKS": string[]; PIJAMAS: string[]; "POR MAYOR": string[]; }'.
+app-wrapper.tsx(10107,23): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ PAREJAS: string[]; "CASACAS DE EQUIPOS": string[]; "CASACAS GEEKS": string[]; PIJAMAS: string[]; "POR MAYOR": string[]; }'.
+  No index signature with a parameter of type 'string' was found on type '{ PAREJAS: string[]; "CASACAS DE EQUIPOS": string[]; "CASACAS GEEKS": string[]; PIJAMAS: string[]; "POR MAYOR": string[]; }'.
+app-wrapper.tsx(10413,21): error TS2322: Type 'string' is not assignable to type 'number'.
+app-wrapper.tsx(10728,40): error TS7006: Parameter 'e' implicitly has an 'any' type.
+app-wrapper.tsx(11209,14): error TS7053: Element implicitly has an 'any' type because expression of type 'string' can't be used to index type '{ ventas: string; dise├▒o: string; cobranza: string; pre_estampado: string; estampado: string; empaquetado: string; reparto: string; finalizados: string; corte: string; confeccion: string; limpieza: string; registro: string; }'.
+  No index signature with a parameter of type 'string' was found on type '{ ventas: string; dise├▒o: string; cobranza: string; pre_estampado: string; estampado: string; empaquetado: string; reparto: string; finalizados: string; corte: string; confeccion: string; limpieza: string; registro: string; }'.
+app-wrapper.tsx(11844,9): error TS2353: Object literal may only specify known properties, and 'orden' does not exist in type 'SetStateAction<{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }>'.
+app-wrapper.tsx(11905,49): error TS2339: Property 'orden' does not exist on type '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }'.
+app-wrapper.tsx(11969,51): error TS2345: Argument of type '(prev: { nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }) => { tipoObligatoria: string | null; obligatoria: any; ... 4 more ...; moduloPermisos: string; }' is not assignable to parameter of type 'SetStateAction<{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }>'.
+  Type '(prev: { nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }) => { tipoObligatoria: string | null; obligatoria: any; ... 4 more ...; moduloPermisos: string; }' is not assignable to type '(prevState: { nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }) => { nombre: string; descripcion: string; ... 4 more ...; tipoObligatoria: null; }'.
+    Call signature return types '{ tipoObligatoria: string | null; obligatoria: any; nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; }' and '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }' are incompatible.
+      The types of 'tipoObligatoria' are incompatible between these types.
+        Type 'string | null' is not assignable to type 'null'.
+          Type 'string' is not assignable to type 'null'.
+app-wrapper.tsx(11982,51): error TS2345: Argument of type '(prev: { nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }) => { tipoObligatoria: string | null; obligatoria: any; ... 4 more ...; moduloPermisos: string; }' is not assignable to parameter of type 'SetStateAction<{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }>'.
+  Type '(prev: { nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }) => { tipoObligatoria: string | null; obligatoria: any; ... 4 more ...; moduloPermisos: string; }' is not assignable to type '(prevState: { nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }) => { nombre: string; descripcion: string; ... 4 more ...; tipoObligatoria: null; }'.
+    Call signature return types '{ tipoObligatoria: string | null; obligatoria: any; nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; }' and '{ nombre: string; descripcion: string; icono: string; color: string; moduloPermisos: string; obligatoria: boolean; tipoObligatoria: null; }' are incompatible.
+      The types of 'tipoObligatoria' are incompatible between these types.
+        Type 'string | null' is not assignable to type 'null'.
+          Type 'string' is not assignable to type 'null'.
+app-wrapper.tsx(12378,27): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ ShoppingCart: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; ... 60 more ...; TrendingUp: ForwardRefExoticComponent<...>; }'.
+app-wrapper.tsx(12633,34): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ dise├▒o: string; cobranza: string; pre_estampado: string; estampado: string; empaquetado: string; reparto: string; finalizados: string; ventas: string; }'.
+app-wrapper.tsx(12714,27): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{ ShoppingCart: ForwardRefExoticComponent<Omit<LucideProps, "ref"> & RefAttributes<SVGSVGElement>>; ... 60 more ...; TrendingUp: ForwardRefExoticComponent<...>; }'.
+components/tabs/gestion-columnas-tab.tsx(456,38): error TS7031: Binding element 'onColumnasChange' implicitly has an 'any' type.
+components/tabs/gestion-columnas-tab.tsx(551,64): error TS2339: Property 'delete' does not exist on type '{ update: (data: any) => Promise<void>; }'.
+components/tabs/pedidos-tab.tsx(59,31): error TS7006: Parameter 'reporte' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(92,26): error TS7006: Parameter 'reporte' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(92,35): error TS7006: Parameter 'tipoReporte' implicitly has an 'any' type.
+components/tabs/pedidos-tab.tsx(470,18): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(471,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(482,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(483,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(484,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(489,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(503,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(504,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(507,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(508,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(520,18): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(521,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(532,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(533,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(534,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(539,13): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(553,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(554,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(557,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(558,17): error TS7053: Element implicitly has an 'any' type because expression of type 'any' can't be used to index type '{}'.
+components/tabs/pedidos-tab.tsx(576,76): error TS2339: Property 'delete' does not exist on type '{ update: (data: any) => Promise<void>; }'.
+components/tabs/ventas-tab.tsx(104,76): error TS2339: Property 'delete' does not exist on type '{ update: (data: any) => Promise<void>; }'.
+components/ui/alert-dialog.tsx(7,10): error TS2305: Module '"@/components/ui/button"' has no exported member 'buttonVariants'.
+components/ui/calendar.tsx(8,10): error TS2305: Module '"@/components/ui/button"' has no exported member 'buttonVariants'.
+components/ui/carousel.tsx(207,7): error TS2322: Type 'string' is not assignable to type '"lg" | "md" | "sm" | undefined'.
+components/ui/carousel.tsx(236,7): error TS2322: Type 'string' is not assignable to type '"lg" | "md" | "sm" | undefined'.
+components/ui/pagination.tsx(5,23): error TS2305: Module '"@/components/ui/button"' has no exported member 'buttonVariants'.
+components/ui/pagination.tsx(45,3): error TS2322: Type '"icon"' is not assignable to type '"lg" | "md" | "sm"'.
+components/ui/pagination.tsx(68,5): error TS2322: Type '"default"' is not assignable to type '"lg" | "md" | "sm" | undefined'.
+components/ui/pagination.tsx(84,5): error TS2322: Type '"default"' is not assignable to type '"lg" | "md" | "sm" | undefined'.
+components/ui/sidebar.tsx(273,7): error TS2322: Type '"icon"' is not assignable to type '"lg" | "md" | "sm" | undefined'.
+components/ui/sidebar.tsx(341,7): error TS2322: Type '{ label?: string | undefined; icon?: ReactNode; error?: string | undefined; rows?: number | undefined; accept?: string | undefined; alt?: string | undefined; autoComplete?: HTMLInputAutoCompleteAttribute | undefined; ... 307 more ...; className: string; }' is not assignable to type 'IntrinsicAttributes & InputProps'.
+  Property 'ref' does not exist on type 'IntrinsicAttributes & InputProps'.

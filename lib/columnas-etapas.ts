@@ -1,0 +1,55 @@
+/**
+ * Anchos mínimos por campo para encabezados de tablas en etapas (Preparación, Diseño, Cobranza, Estampado, Empaquetado, Reparto).
+ * Así los encabezados se ven completos sin truncar.
+ */
+export const ANCHOS_COLUMNAS_ETAPAS: Record<string, string> = {
+  id: "min-w-[5rem]",
+  numeroPedido: "min-w-[5rem]",
+  createdAt: "min-w-[6rem]",
+  activador: "min-w-[4rem]",
+  whatsappOrigen: "min-w-[8rem]",
+  canalVenta: "min-w-[6rem]",
+  vendedor: "min-w-[6rem]",
+  clienteContacto: "min-w-[9.5rem]",
+  cantidad: "min-w-[5rem]",
+  productos: "min-w-[7rem]",
+  regalos: "min-w-[5rem]",
+  talla: "min-w-[4rem]",
+  productosRegalo: "min-w-[9rem]",
+  observacion: "min-w-[10rem]",
+  montoTotal: "min-w-[6rem]",
+  montoAdelanto: "min-w-[5rem]",
+  montoPendiente: "min-w-[5rem]",
+  estadoGeneral: "min-w-[8rem]",
+  "diseño.urlImagen": "min-w-[6rem]",
+  "diseño.fechaEntrada": "min-w-[8rem]",
+  "diseño.diseñadorAsignado": "min-w-[7rem]",
+  "diseño.estado": "min-w-[7rem]",
+  "diseño.fechaSalida": "min-w-[8rem]",
+  "cobranza.estado": "min-w-[7rem]",
+  "cobranza.pago1": "min-w-[5rem]",
+  "cobranza.pago2": "min-w-[5rem]",
+  "cobranza.fechaSalida": "min-w-[8rem]",
+  "cobranza.accion": "min-w-[7rem]",
+  "preparacion.fechaEntrada": "min-w-[8rem]",
+  "preparacion.operador": "min-w-[9rem]",
+  "preparacion.estado": "min-w-[9rem]",
+  "preparacion.fechaSalida": "min-w-[9rem]",
+  "estampado.fechaEntrada": "min-w-[8rem]",
+  "estampado.operador": "min-w-[9rem]",
+  "estampado.estado": "min-w-[9rem]",
+  "estampado.fechaSalida": "min-w-[9rem]",
+  "empaquetado.fechaEntrada": "min-w-[8rem]",
+  "empaquetado.operador": "min-w-[9rem]",
+  "empaquetado.estado": "min-w-[9rem]",
+  "empaquetado.fechaSalida": "min-w-[9rem]",
+  "reparto.fechaEntrada": "min-w-[8rem]",
+  "reparto.repartidor": "min-w-[9rem]",
+  "reparto.estado": "min-w-[9rem]",
+  "reparto.fechaSalida": "min-w-[9rem]",
+  esPersonalizado: "min-w-[8rem]",
+}
+
+export function getAnchoColumnaEtapa(campo: string): string {
+  return ANCHOS_COLUMNAS_ETAPAS[campo] ?? "min-w-[6rem]"
+}

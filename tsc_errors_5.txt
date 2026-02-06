@@ -1,0 +1,4 @@
+﻿app-wrapper.tsx(6334,45): error TS1005: ',' expected.
+app-wrapper.tsx(6349,58): error TS1005: ',' expected.
+app-wrapper.tsx(6484,46): error TS1005: ',' expected.
+app-wrapper.tsx(10611,57): error TS1005: ',' expected.

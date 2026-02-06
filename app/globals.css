@@ -1,0 +1,235 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+body {
+  overflow-x: hidden;
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background: transparent !important;
+}
+
+/* Caja estilo "liquid glass" (igual que el menú lateral) */
+.glass-box {
+  background: linear-gradient(135deg, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.08) 50%, rgba(255,255,255,0.15) 100%);
+  backdrop-filter: blur(24px) saturate(200%);
+  -webkit-backdrop-filter: blur(24px) saturate(200%);
+  box-shadow: inset 0 1px 0 0 rgba(255,255,255,0.3), 0 4px 24px -4px rgba(0,0,0,0.25), 0 0 0 1px rgba(255,255,255,0.1);
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+/* Animación de barrido al desplegar (Resumen de Totales, etc.) */
+.resumen-sweep {
+  overflow: hidden;
+  transition:
+    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.35s ease-out;
+  transform-origin: top;
+}
+.resumen-sweep.is-closed {
+  max-height: 0;
+  opacity: 0;
+}
+.resumen-sweep.is-open {
+  max-height: 2200px;
+  opacity: 1;
+}
+
+/* Animación al cambiar de etapa (flujo Ventas → Diseño → etc.) */
+@keyframes stage-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.stage-transition-in {
+  animation: stage-fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+/* Sidebar: no mostrar barra de desplazamiento horizontal durante la animación */
+.sidebar-no-h-scroll {
+  overflow-x: hidden !important;
+}
+.sidebar-no-h-scroll::-webkit-scrollbar:horizontal {
+  display: none;
+  height: 0;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Encabezados de tablas de resumen: bordes redondeados y fuente sobria */
+.resumen-table {
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.resumen-table thead {
+  font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+}
+/* No partir palabras en encabezados: solo cortar en espacios */
+.resumen-table thead th {
+  word-break: keep-all;
+  overflow-wrap: normal;
+}
+.resumen-table thead tr:first-child th:first-child {
+  border-top-left-radius: 0.75rem;
+}
+.resumen-table thead tr:first-child th:last-child {
+  border-top-right-radius: 0.75rem;
+}
+.resumen-table thead tr:last-child th:first-child {
+  border-bottom-left-radius: 0;
+}
+.resumen-table thead tr:last-child th:last-child {
+  border-bottom-right-radius: 0;
+}
+.resumen-table thead tr:only-child th:first-child {
+  border-top-left-radius: 0.75rem;
+}
+.resumen-table thead tr:only-child th:last-child {
+  border-top-right-radius: 0.75rem;
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 217 91% 60%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 210 40% 96%;
+    --accent-foreground: 222 47% 11%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 217 91% 60%;
+    --chart-1: 217 91% 60%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.75rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 217 91% 60%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 210 40% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 214 32% 91%;
+    --sidebar-ring: 217 91% 60%;
+  }
+  .dark {
+    --background: 0 0% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 9%;
+    --secondary: 0 0% 14.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 14.9%;
+    --muted-foreground: 0 0% 63.9%;
+    --accent: 0 0% 14.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 14.9%;
+    --input: 0 0% 14.9%;
+    --ring: 0 0% 83.1%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    @apply min-h-full;
+  }
+  body {
+    @apply text-foreground;
+    margin: 0;
+    padding: 0;
+  }
+}
+
+/* Ocultar el indicador de desarrollo de Next.js - Solución completa */
+[data-nextjs-dev-indicator],
+[data-nextjs-dev-indicator] *,
+.__next-dev-indicator,
+#__next-build-watcher,
+[data-nextjs-toast],
+[data-nextjs-toast] *,
+div[data-nextjs-dev-indicator],
+div[data-nextjs-dev-indicator] *,
+button[data-nextjs-dev-indicator],
+a[data-nextjs-dev-indicator] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  position: absolute !important;
+  left: -9999px !important;
+  width: 0 !important;
+  height: 0 !important;
+  overflow: hidden !important;
+}
+
+/* Ocultar cualquier elemento flotante de Next.js en la esquina inferior izquierda */
+body > div[style*="position: fixed"][style*="bottom"][style*="left"],
+body > div[style*="position:fixed"][style*="bottom"][style*="left"],
+div[style*="position: fixed"][style*="bottom: 0"][style*="left: 0"],
+div[style*="position:fixed"][style*="bottom:0"][style*="left:0"],
+div[style*="bottom: 16px"][style*="left: 16px"],
+div[style*="bottom:16px"][style*="left:16px"] {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+/* Ocultar por ID específico si existe */
+#__next-dev-indicator,
+#__next-build-indicator,
+#__next-dev-overlay-indicator {
+  display: none !important;
+  visibility: hidden !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
