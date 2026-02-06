@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react"
 import { useAuth } from "@/contexts/auth-context"
-import { mockDatabase } from "@/lib/mock-firebase"
+import { mockDatabase, mockFirestore } from "@/lib/mock-firebase"
 import { SPECIAL_PERMISSIONS, OWNER_EMAIL, AVAILABLE_MODULES, vendedores as vendedoresDefault } from "@/lib/constants"
 import { Button } from "@/components/ui/button"
 import { Modal } from "@/components/ui/modal"
