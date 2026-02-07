@@ -289,6 +289,7 @@ function App() {
   const [flowStageForBackground, setFlowStageForBackground] = useState<string>("diseño")
   const [mostrarGestionInventarios, setMostrarGestionInventarios] = useState(false)
   const [inventarioSeleccionado, setInventarioSeleccionado] = useState<string>("prendas")
+  const [inventarioTab, setInventarioTab] = useState<string>("movimientos")
 
   // Asegurar que las columnas se inicialicen
   useEffect(() => {
@@ -668,7 +669,12 @@ function App() {
         )
       case "inventarios":
         if (mostrarGestionInventarios) return <GestionInventariosTab />
-        return <InventariosMatrix />
+        return (
+          <InventariosMatrix
+            onInventarioTabChange={setInventarioTab}
+            compactLayout={inventarioTab === "movimientos" || inventarioTab === "historial"}
+          />
+        )
       case "finanzas":
         return (
           <div className="flex items-center justify-center h-full">
@@ -700,7 +706,7 @@ function App() {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
 
   const inventariosBg =
-    "linear-gradient(135deg, rgba(191, 219, 254, 0.92) 0%, rgba(224, 242, 254, 0.88) 50%, rgba(186, 230, 253, 0.85) 100%)"
+    "linear-gradient(135deg, #f8fbfe 0%, #f0f6fd 35%, #fafbfc 50%, #f2f5fd 65%, #f8fbfe 100%)"
 
   const rootStyle = useMemo(
     () => ({
@@ -953,8 +959,8 @@ function App() {
       )}
       {/* Contenido Principal: z-index bajo para quedar siempre detrás del sidebar */}
       <div className="flex-1 flex flex-col overflow-hidden min-w-0 relative pl-20 z-0" style={{ background: "transparent" }}>
-        <main className="flex-1 overflow-auto min-h-0" style={{ background: 'transparent' }}>
-          <div className="min-h-full flex flex-col" style={{ background: "transparent" }}>
+        <main className={`flex-1 min-h-0 ${activeMatrix === "inventarios" && !mostrarGestionInventarios && (inventarioTab === "movimientos" || inventarioTab === "historial") ? "overflow-hidden" : "overflow-auto"}`} style={{ background: 'transparent' }}>
+          <div className={`min-h-full flex flex-col ${activeMatrix === "inventarios" && !mostrarGestionInventarios && (inventarioTab === "movimientos" || inventarioTab === "historial") ? "max-h-full h-full" : ""}`} style={{ background: "transparent" }}>
             {/* Header Superior - dentro de la misma sección que el contenido */}
             <header className="bg-transparent px-6 py-4 flex-shrink-0">
               <div className="flex items-center justify-between">
@@ -1095,7 +1101,15 @@ function App() {
             </header>
 
             {/* Contenido de la matriz (etapas, Gestión de Diseño, etc.) */}
-            {renderMatrix()}
+            {activeMatrix === "inventarios" && !mostrarGestionInventarios ? (
+              <div
+                className={`flex-1 min-h-0 flex flex-col ${inventarioTab === "movimientos" || inventarioTab === "historial" ? "overflow-hidden" : ""}`}
+              >
+                {renderMatrix()}
+              </div>
+            ) : (
+              renderMatrix()
+            )}
           </div>
         </main>
       </div>

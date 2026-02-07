@@ -40,7 +40,7 @@ function FieldWithActions({
           <button
             type="button"
             onClick={onAdd}
-            className="w-7 h-7 rounded-full border border-slate-300 bg-white hover:bg-slate-50 flex items-center justify-center text-slate-600 hover:text-indigo-600 transition-colors"
+            className="w-7 h-7 rounded-full border border-slate-300 bg-white hover:bg-slate-50 flex items-center justify-center text-slate-600 hover:text-red-600 transition-colors"
             title="Agregar"
           >
             <Plus className="w-3.5 h-3.5" />
@@ -59,7 +59,7 @@ function FieldWithActions({
         id={id}
         value={value}
         onChange={(e) => onChange(e.target.value)}
-        className="block w-full pl-3 pr-10 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm bg-white"
+        className="block w-full pl-3 pr-10 py-2.5 border border-slate-300 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm bg-white"
       >
         {options.map((opt) => (
           <option key={opt.value} value={opt.value}>
@@ -171,33 +171,43 @@ export function MovementForm({ currentUser, onMovementDone }: MovementFormProps)
 
   return (
     <div className="flex justify-center">
-      <div className="glass-box-flujos p-5 rounded-2xl w-full max-w-md shadow-md">
-        {/* Tipo de movimiento: Entrada / Salida */}
+      <div className="glass-box p-5 rounded-2xl w-full max-w-md">
+        {/* Tipo de movimiento: Entrada / Salida - fondo en el span cuando está seleccionado para evitar huecos */}
         <div className="flex gap-2 mb-4">
-          <button
-            type="button"
-            onClick={() => setMovementType("entry")}
-            className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium text-sm transition-all border ${
-              movementType === "entry"
-                ? "bg-emerald-500 text-white shadow-md border-emerald-600"
-                : "glass-box-flujos border-slate-200/80 text-slate-600 hover:bg-blue-50/70 hover:border-slate-200"
-            }`}
+          <span
+            className="flex-1 flex rounded-xl overflow-hidden min-h-[44px] border-2 box-border"
+            style={{
+              borderColor: movementType === "entry" ? "rgb(22 163 74)" : "rgb(134 239 172)",
+              backgroundColor: movementType === "entry" ? "rgb(22 163 74)" : "rgb(240 253 244)",
+            }}
           >
-            <ArrowDownLeft className="w-4 h-4" />
-            Entrada
-          </button>
-          <button
-            type="button"
-            onClick={() => setMovementType("exit")}
-            className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium text-sm transition-all border ${
-              movementType === "exit"
-                ? "bg-red-500 text-white shadow-md border-red-600"
-                : "glass-box-flujos border-slate-200/80 text-slate-600 hover:bg-blue-50/70 hover:border-slate-200"
-            }`}
+            <button
+              type="button"
+              onClick={() => setMovementType("entry")}
+              className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-[10px] font-medium text-sm border-none outline-none shadow-none min-h-[40px] bg-transparent"
+              style={movementType === "entry" ? { color: "white" } : { color: "rgb(51 65 85)" }}
+            >
+              <ArrowDownLeft className="w-4 h-4" />
+              Entrada
+            </button>
+          </span>
+          <span
+            className="flex-1 flex rounded-xl overflow-hidden min-h-[44px] border-2 box-border"
+            style={{
+              borderColor: movementType === "exit" ? "rgb(220 38 38)" : "rgb(254 202 202)",
+              backgroundColor: movementType === "exit" ? "rgb(220 38 38)" : "rgb(254 242 242)",
+            }}
           >
-            <ArrowUpRight className="w-4 h-4" />
-            Salida
-          </button>
+            <button
+              type="button"
+              onClick={() => setMovementType("exit")}
+              className="w-full flex items-center justify-center gap-2 py-3 px-4 rounded-[10px] font-medium text-sm border-none outline-none shadow-none min-h-[40px] bg-transparent"
+              style={movementType === "exit" ? { color: "white" } : { color: "rgb(51 65 85)" }}
+            >
+              <ArrowUpRight className="w-4 h-4" />
+              Salida
+            </button>
+          </span>
         </div>
 
         {/* Grid 2x2: Prenda, Color, Talla, Cantidad */}
@@ -247,7 +257,7 @@ export function MovementForm({ currentUser, onMovementDone }: MovementFormProps)
                 min={0}
                 value={quantity}
                 onChange={(e) => setQuantity(Math.max(0, parseInt(e.target.value, 10) || 0))}
-                className="flex-1 min-w-0 w-14 text-center bg-white text-slate-800 font-medium py-2.5 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 focus:border-indigo-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                className="flex-1 min-w-0 w-14 text-center bg-white text-slate-800 font-medium py-2.5 focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-500 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               />
               <button
                 type="button"
@@ -268,7 +278,8 @@ export function MovementForm({ currentUser, onMovementDone }: MovementFormProps)
                 key={`+${n}`}
                 type="button"
                 onClick={() => setQuantity((q) => q + n)}
-                className="w-14 h-9 flex items-center justify-center rounded-full border-2 border-emerald-500 text-emerald-600 bg-emerald-50 hover:bg-emerald-100 font-medium text-sm transition-colors"
+                className="w-14 h-9 flex items-center justify-center rounded-full border-2 bg-green-50 hover:bg-green-100 font-medium text-sm transition-colors text-green-600"
+                style={{ borderColor: "rgb(34 197 94)" }}
               >
                 +{n}
               </button>
@@ -280,7 +291,8 @@ export function MovementForm({ currentUser, onMovementDone }: MovementFormProps)
                 key={`-${n}`}
                 type="button"
                 onClick={() => setQuantity((q) => Math.max(0, q - n))}
-                className="w-14 h-9 flex items-center justify-center rounded-full border-2 border-red-400 text-red-600 bg-red-50 hover:bg-red-100 font-medium text-sm transition-colors"
+                className="w-14 h-9 flex items-center justify-center rounded-full border-2 bg-red-50 hover:bg-red-100 font-medium text-sm transition-colors text-red-600"
+                style={{ borderColor: "rgb(239 68 68)" }}
               >
                 -{n}
               </button>
@@ -290,25 +302,28 @@ export function MovementForm({ currentUser, onMovementDone }: MovementFormProps)
 
         {error && <p className="mb-3 text-sm text-red-600">{error}</p>}
 
-        {/* Confirmar Movimiento (principal) */}
-        <Button
-          type="button"
-          onClick={applyMovement}
-          className="w-full py-3 bg-indigo-600 hover:bg-indigo-700 text-white font-medium rounded-xl shadow-md"
-        >
-          <Check className="w-4 h-4 mr-2" />
-          Confirmar Movimiento
-        </Button>
-
-        {/* Deshacer última acción */}
+        {/* Confirmar Movimiento: borde solo al hacer foco (tras clic), sin borde en hover */}
         <Button
           type="button"
           variant="outline"
+          onClick={applyMovement}
+          size="lg"
+          className="w-full py-3 rounded-xl border-2 border-transparent hover:border-transparent text-blue-700 hover:bg-blue-50 bg-white shadow-sm hover:shadow focus:border-blue-300 focus-visible:border-blue-300 focus:ring-blue-500"
+          iconLeft={<Check className="w-4 h-4" />}
+        >
+          Confirmar Movimiento
+        </Button>
+
+        {/* Deshacer última acción - outline con color rojo */}
+        <Button
+          type="button"
+          variant="outline"
+          size="lg"
           onClick={() => setShowUndoConfirm(true)}
           disabled={undoStatus === "loading"}
-          className="w-full mt-2 py-2.5 border-red-300 text-red-600 hover:bg-red-50 hover:border-red-400 rounded-xl text-sm"
+          className="w-full mt-2 py-2.5 rounded-xl border-2 border-transparent hover:border-transparent text-red-600 hover:bg-red-50 bg-white shadow-sm hover:shadow focus:border-red-400 focus-visible:border-red-400 focus:ring-red-500"
+          iconLeft={<Undo2 className="w-4 h-4" />}
         >
-          <Undo2 className="w-4 h-4 mr-2" />
           {undoStatus === "loading" ? "..." : "Deshacer Última Acción"}
         </Button>
       </div>

@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useCallback } from "react"
+import React, { useState, useCallback, useEffect } from "react"
 import { useAuth } from "@/contexts/auth-context"
 import { MovementForm } from "./MovementForm"
 import { StatsPanel } from "./StatsPanel"
@@ -15,10 +15,26 @@ const INVENTARIO_TABS = [
   { key: "reportes", name: "Reportes", icon: <FileText className="w-4 h-4 mr-2" /> },
 ]
 
-export function InventarioPorted() {
+type InventarioPortedProps = {
+  onInventarioTabChange?: (tab: string) => void
+  compactLayout?: boolean
+}
+
+export function InventarioPorted({ onInventarioTabChange, compactLayout = false }: InventarioPortedProps = {}) {
   const { userData } = useAuth()
   const [activeTab, setActiveTab] = useState("movimientos")
   const [, setRefresh] = useState(0)
+  const [hideScrollbar, setHideScrollbar] = useState(false)
+
+  useEffect(() => {
+    onInventarioTabChange?.(activeTab)
+  }, [activeTab, onInventarioTabChange])
+
+  useEffect(() => {
+    setHideScrollbar(true)
+    const t = setTimeout(() => setHideScrollbar(false), 320)
+    return () => clearTimeout(t)
+  }, [activeTab])
 
   const currentUser = {
     name: userData?.name ?? undefined,
@@ -45,12 +61,17 @@ export function InventarioPorted() {
   }
 
   return (
-    <div className="px-6 pt-2 pb-6 min-h-screen">
-      <div className="mb-2">
-        <h2 className="text-3xl font-bold text-slate-800">Control de inventario (Prendas)</h2>
-        <p className="text-slate-600 mt-1">Registra entradas y salidas, revisa resumen e historial.</p>
+    <div className={`px-6 pt-2 pb-6 flex flex-col ${compactLayout ? "flex-1 min-h-0 h-full" : "min-h-screen"}`}>
+      <div className={`mb-2 ${compactLayout ? "flex-shrink-0" : ""}`}>
+        <h2 className="text-3xl font-bold text-slate-800 flex items-center gap-2">
+          <span className="w-1.5 h-8 rounded-full bg-blue-600" />
+          Control de inventario (Prendas)
+        </h2>
+        <p className="text-sm text-slate-600 mt-1 font-medium">
+          Registra entradas y salidas, revisa resumen e historial.
+        </p>
       </div>
-      <div className="flex flex-wrap justify-center items-center gap-2 py-2 mb-4" aria-label="Tabs Inventario">
+      <div className={`flex flex-wrap justify-center items-center gap-2 py-2 mb-4 ${compactLayout ? "flex-shrink-0" : ""}`} aria-label="Tabs Inventario">
         {INVENTARIO_TABS.map((tab) => (
           <button
             key={tab.key}
@@ -58,8 +79,8 @@ export function InventarioPorted() {
             onClick={() => setActiveTab(tab.key)}
             className={`rounded-full inline-flex items-center gap-2 py-2.5 px-4 font-medium text-sm transition-all duration-200 border ${
               activeTab === tab.key
-                ? "bg-blue-600 text-white shadow-md border-blue-500"
-                : "bg-white/70 text-slate-600 border-slate-200/80 hover:bg-blue-50/80 hover:text-indigo-700 hover:border-slate-200 shadow-sm"
+                ? "bg-gradient-to-r from-blue-600 to-indigo-600 text-white shadow-md border-indigo-400/50 ring-2 ring-blue-400/30"
+                : "bg-white/70 text-slate-600 border-slate-200/80 hover:text-indigo-700 hover:bg-indigo-50 hover:border-indigo-200 shadow-sm"
             }`}
           >
             {tab.icon}
@@ -67,7 +88,13 @@ export function InventarioPorted() {
           </button>
         ))}
       </div>
-      <div className="flex-grow">{renderContent()}</div>
+      <div
+        className={`${compactLayout ? "flex-1 min-h-0 overflow-y-auto overflow-x-hidden" : "flex-grow overflow-x-hidden"} ${hideScrollbar ? "inventario-hide-scrollbar" : ""}`}
+      >
+        <div key={activeTab} className="stage-transition-in min-h-full w-full">
+          {renderContent()}
+        </div>
+      </div>
     </div>
   )
 }

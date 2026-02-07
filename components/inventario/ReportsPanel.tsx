@@ -264,36 +264,46 @@ export function ReportsPanel() {
 
   return (
     <div className="space-y-6">
-      {/* Tipo de reporte */}
+      {/* Tipo de reporte - fondo en el span cuando está seleccionado para evitar huecos */}
       <div className="flex flex-wrap gap-3 justify-center">
-        <button
-          type="button"
-          onClick={() => setReportType("salidas")}
-          className={`w-52 h-[44px] min-h-[44px] inline-flex items-center justify-center gap-2 rounded-lg font-semibold text-sm leading-none transition-all box-border ${
-            reportType === "salidas"
-              ? "bg-red-600 text-white shadow border-2 border-red-600"
-              : "bg-red-50 border-2 border-red-300 text-slate-700 hover:bg-red-100"
-          }`}
+        <span
+          className="w-52 h-[44px] min-h-[44px] inline-flex rounded-lg overflow-hidden border-2 box-border"
+          style={{
+            borderColor: reportType === "salidas" ? "rgb(220 38 38)" : "rgb(254 202 202)",
+            backgroundColor: reportType === "salidas" ? "rgb(220 38 38)" : "rgb(254 242 242)",
+          }}
         >
-          <TrendingDown className="w-4 h-4 shrink-0" />
-          <span className="whitespace-nowrap">REPORTE DE SALIDAS</span>
-        </button>
-        <button
-          type="button"
-          onClick={() => setReportType("entradas")}
-          className={`w-52 h-[44px] min-h-[44px] inline-flex items-center justify-center gap-2 rounded-lg font-semibold text-sm leading-none transition-all box-border ${
-            reportType === "entradas"
-              ? "bg-green-600 text-white shadow border-2 border-green-600"
-              : "bg-green-50 border-2 border-green-300 text-slate-700 hover:bg-green-100"
-          }`}
+          <button
+            type="button"
+            onClick={() => setReportType("salidas")}
+            className="w-full h-full inline-flex items-center justify-center gap-2 rounded-[6px] font-semibold text-sm border-none outline-none shadow-none bg-transparent"
+            style={reportType === "salidas" ? { color: "white" } : { color: "rgb(51 65 85)" }}
+          >
+            <TrendingDown className="w-4 h-4 shrink-0" />
+            <span className="whitespace-nowrap">REPORTE DE SALIDAS</span>
+          </button>
+        </span>
+        <span
+          className="w-52 h-[44px] min-h-[44px] inline-flex rounded-lg overflow-hidden border-2 box-border"
+          style={{
+            borderColor: reportType === "entradas" ? "rgb(22 163 74)" : "rgb(134 239 172)",
+            backgroundColor: reportType === "entradas" ? "rgb(22 163 74)" : "rgb(240 253 244)",
+          }}
         >
-          <TrendingUp className="w-4 h-4 shrink-0" />
-          <span className="whitespace-nowrap">REPORTE DE ENTRADAS</span>
-        </button>
+          <button
+            type="button"
+            onClick={() => setReportType("entradas")}
+            className="w-full h-full inline-flex items-center justify-center gap-2 rounded-[6px] font-semibold text-sm border-none outline-none shadow-none bg-transparent"
+            style={reportType === "entradas" ? { color: "white" } : { color: "rgb(51 65 85)" }}
+          >
+            <TrendingUp className="w-4 h-4 shrink-0" />
+            <span className="whitespace-nowrap">REPORTE DE ENTRADAS</span>
+          </button>
+        </span>
       </div>
 
       {/* Filtro por fechas - contenedor más cuadrado */}
-      <div className="glass-box-flujos rounded-2xl shadow-sm p-5 max-w-3xl mx-auto">
+      <div className="glass-box rounded-2xl p-5 max-w-3xl mx-auto">
         <h3 className="flex items-center gap-2 text-base font-semibold text-slate-800 mb-4">
           <SlidersHorizontal className="w-4 h-4 text-slate-500" />
           FILTRO POR FECHAS
@@ -356,24 +366,27 @@ export function ReportsPanel() {
         </div>
         <div className="flex flex-wrap gap-3 justify-center">
           <Button
+            variant="outline"
+            size="lg"
             onClick={generateReport}
-            className="bg-violet-600 hover:bg-violet-700 text-white"
+            className="rounded-xl border-2 border-transparent hover:border-transparent text-blue-700 hover:bg-blue-50 bg-white shadow-sm hover:shadow focus:border-blue-300 focus-visible:border-blue-300 focus:ring-blue-500"
           >
             GENERAR REPORTE
           </Button>
           <Button
             variant="outline"
+            size="lg"
             onClick={exportReport}
-            className="border-green-600 text-green-700 hover:bg-green-50"
+            className="btn-exportar-excel rounded-xl border-2 border-transparent hover:border-transparent text-green-700 hover:bg-green-50 bg-white shadow-sm hover:shadow"
+            iconLeft={<Table2 className="w-4 h-4" />}
           >
-            <Table2 className="w-4 h-4 mr-2" />
             EXPORTAR A EXCEL
           </Button>
         </div>
       </div>
 
       {reportGenerated && (
-        <div className="glass-box-flujos rounded-2xl shadow-sm overflow-hidden">
+        <div className="glass-box rounded-2xl overflow-hidden">
           <div className="px-5 py-4 border-b border-white/30 bg-white/10 backdrop-blur-sm">
             <h3 className="text-lg font-bold text-slate-800">
               {reportType === "entradas" ? "Reporte de Entradas" : "Reporte de Salidas"}
@@ -427,25 +440,25 @@ export function ReportsPanel() {
 
       {/* Zona Administrador - contenedor más cuadrado */}
       {isAdmin && (
-        <div className="glass-box-flujos rounded-2xl p-6 max-w-3xl mx-auto border-2 border-dashed border-red-300/70">
+        <div className="glass-box rounded-2xl p-6 max-w-3xl mx-auto border-2 border-dashed border-red-300/70">
           <h3 className="flex items-center gap-2 text-lg font-bold text-slate-800 mb-4">
             <AlertTriangle className="w-5 h-5 text-red-600" />
             ZONA ADMINISTRADOR
           </h3>
           {adminMessage && (
-            <p className="mb-4 text-sm text-slate-700 glass-box-flujos rounded-lg px-3 py-2">{adminMessage}</p>
+            <p className="mb-4 text-sm text-slate-700 glass-box rounded-lg px-3 py-2">{adminMessage}</p>
           )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Copia de Seguridad */}
-            <div className="glass-box-flujos rounded-xl p-4">
+            <div className="glass-box rounded-xl p-4">
               <h4 className="flex items-center gap-2 font-semibold text-slate-800 mb-2">
                 <FileArchive className="w-4 h-4 text-slate-500" />
                 Copia de Seguridad
               </h4>
               <p className="text-sm text-slate-600 mb-3">Descarga o restaura los datos del historial.</p>
               <div className="flex flex-wrap gap-2">
-                <Button size="sm" className="bg-blue-600 hover:bg-blue-700 text-white" onClick={handleBackup14Days}>
+                <Button size="sm" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white" onClick={handleBackup14Days}>
                   <FileDown className="w-4 h-4 mr-2" />
                   Backup Últimos 14 Días
                 </Button>
@@ -469,7 +482,7 @@ export function ReportsPanel() {
             </div>
 
             {/* Importar Stock Masivo */}
-            <div className="glass-box-flujos rounded-xl p-4">
+            <div className="glass-box rounded-xl p-4">
               <h4 className="flex items-center gap-2 font-semibold text-slate-800 mb-2">
                 <FolderInput className="w-4 h-4 text-slate-500" />
                 Importar Stock Masivo
@@ -487,7 +500,7 @@ export function ReportsPanel() {
               <button
                 type="button"
                 onClick={() => setShowCsvImport(true)}
-                className="inline-flex items-center gap-2 text-sm font-medium text-violet-600 hover:text-violet-700"
+                className="inline-flex items-center gap-2 text-sm font-medium text-indigo-600 hover:text-indigo-700"
               >
                 <Upload className="w-4 h-4" />
                 Cargar CSV de Stock
@@ -495,7 +508,7 @@ export function ReportsPanel() {
             </div>
 
             {/* Limpieza de Historial */}
-            <div className="glass-box-flujos rounded-xl p-4">
+            <div className="glass-box rounded-xl p-4">
               <h4 className="flex items-center gap-2 font-semibold text-slate-800 mb-2">
                 <Trash2 className="w-4 h-4 text-slate-500" />
                 Limpieza de Historial
@@ -529,7 +542,7 @@ export function ReportsPanel() {
             </div>
 
             {/* Gestión de Stock */}
-            <div className="glass-box-flujos rounded-xl p-4">
+            <div className="glass-box rounded-xl p-4">
               <h4 className="flex items-center gap-2 font-semibold text-slate-800 mb-2">
                 <RotateCcw className="w-4 h-4 text-slate-500" />
                 Gestión de Stock
@@ -538,7 +551,7 @@ export function ReportsPanel() {
               <Button
                 size="sm"
                 variant="destructive"
-                className="bg-red-600 hover:bg-red-700"
+                className="bg-red-500 hover:bg-red-600"
                 onClick={() => setShowResetConfirm(true)}
               >
                 <AlertTriangle className="w-4 h-4 mr-2" />
@@ -547,13 +560,13 @@ export function ReportsPanel() {
             </div>
 
             {/* Optimización */}
-            <div className="glass-box-flujos rounded-xl p-4 border-2 border-dashed border-violet-300/70">
+            <div className="glass-box rounded-xl p-4 border-2 border-dashed border-indigo-300/70">
               <h4 className="flex items-center gap-2 font-semibold text-slate-800 mb-2">
-                <Sparkles className="w-4 h-4 text-violet-500" />
+                <Sparkles className="w-4 h-4 text-indigo-500" />
                 Optimización
               </h4>
               <p className="text-sm text-slate-600 mb-3">Migrar datos a nueva estructura.</p>
-              <Button size="sm" className="bg-violet-600 hover:bg-violet-700 text-white" onClick={handleOptimization}>
+              <Button size="sm" className="bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-700 hover:to-indigo-700 text-white" onClick={handleOptimization}>
                 <Database className="w-4 h-4 mr-2" />
                 RESCATAR DATOS (MIGRAR)
               </Button>

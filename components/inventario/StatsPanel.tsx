@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useMemo, useState, useEffect } from "react"
+import React, { useMemo, useState, useEffect, memo, useRef } from "react"
 import { InventarioData } from "@/lib/inventario-data"
 import { ChartContainer, ChartTooltip, ChartTooltipContent } from "@/components/ui/chart"
 import { Bar, BarChart, XAxis, YAxis, CartesianGrid, PieChart, Pie, Cell } from "recharts"
@@ -22,6 +22,41 @@ const chartConfig = {
 
 const FALLBACK_BAR_COLOR = "#94a3b8"
 
+const PIE_ANIMATION_DURATION = 600
+const BAR_ANIMATION_DURATION = 600
+
+type PieDataItem = { name: string; cantidad: number }
+
+const DonutChartMemo = memo(function DonutChartMemo({ data }: { data: PieDataItem[] }) {
+  return (
+    <ChartContainer config={chartConfig} className="h-full w-full [&_.recharts-wrapper]:overflow-visible aspect-auto" style={{ width: 280, height: 220 }}>
+      <PieChart width={280} height={220}>
+        <Pie
+          data={data}
+          dataKey="cantidad"
+          nameKey="name"
+          cx="50%"
+          cy="50%"
+          innerRadius={56}
+          outerRadius={80}
+          paddingAngle={1}
+          stroke="none"
+          isAnimationActive={true}
+          animationBegin={0}
+          animationDuration={PIE_ANIMATION_DURATION}
+          animationEasing="ease-out"
+          clockwise={false}
+        >
+          {data.map((_, index) => (
+            <Cell key={index} fill={DONUT_COLORS[index % DONUT_COLORS.length]} />
+          ))}
+        </Pie>
+        <ChartTooltip content={<ChartTooltipContent />} />
+      </PieChart>
+    </ChartContainer>
+  )
+})
+
 export function StatsPanel() {
   const [subView, setSubView] = useState<"color" | "talla" | "prenda">("color")
   const [selectedPrendaType, setSelectedPrendaType] = useState<string | null>(null)
@@ -29,12 +64,55 @@ export function StatsPanel() {
   const [prendaFilterTalla, setPrendaFilterTalla] = useState("")
   const [prendaFilterStockMin, setPrendaFilterStockMin] = useState<string>("0")
   const [prendaFilterStockMax, setPrendaFilterStockMax] = useState<string>("∞")
+  const [chartsReady, setChartsReady] = useState(false)
+  const [animationDonePie, setAnimationDonePie] = useState(false)
+  const [animationDoneBar, setAnimationDoneBar] = useState(false)
+  const [frozenPieData, setFrozenPieData] = useState<{ name: string; cantidad: number }[]>([])
+  const [frozenBarData, setFrozenBarData] = useState<{ name: string; cantidad: number }[]>([])
+  const [tabIndicator, setTabIndicator] = useState({ left: 0, width: 0 })
+  const tabsContainerRef = useRef<HTMLDivElement>(null)
+  const tabColorRef = useRef<HTMLButtonElement>(null)
+  const tabTallaRef = useRef<HTMLButtonElement>(null)
+  const tabPrendaRef = useRef<HTMLButtonElement>(null)
   const inventory = InventarioData.getInventory()
   const meta = InventarioData.getMetadata()
 
   useEffect(() => {
     if (subView !== "prenda") setSelectedPrendaType(null)
   }, [subView])
+
+  useEffect(() => {
+    const raf = requestAnimationFrame(() => {
+      const container = tabsContainerRef.current
+      const refs = { color: tabColorRef, talla: tabTallaRef, prenda: tabPrendaRef }
+      const btn = refs[subView]?.current
+      if (!container || !btn) return
+      const containerRect = container.getBoundingClientRect()
+      const btnRect = btn.getBoundingClientRect()
+      setTabIndicator({
+        left: btnRect.left - containerRect.left,
+        width: btnRect.width,
+      })
+    })
+    return () => cancelAnimationFrame(raf)
+  }, [subView])
+
+  useEffect(() => {
+    let donePieTimer: ReturnType<typeof setTimeout>
+    let doneBarTimer: ReturnType<typeof setTimeout>
+    const t = setTimeout(() => {
+      setFrozenPieData(byType)
+      setFrozenBarData(byColor.slice(0, 12))
+      setChartsReady(true)
+      doneBarTimer = setTimeout(() => setAnimationDoneBar(true), BAR_ANIMATION_DURATION + 150)
+      donePieTimer = setTimeout(() => setAnimationDonePie(true), PIE_ANIMATION_DURATION + 250)
+    }, 150)
+    return () => {
+      clearTimeout(t)
+      clearTimeout(donePieTimer!)
+      clearTimeout(doneBarTimer!)
+    }
+  }, [])
 
   const colorNameToHex = useMemo(() => {
     const map: Record<string, string> = {}
@@ -247,12 +325,12 @@ export function StatsPanel() {
 
   if (inventory.length === 0) {
     return (
-      <div className="space-y-4">
+      <div className="space-y-4 px-4 sm:px-6 lg:px-8">
         <div className="flex items-center gap-2">
           <RefreshCw className="w-5 h-5 text-slate-500" />
           <h2 className="text-2xl font-bold text-slate-800">Resumen de Stock</h2>
         </div>
-        <div className="glass-box-flujos p-8 rounded-2xl text-center text-slate-600">
+        <div className="glass-box p-8 rounded-2xl text-center text-slate-600">
           No hay datos de stock. Registra entradas o salidas en Movimientos.
         </div>
       </div>
@@ -260,7 +338,7 @@ export function StatsPanel() {
   }
 
   return (
-    <div className="space-y-6">
+    <div className="space-y-6 px-4 sm:px-6 lg:px-8">
       {/* Header */}
       <div className="flex items-center gap-2">
         <RefreshCw className="w-5 h-5 text-slate-500" />
@@ -270,30 +348,15 @@ export function StatsPanel() {
       {/* Top row: dos cards */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Card izquierda: Distribución por Tipo de Prenda (donut) */}
-        <div className="glass-box-flujos rounded-2xl shadow-sm p-6">
+        <div className="glass-box rounded-2xl p-6 overflow-visible">
           <h3 className="text-lg font-semibold text-slate-800 mb-2">Distribución por Tipo de Prenda</h3>
-          <div className="flex flex-col items-center">
-            <div className="w-full max-w-[280px] h-[220px]">
-              <ChartContainer config={chartConfig} className="h-full w-full">
-                <PieChart>
-                  <Pie
-                    data={byType}
-                    dataKey="cantidad"
-                    nameKey="name"
-                    cx="50%"
-                    cy="50%"
-                    innerRadius={56}
-                    outerRadius={80}
-                    paddingAngle={1}
-                    stroke="none"
-                  >
-                    {byType.map((_, index) => (
-                      <Cell key={index} fill={DONUT_COLORS[index % DONUT_COLORS.length]} />
-                    ))}
-                  </Pie>
-                  <ChartTooltip content={<ChartTooltipContent />} />
-                </PieChart>
-              </ChartContainer>
+          <div className="flex flex-col items-center overflow-visible">
+            <div className="w-full max-w-[280px] h-[220px] overflow-visible p-2" style={{ width: 280, height: 220 }}>
+              {chartsReady ? (
+                <DonutChartMemo data={animationDonePie ? byType : frozenPieData} />
+              ) : (
+                <div className="h-full w-full" aria-hidden />
+              )}
             </div>
             <p className="text-slate-600 font-semibold -mt-2">Total: {totalStock}</p>
             <div className="flex flex-wrap justify-center gap-x-4 gap-y-1 mt-3 text-xs">
@@ -311,75 +374,84 @@ export function StatsPanel() {
         </div>
 
         {/* Card derecha: Top Colores con más Stock (barras horizontales) */}
-        <div className="glass-box-flujos rounded-2xl shadow-sm p-6">
+        <div className="glass-box rounded-2xl p-6 overflow-visible">
           <h3 className="text-lg font-semibold text-slate-800 mb-1">Top Colores con más Stock</h3>
           <p className="text-sm text-slate-500 mb-3">Top Colores</p>
-          <div className="h-[260px] w-full">
-            <ChartContainer config={chartConfig} className="h-full w-full">
-              <BarChart
-                data={byColor.slice(0, 12)}
-                layout="vertical"
-                margin={{ left: 8, right: 24, top: 4, bottom: 4 }}
-              >
-                <CartesianGrid strokeDasharray="3 3" horizontal={false} />
-                <XAxis type="number" domain={[0, "auto"]} tick={{ fontSize: 11 }} />
-                <YAxis type="category" dataKey="name" width={90} tick={{ fontSize: 11 }} />
-                <ChartTooltip content={<ChartTooltipContent />} />
-                <Bar dataKey="cantidad" radius={[0, 4, 4, 0]}>
-                  {byColor.slice(0, 12).map((entry, index) => (
-                    <Cell key={entry.name} fill={colorNameToHex(entry.name)} stroke={entry.name === "Blanco" ? "#e2e8f0" : undefined} strokeWidth={entry.name === "Blanco" ? 1 : 0} />
-                  ))}
-                </Bar>
-              </BarChart>
-            </ChartContainer>
+          <div className="h-[260px] w-full overflow-visible p-2">
+            {chartsReady ? (
+              <ChartContainer config={chartConfig} className="h-full w-full [&_.recharts-wrapper]:overflow-visible aspect-auto">
+                <BarChart
+                  data={animationDoneBar ? byColor.slice(0, 12) : frozenBarData}
+                  layout="vertical"
+                  margin={{ left: 8, right: 24, top: 4, bottom: 4 }}
+                >
+                  <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+                  <XAxis type="number" domain={[0, "auto"]} tick={{ fontSize: 11 }} />
+                  <YAxis type="category" dataKey="name" width={90} tick={{ fontSize: 11 }} />
+                  <ChartTooltip content={<ChartTooltipContent />} />
+                  <Bar dataKey="cantidad" radius={[0, 4, 4, 0]} animationDuration={BAR_ANIMATION_DURATION} animationEasing="ease-out">
+                    {(animationDoneBar ? byColor.slice(0, 12) : frozenBarData).map((entry, index) => (
+                      <Cell key={entry.name} fill={colorNameToHex(entry.name)} stroke={entry.name === "Blanco" ? "#e2e8f0" : undefined} strokeWidth={entry.name === "Blanco" ? 1 : 0} />
+                    ))}
+                  </Bar>
+                </BarChart>
+              </ChartContainer>
+            ) : (
+              <div className="h-full w-full" aria-hidden />
+            )}
           </div>
         </div>
       </div>
 
       {/* Tabs: Por Color | Por Talla (Matriz) | Por Prenda */}
       <div className="flex justify-center">
-        <div className="flex flex-wrap gap-0 p-1 rounded-xl glass-box-flujos shadow-sm w-fit">
-        <button
-          type="button"
-          onClick={() => setSubView("color")}
-          className={`inline-flex items-center gap-2 py-2.5 px-4 rounded-lg font-medium text-sm transition-all ${
-            subView === "color"
-              ? "bg-violet-600 text-white shadow"
-              : "text-slate-600 hover:bg-slate-100"
-          }`}
+        <div
+          ref={tabsContainerRef}
+          className="relative flex flex-wrap gap-0 p-1 rounded-xl glass-box w-fit overflow-hidden bg-slate-200/60"
         >
-          <Palette className="w-4 h-4" />
-          Por Color
-        </button>
-        <button
-          type="button"
-          onClick={() => setSubView("talla")}
-          className={`inline-flex items-center gap-2 py-2.5 px-4 rounded-lg font-medium text-sm transition-all ${
-            subView === "talla"
-              ? "bg-violet-600 text-white shadow"
-              : "text-slate-600 hover:bg-slate-100"
-          }`}
-        >
-          <LayoutGrid className="w-4 h-4" />
-          Por Talla (Matriz)
-        </button>
-        <button
-          type="button"
-          onClick={() => setSubView("prenda")}
-          className={`inline-flex items-center gap-2 py-2.5 px-4 rounded-lg font-medium text-sm transition-all ${
-            subView === "prenda"
-              ? "bg-violet-600 text-white shadow"
-              : "text-slate-600 hover:bg-slate-100"
-          }`}
-        >
-          <Shirt className="w-4 h-4" />
-          Por Prenda
-        </button>
+          <div
+            className="absolute top-1 h-[calc(100%-8px)] rounded-lg bg-gradient-to-r from-blue-600 to-indigo-600 shadow transition-all duration-300 ease-out"
+            style={{ left: tabIndicator.left, width: tabIndicator.width }}
+            aria-hidden
+          />
+          <button
+            ref={tabColorRef}
+            type="button"
+            onClick={() => setSubView("color")}
+            className={`relative z-10 inline-flex items-center gap-2 py-2.5 px-4 rounded-lg font-medium text-sm transition-colors bg-transparent ${
+              subView === "color" ? "text-white" : "text-slate-600 hover:text-slate-800"
+            }`}
+          >
+            <Palette className="w-4 h-4" />
+            Por Color
+          </button>
+          <button
+            ref={tabTallaRef}
+            type="button"
+            onClick={() => setSubView("talla")}
+            className={`relative z-10 inline-flex items-center gap-2 py-2.5 px-4 rounded-lg font-medium text-sm transition-colors bg-transparent ${
+              subView === "talla" ? "text-white" : "text-slate-600 hover:text-slate-800"
+            }`}
+          >
+            <LayoutGrid className="w-4 h-4" />
+            Por Talla (Matriz)
+          </button>
+          <button
+            ref={tabPrendaRef}
+            type="button"
+            onClick={() => setSubView("prenda")}
+            className={`relative z-10 inline-flex items-center gap-2 py-2.5 px-4 rounded-lg font-medium text-sm transition-colors bg-transparent ${
+              subView === "prenda" ? "text-white" : "text-slate-600 hover:text-slate-800"
+            }`}
+          >
+            <Shirt className="w-4 h-4" />
+            Por Prenda
+          </button>
         </div>
       </div>
 
       {/* Tabla / contenido según vista */}
-      <div className="glass-box-flujos rounded-2xl shadow-sm overflow-hidden">
+      <div className="glass-box rounded-2xl overflow-hidden">
         {subView === "color" && (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -466,7 +538,7 @@ export function StatsPanel() {
                     setPrendaFilterStockMin("0")
                     setPrendaFilterStockMax("∞")
                   }}
-                  className="flex flex-col items-center gap-2 p-4 rounded-xl glass-box-flujos shadow-sm hover:shadow-md transition-all text-violet-700"
+                  className="flex flex-col items-center gap-2 p-4 rounded-xl glass-box hover:shadow-lg transition-all text-indigo-700"
                 >
                   <Shirt className="w-10 h-10 shrink-0" />
                   <span className="font-medium text-sm text-center">{row.name}</span>
@@ -481,7 +553,7 @@ export function StatsPanel() {
             <button
               type="button"
               onClick={() => setSelectedPrendaType(null)}
-              className="inline-flex items-center gap-2 text-slate-600 hover:text-violet-600 mb-4 text-sm font-medium"
+              className="inline-flex items-center gap-2 text-slate-600 hover:text-indigo-600 mb-4 text-sm font-medium"
             >
               <ArrowLeft className="w-4 h-4" />
               Cambiar Prenda
@@ -490,7 +562,7 @@ export function StatsPanel() {
               <h3 className="text-lg font-semibold text-slate-800">TOTAL: {selectedPrendaType.toUpperCase()}</h3>
               <p className="text-4xl font-bold text-green-600 mt-1">{prendaDetailData.total}</p>
             </div>
-            <div className="glass-box-flujos rounded-xl p-4 mb-4">
+            <div className="glass-box rounded-xl p-4 mb-4">
               <h4 className="text-sm font-semibold text-slate-700 mb-3">Filtrar Detalles</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 <Select

@@ -36,11 +36,16 @@ const INVENTARIOS_TABS = {
   historial: { name: "Historial Movimientos", icon: <History className="w-4 h-4 mr-2" /> },
 }
 
-export function InventariosMatrix() {
+type InventariosMatrixProps = {
+  onInventarioTabChange?: (tab: string) => void
+  compactLayout?: boolean
+}
+
+export function InventariosMatrix({ onInventarioTabChange, compactLayout = false }: InventariosMatrixProps) {
   return (
-    <div className="flex flex-col h-full">
-      <div className="flex-grow overflow-y-auto">
-        <InventarioPorted />
+    <div className={compactLayout ? "flex flex-col h-full min-h-0 flex-1" : "flex flex-col"}>
+      <div className={compactLayout ? "flex-1 min-h-0 overflow-hidden" : "flex-grow overflow-y-auto"}>
+        <InventarioPorted onInventarioTabChange={onInventarioTabChange} compactLayout={compactLayout} />
       </div>
     </div>
   )
@@ -55,7 +60,7 @@ export function GestionInventariosTab() {
   if (!isOwner?.()) {
     return (
       <div className="p-6">
-        <div className="glass-box-flujos rounded-2xl p-6 text-center">
+        <div className="glass-box rounded-2xl p-6 text-center">
           <AlertTriangle className="w-12 h-12 text-amber-500 mx-auto mb-3" />
           <p className="text-slate-700 font-medium">No tienes permisos para acceder a esta sección.</p>
         </div>
@@ -68,7 +73,7 @@ export function GestionInventariosTab() {
       <div className="mb-6 flex items-center justify-between">
         <h2 className="text-3xl font-bold text-slate-800">Gestión de Inventarios</h2>
       </div>
-      <div className="glass-box-flujos rounded-2xl p-6 max-w-2xl">
+      <div className="glass-box rounded-2xl p-6 max-w-2xl">
         <h3 className="text-lg font-semibold text-slate-800 mb-4">Tipos de inventario disponibles</h3>
         <p className="text-sm text-slate-600 mb-6">
           Configura los módulos de inventario disponibles en el menú de Inventarios (Prendas, Productos, Insumos, etc.).
@@ -294,7 +299,7 @@ function InventarioPrendasTab() {
       </div>
 
       {/* Resumen General de Totales */}
-      <div className="glass-box-flujos p-4 rounded-2xl mb-6 overflow-x-auto">
+      <div className="glass-box p-4 rounded-2xl mb-6 overflow-x-auto">
         <div className="flex justify-between items-center mb-3">
           <h3 className="text-lg font-bold text-slate-800">TOTALES GENERALES</h3>
           <Button
@@ -333,7 +338,7 @@ function InventarioPrendasTab() {
       </div>
 
       {/* Filtros y Buscador */}
-      <div className="glass-box-flujos p-4 rounded-2xl mb-6">
+      <div className="glass-box p-4 rounded-2xl mb-6">
         <h3 className="text-lg font-bold text-slate-800 mb-3">Filtros y Búsqueda Detallada</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <Select
@@ -372,7 +377,7 @@ function InventarioPrendasTab() {
       </div>
 
       {/* Tabla de Inventario Detallada */}
-      <div className="glass-box-flujos p-4 rounded-2xl overflow-x-auto">
+      <div className="glass-box p-4 rounded-2xl overflow-x-auto">
         <h3 className="text-lg font-medium text-gray-700 mb-4">Inventario Detallado de Prendas</h3>
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-slate-50">
