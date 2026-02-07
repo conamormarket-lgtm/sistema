@@ -342,17 +342,19 @@ function UsuariosRolesTab() {
 // Pestaña 1: Tipos de Usuarios (Perfiles)
 function UserProfilesTab() {
   const { refreshPermissions } = useAuth()
-  const [profiles, setProfiles] = useState(mockDatabase.userProfiles)
+  const [profiles, setProfiles] = useState<any[]>([])
+  const [profilesLoaded, setProfilesLoaded] = useState(false)
   const [showProfileModal, setShowProfileModal] = useState(false)
   const [editingProfile, setEditingProfile] = useState<any>(null)
   const [searchTerm, setSearchTerm] = useState("")
 
-  // Sincronizar perfiles desde Firestore y subir los por defecto del código si no existen
+  // Cargar perfiles solo desde la suscripción (evita mostrar primero los 3 por defecto y luego los de Firestore)
   useEffect(() => {
     const defaults = (mockDatabase as any).defaultUserProfiles as any[] | undefined
     const unsub = mockFirestore.collection("userProfiles").onSnapshot(async () => {
       const list = Array.isArray(mockDatabase.userProfiles) ? [...mockDatabase.userProfiles] : []
       setProfiles(list)
+      setProfilesLoaded(true)
       if (defaults?.length) {
         for (const def of defaults) {
           if (!def?.id) continue
@@ -417,6 +419,10 @@ function UserProfilesTab() {
       </div>
 
       <div className="grid gap-4">
+        {!profilesLoaded ? (
+          <div className="text-center py-8 text-slate-500">Cargando perfiles...</div>
+        ) : (
+        <>
         {filteredProfiles.map((profile: any) => (
           <div key={profile.id} className="border border-slate-200 rounded-lg p-4 bg-white shadow-sm">
             <div className="flex justify-between items-start">
@@ -451,6 +457,8 @@ function UserProfilesTab() {
           <div className="text-center py-8 text-slate-500">
             {searchTerm ? "No se encontraron perfiles" : "No hay perfiles creados"}
           </div>
+        )}
+        </>
         )}
       </div>
 
