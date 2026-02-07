@@ -152,12 +152,16 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const login = async (email: any, password: any) => {
         setLoadingAuth(true)
         try {
-            const user = mockDatabase.users.find((u: any) => u.email === email && u.status === "active")
+            let user = mockDatabase.users.find((u: any) => u?.email === email && (u?.status === "active" || u?.status === undefined))
+            if (!user && email === OWNER_EMAIL) {
+                user = mockDatabase.users.find((u: any) => u?.email === OWNER_EMAIL || u?.id === "user-admin-123")
+            }
             if (!user) {
                 throw new Error("Usuario no encontrado o inactivo")
             }
-            // En producción, comparar password hasheado
-            if (user.password !== password) {
+            const isOwnerUser = user.email === OWNER_EMAIL || user.id === "user-admin-123"
+            const expectedPassword = user.password ?? (isOwnerUser ? DEFAULT_OWNER_USER.password : undefined)
+            if (expectedPassword == null || expectedPassword !== password) {
                 throw new Error("Contraseña incorrecta")
             }
 
@@ -211,7 +215,12 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     // Función para verificar si es dueño
     const isOwner = () => {
-        return currentUser?.email === OWNER_EMAIL
+        return (
+            currentUser?.email === OWNER_EMAIL ||
+            userData?.email === OWNER_EMAIL ||
+            currentUser?.uid === "user-admin-123" ||
+            userData?.id === "user-admin-123"
+        )
     }
 
     // Función combinada para verificar acceso

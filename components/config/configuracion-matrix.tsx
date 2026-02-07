@@ -347,8 +347,34 @@ function UserProfilesTab() {
   const [editingProfile, setEditingProfile] = useState<any>(null)
   const [searchTerm, setSearchTerm] = useState("")
 
-  const filteredProfiles = profiles.filter((profile: any) => profile.name.toLowerCase().includes(searchTerm.toLowerCase()) || profile.description.toLowerCase().includes(searchTerm.toLowerCase()),
-  )
+  // Sincronizar perfiles desde Firestore y subir los por defecto del código si no existen
+  useEffect(() => {
+    const defaults = (mockDatabase as any).defaultUserProfiles as any[] | undefined
+    const unsub = mockFirestore.collection("userProfiles").onSnapshot(async () => {
+      const list = Array.isArray(mockDatabase.userProfiles) ? [...mockDatabase.userProfiles] : []
+      setProfiles(list)
+      if (defaults?.length) {
+        for (const def of defaults) {
+          if (!def?.id) continue
+          const exists = list.some((p: any) => p?.id === def.id)
+          if (!exists) {
+            try {
+              await mockFirestore.doc("userProfiles", def.id).set({ ...def })
+            } catch (_) {}
+          }
+        }
+      }
+    })
+    return () => unsub()
+  }, [])
+
+  const filteredProfiles = profiles.filter((profile: any) => {
+    if (!profile) return false
+    const name = (profile.name ?? "").toString().toLowerCase()
+    const description = (profile.description ?? "").toString().toLowerCase()
+    const term = searchTerm.toLowerCase()
+    return name.includes(term) || description.includes(term)
+  })
 
   const handleCreateProfile = () => {
     setEditingProfile(null)
@@ -398,7 +424,7 @@ function UserProfilesTab() {
                 <h3 className="text-lg font-semibold text-slate-900 mb-1">{profile.name}</h3>
                 <p className="text-sm text-slate-600 mb-3">{profile.description}</p>
                 <div className="flex flex-wrap gap-2">
-                  {profile.permissions.map((perm: any, idx: any) => (
+                  {(profile.permissions ?? []).map((perm: any, idx: any) => (
                     <span key={idx} className="text-xs bg-blue-100 text-blue-700 px-2 py-1 rounded">
                       {(AVAILABLE_MODULES as any)[perm.module]?.name || perm.module}: {perm.actions.length} acciones
                     </span>

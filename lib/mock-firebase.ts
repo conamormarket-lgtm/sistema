@@ -251,41 +251,16 @@ export const mockDatabase: any = {
     // Inventarios genéricos (no prendas): items e historial por inventarioId
     inventarioGenericoStats: {} as Record<string, { items: { id: string; tipo: string; attrs: Record<string, string>; quantity: number }[] }>,
     inventarioGenericoHistory: {} as Record<string, { id: string; timestamp: string; user: string; action: string; details: string; quantity: number; metadata: Record<string, unknown> }[]>,
-    // Nuevas colecciones para usuarios y roles
+    // Perfiles por defecto (se suben a Firestore si faltan)
+    defaultUserProfiles: [
+        { id: "profile-ventas", name: "Ventas", description: "Perfil para personal de ventas con permisos básicos", permissions: [{ module: "ventas", actions: ["ver", "crear", "editar", "exportar"] }], specialPermissions: [], createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-01-01") },
+        { id: "profile-diseñador", name: "Diseñador", description: "Perfil para diseñadores con acceso a módulo de diseño", permissions: [{ module: "diseño", actions: ["ver", "asignar", "subir-archivos", "marcar-completado", "editar-notas"] }], specialPermissions: [], createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-01-01") },
+        { id: "profile-cobranza", name: "Cobranza", description: "Perfil para personal de cobranza", permissions: [{ module: "cobranza", actions: ["ver", "validar-pago", "editar-montos", "subir-comprobantes", "marcar-validado"] }], specialPermissions: [], createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-01-01") },
+    ] as any[],
     userProfiles: [
-        {
-            id: "profile-ventas",
-            name: "Ventas",
-            description: "Perfil para personal de ventas con permisos básicos",
-            permissions: [
-                { module: "ventas", actions: ["ver", "crear", "editar", "exportar"] },
-            ],
-            specialPermissions: [],
-            createdAt: new Date("2024-01-01"),
-            updatedAt: new Date("2024-01-01"),
-        },
-        {
-            id: "profile-diseñador",
-            name: "Diseñador",
-            description: "Perfil para diseñadores con acceso a módulo de diseño",
-            permissions: [
-                { module: "diseño", actions: ["ver", "asignar", "subir-archivos", "marcar-completado", "editar-notas"] },
-            ],
-            specialPermissions: [],
-            createdAt: new Date("2024-01-01"),
-            updatedAt: new Date("2024-01-01"),
-        },
-        {
-            id: "profile-cobranza",
-            name: "Cobranza",
-            description: "Perfil para personal de cobranza",
-            permissions: [
-                { module: "cobranza", actions: ["ver", "validar-pago", "editar-montos", "subir-comprobantes", "marcar-validado"] },
-            ],
-            specialPermissions: [],
-            createdAt: new Date("2024-01-01"),
-            updatedAt: new Date("2024-01-01"),
-        },
+        { id: "profile-ventas", name: "Ventas", description: "Perfil para personal de ventas con permisos básicos", permissions: [{ module: "ventas", actions: ["ver", "crear", "editar", "exportar"] }], specialPermissions: [], createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-01-01") },
+        { id: "profile-diseñador", name: "Diseñador", description: "Perfil para diseñadores con acceso a módulo de diseño", permissions: [{ module: "diseño", actions: ["ver", "asignar", "subir-archivos", "marcar-completado", "editar-notas"] }], specialPermissions: [], createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-01-01") },
+        { id: "profile-cobranza", name: "Cobranza", description: "Perfil para personal de cobranza", permissions: [{ module: "cobranza", actions: ["ver", "validar-pago", "editar-montos", "subir-comprobantes", "marcar-validado"] }], specialPermissions: [], createdAt: new Date("2024-01-01"), updatedAt: new Date("2024-01-01") },
     ],
     users: [
         { ...DEFAULT_OWNER_USER },
