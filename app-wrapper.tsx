@@ -281,7 +281,7 @@ function getStageBackground(stageId: string | null): { background: string; backg
 
 function App() {
   const auth = useAuth()
-  const { currentUser, userData, isAdmin, isMasterAdmin, isOwner } = auth || {}
+  const { currentUser, userData, isAdmin, isMasterAdmin, isOwner, logout } = auth || {}
   const [activeMatrix, setActiveMatrix] = useState("inicio")
   const [flujoSeleccionado, setFlujoSeleccionado] = useState("pedidos")
   const [flujoSeleccionadoId, setFlujoSeleccionadoId] = useState<any>("flujo-pedidos") // ID del flujo seleccionado; por defecto Flujo de Pedidos
@@ -949,7 +949,7 @@ function App() {
               <DropdownMenuItem
                 onClick={() => {
                   if (confirm("¿Deseas cerrar sesión?")) {
-                    // logout()
+                    logout()
                   }
                 }}
                 className="cursor-pointer px-3 py-2.5 flex items-center gap-3 hover:bg-red-50 focus:bg-red-50 transition-colors text-red-600"
