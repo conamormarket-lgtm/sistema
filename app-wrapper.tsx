@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect, useMemo } from "react"
+import React, { useState, useEffect, useMemo, useRef } from "react"
 import { createPortal } from "react-dom"
 import {
   MATRIZ_COMPOSICION,
@@ -280,7 +280,7 @@ function getStageBackground(stageId: string | null): { background: string; backg
 function App() {
   const auth = useAuth()
   const { currentUser, userData, isAdmin, isMasterAdmin, isOwner } = auth || {}
-  const [activeMatrix, setActiveMatrix] = useState("flujo")
+  const [activeMatrix, setActiveMatrix] = useState("inicio")
   const [flujoSeleccionado, setFlujoSeleccionado] = useState("pedidos")
   const [flujoSeleccionadoId, setFlujoSeleccionadoId] = useState<any>("flujo-pedidos") // ID del flujo seleccionado; por defecto Flujo de Pedidos
   const [mostrarGestionFlujos, setMostrarGestionFlujos] = useState(false)
@@ -671,6 +671,7 @@ function App() {
         if (mostrarGestionInventarios) return <GestionInventariosTab />
         return (
           <InventariosMatrix
+            inventarioSeleccionado={inventarioSeleccionado}
             onInventarioTabChange={setInventarioTab}
             compactLayout={inventarioTab === "movimientos" || inventarioTab === "historial"}
           />
@@ -703,7 +704,8 @@ function App() {
     [activeMatrix, mostrarGestionFlujos, flowStageForBackground]
   )
 
-  const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
+  const [sidebarCollapsed, setSidebarCollapsed] = useState(true)
+  const sidebarIconsZoneRef = useRef<HTMLDivElement | null>(null)
 
   const inventariosBg =
     "linear-gradient(135deg, #f8fbfe 0%, #f0f6fd 35%, #fafbfc 50%, #f2f5fd 65%, #f8fbfe 100%)"
@@ -744,9 +746,24 @@ function App() {
       data-app-sidebar
       role={sidebarCollapsed ? "button" : undefined}
       tabIndex={sidebarCollapsed ? 0 : undefined}
-      title={sidebarCollapsed ? "Clic para expandir menú" : undefined}
+      title={sidebarCollapsed ? "Pasa el mouse para expandir" : undefined}
       onClick={sidebarCollapsed ? () => setSidebarCollapsed(false) : undefined}
       onKeyDown={sidebarCollapsed ? (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSidebarCollapsed(false); } } : undefined}
+      onMouseEnter={(e) => {
+        if (!sidebarCollapsed) return
+        const rect = e.currentTarget.getBoundingClientRect()
+        const relX = e.clientX - rect.left
+        const channelWidth = 20
+        const inChannel = relX >= rect.width - channelWidth
+        const iconsZoneEl = sidebarIconsZoneRef.current
+        if (iconsZoneEl) {
+          const zoneRect = iconsZoneEl.getBoundingClientRect()
+          const inIconsZone = e.clientY >= zoneRect.top && e.clientY <= zoneRect.bottom
+          if (inIconsZone && inChannel) return
+        }
+        setSidebarCollapsed(false)
+      }}
+      onMouseLeave={() => setSidebarCollapsed(true)}
       className={`fixed left-0 top-0 h-full min-w-0 transition-[width] duration-300 flex flex-col border-r border-white/10 z-[9999] text-slate-700 overflow-x-hidden overflow-y-auto sidebar-no-h-scroll isolate ${
         sidebarCollapsed ? "w-20 cursor-pointer" : "w-64"
       }`}
@@ -769,6 +786,7 @@ function App() {
 
         {/* Navegación Principal */}
         <nav className="flex-1 min-w-0 overflow-x-hidden overflow-y-auto py-4 px-3 space-y-1 sidebar-no-h-scroll relative z-10" style={{ pointerEvents: 'auto' }}>
+          <div ref={sidebarIconsZoneRef} className="space-y-1">
           <button
             type="button"
             onClick={(e) => { e.stopPropagation(); setActiveMatrix("inicio"); }}
@@ -884,6 +902,7 @@ function App() {
               )}
             </button>
           )}
+          </div>
         </nav>
 
         {/* Footer del Sidebar - Usuario */}

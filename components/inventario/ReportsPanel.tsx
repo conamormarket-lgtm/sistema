@@ -35,8 +35,14 @@ import {
   CalendarIcon,
 } from "lucide-react"
 
-export function ReportsPanel() {
+type ReportsPanelProps = {
+  inventarioId?: string
+  inventarioSeleccionado?: string
+}
+
+export function ReportsPanel({ inventarioId, inventarioSeleccionado = "prendas" }: ReportsPanelProps = {}) {
   const { isOwner, hasSpecialPermission } = useAuth()
+  const esPrendas = inventarioSeleccionado === "prendas" || !inventarioId
   const [reportType, setReportType] = useState<"entradas" | "salidas">("salidas")
   const [startDate, setStartDate] = useState(format(subDays(new Date(), 7), "yyyy-MM-dd"))
   const [endDate, setEndDate] = useState(format(new Date(), "yyyy-MM-dd"))
@@ -59,8 +65,12 @@ export function ReportsPanel() {
     const endRequested = endOfDay(parseDateLocal(endDate))
     const todayEnd = endOfDay(new Date())
     const end = endRequested.getTime() > todayEnd.getTime() ? todayEnd : endRequested
-    return InventarioData.getHistoryByDateRange(start, end)
-  }, [startDate, endDate])
+    return esPrendas
+      ? InventarioData.getHistoryByDateRange(start, end)
+      : inventarioId
+        ? InventarioData.getHistoryByDateRangeGenerico(inventarioId, start, end)
+        : []
+  }, [startDate, endDate, esPrendas, inventarioId])
 
   const filteredByType = useMemo(() => {
     const action = reportType === "entradas" ? "Entrada" : "Salida"
@@ -76,7 +86,7 @@ export function ReportsPanel() {
     const endRequested = endOfDay(parseDateLocal(endDate))
     const todayEnd = endOfDay(new Date())
     const end = endRequested.getTime() > todayEnd.getTime() ? todayEnd : endRequested
-    const logs = InventarioData.getHistoryByDateRange(start, end).filter(
+    const logs = (esPrendas ? InventarioData.getHistoryByDateRange(start, end) : inventarioId ? InventarioData.getHistoryByDateRangeGenerico(inventarioId, start, end) : []).filter(
       (l) => l.action === (reportType === "entradas" ? "Entrada" : "Salida")
     )
     const fechaGeneracion = format(new Date(), "dd/MM/yyyy", { locale: es })

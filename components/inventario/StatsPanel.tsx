@@ -57,7 +57,13 @@ const DonutChartMemo = memo(function DonutChartMemo({ data }: { data: PieDataIte
   )
 })
 
-export function StatsPanel() {
+type StatsPanelProps = {
+  inventarioId?: string
+  inventarioSeleccionado?: string
+}
+
+export function StatsPanel({ inventarioId, inventarioSeleccionado = "prendas" }: StatsPanelProps = {}) {
+  const esPrendas = inventarioSeleccionado === "prendas" || !inventarioId
   const [subView, setSubView] = useState<"color" | "talla" | "prenda">("color")
   const [selectedPrendaType, setSelectedPrendaType] = useState<string | null>(null)
   const [prendaFilterColor, setPrendaFilterColor] = useState("")
@@ -74,8 +80,32 @@ export function StatsPanel() {
   const tabColorRef = useRef<HTMLButtonElement>(null)
   const tabTallaRef = useRef<HTMLButtonElement>(null)
   const tabPrendaRef = useRef<HTMLButtonElement>(null)
-  const inventory = InventarioData.getInventory()
-  const meta = InventarioData.getMetadata()
+  const inventoryPrendas = InventarioData.getInventory()
+  const inventoryGenericoRaw = inventarioId ? InventarioData.getInventoryGenerico(inventarioId) : []
+  const metaPrendas = InventarioData.getMetadata()
+  const metaGenerico = inventarioId ? InventarioData.getMetadataGenerico(inventarioId) : null
+  const inventory = esPrendas
+    ? inventoryPrendas
+    : inventoryGenericoRaw.map((item) => {
+        const attrKeys = metaGenerico?.caracteristicas?.map((c) => c.nombre) ?? []
+        const vals = attrKeys.map((k) => item.attrs[k] ?? "")
+        return {
+          type: item.tipo,
+          color: vals[0] ?? "",
+          size: vals[1] ?? "",
+          quantity: item.quantity,
+          id: item.id,
+        }
+      })
+  const meta = esPrendas
+    ? metaPrendas
+    : metaGenerico
+      ? {
+          garments: metaGenerico.tipos,
+          colors: (metaGenerico.caracteristicas ?? []).map((c) => ({ name: c.nombre, hex: FALLBACK_BAR_COLOR })),
+          sizes: metaGenerico.caracteristicas?.[0]?.valores ?? [],
+        }
+      : metaPrendas
 
   useEffect(() => {
     if (subView !== "prenda") setSelectedPrendaType(null)
@@ -112,7 +142,7 @@ export function StatsPanel() {
       clearTimeout(donePieTimer!)
       clearTimeout(doneBarTimer!)
     }
-  }, [])
+  }, [inventarioId, inventarioSeleccionado])
 
   const colorNameToHex = useMemo(() => {
     const map: Record<string, string> = {}

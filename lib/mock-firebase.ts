@@ -3,6 +3,8 @@
 // Deshabilitamos chequeo estricto temporalmente para facilitar la migración
 // TODO: Habilitar chequeo estricto y corregir tipos
 
+import { initialTiposDePrendaInventario, initialColoresInventario, initialTallasInventario } from "./constants"
+
 export const SPECIAL_PERMISSIONS = [
     "configuracion",
     "reportes",
@@ -149,8 +151,11 @@ export const mockDatabase: any = {
             id: "inventario-prendas",
             nombre: "Inventario de Prendas",
             descripcion: "Inventario principal de prendas de vestir",
-            tipo: "prendas", // "prendas" o "productos"
+            tipo: "prendas",
             activo: true,
+            orden: 0,
+            icono: "Shirt",
+            color: "#3B82F6",
             fechaCreacion: new Date("2024-01-01"),
             fechaModificacion: new Date("2024-01-01"),
             creadoPor: "system",
@@ -161,11 +166,58 @@ export const mockDatabase: any = {
             descripcion: "Inventario de productos y accesorios",
             tipo: "productos",
             activo: true,
+            orden: 1,
+            icono: "PackageSearch",
+            color: "#10B981",
+            fechaCreacion: new Date("2024-01-01"),
+            fechaModificacion: new Date("2024-01-01"),
+            creadoPor: "system",
+        },
+        {
+            id: "inventario-insumos",
+            nombre: "Inventario de Insumos",
+            descripcion: "Insumos y materiales",
+            tipo: "insumos",
+            activo: true,
+            orden: 2,
+            icono: "Wrench",
+            color: "#F59E0B",
+            fechaCreacion: new Date("2024-01-01"),
+            fechaModificacion: new Date("2024-01-01"),
+            creadoPor: "system",
+        },
+        {
+            id: "inventario-activos",
+            nombre: "Inventario de Activos",
+            descripcion: "Activos fijos y equipos",
+            tipo: "activos",
+            activo: true,
+            orden: 3,
+            icono: "ArchiveRestore",
+            color: "#8B5CF6",
             fechaCreacion: new Date("2024-01-01"),
             fechaModificacion: new Date("2024-01-01"),
             creadoPor: "system",
         },
     ],
+    // Configuración por inventario (tipos/colores/tallas para prendas; editable en Gestión de Inventarios)
+    configInventarioPrendas: {
+        tiposPrenda: [...initialTiposDePrendaInventario],
+        colores: [...initialColoresInventario],
+        tallas: [...initialTallasInventario],
+    },
+    // Configuración de opciones por tipo (legacy; se usa configInventarioGenerico por inventario)
+    configInventarioOpciones: {
+        productos: [] as string[],
+        insumos: [] as string[],
+        activos: [] as string[],
+    } as Record<string, string[]>,
+    // Configuración genérica por inventario (id): qué se inventaría, tipos y características (para no-prendas y nuevos)
+    configInventarioGenerico: {} as Record<string, {
+        nombreItem: string
+        tipos: string[]
+        caracteristicas: { nombre: string; valores: string[] }[]
+    }>,
     counters: {
         prendaCodigoCounter: { lastCodeNumber: 5 },
         productoCodigoCounter: { lastCodeNumber: 0 },
@@ -178,6 +230,9 @@ export const mockDatabase: any = {
     },
     inventoryHistory: [] as { id: string; timestamp: string; user: string; action: string; details: string; quantity: number; metadata: { type: string; color: string; size: string; quantity: number; originalActionType: string } }[],
     inventoryMetadata: null as { garments: string[]; colors: { name: string; hex: string }[]; sizes: string[] } | null,
+    // Inventarios genéricos (no prendas): items e historial por inventarioId
+    inventarioGenericoStats: {} as Record<string, { items: { id: string; tipo: string; attrs: Record<string, string>; quantity: number }[] }>,
+    inventarioGenericoHistory: {} as Record<string, { id: string; timestamp: string; user: string; action: string; details: string; quantity: number; metadata: Record<string, unknown> }[]>,
     // Nuevas colecciones para usuarios y roles
     userProfiles: [
         {

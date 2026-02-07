@@ -6,8 +6,16 @@ import { format } from "date-fns"
 import { es } from "date-fns/locale"
 import { RefreshCw, ArrowUpRight, ArrowDownLeft } from "lucide-react"
 
-export function HistoryPanel() {
-  const history = InventarioData.getHistory()
+type HistoryPanelProps = {
+  inventarioId?: string | null
+  inventarioSeleccionado?: string
+}
+
+export function HistoryPanel({ inventarioId = null, inventarioSeleccionado = "prendas" }: HistoryPanelProps = {}) {
+  const history =
+    inventarioSeleccionado === "historial" || inventarioSeleccionado === "prendas" || !inventarioId
+      ? InventarioData.getHistory()
+      : InventarioData.getHistoryGenerico(inventarioId)
 
   const entradas = history.filter((l) => l.action === "Entrada")
   const salidas = history.filter((l) => l.action === "Salida")

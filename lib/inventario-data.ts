@@ -10,6 +10,8 @@ import {
     initialTallasInventario,
 } from "./constants";
 
+const DEFAULT_HEX = "#9CA3AF";
+
 export type InventoryItem = {
     type: string;
     color: string;
@@ -41,6 +43,18 @@ export type InventoryMetadata = {
 };
 
 function ensureMetadata(): InventoryMetadata {
+    const config = (mockDatabase as any).configInventarioPrendas;
+    if (config) {
+        const colorMap = new Map(initialColoresInventarioConHex.map((c) => [c.name, c.hex]));
+        return {
+            garments: [...(config.tiposPrenda || initialTiposDePrendaInventario)],
+            colors: (config.colores || []).map((name: string) => ({
+                name,
+                hex: colorMap.get(name) || DEFAULT_HEX,
+            })),
+            sizes: [...(config.tallas || initialTallasInventario)],
+        };
+    }
     if (!mockDatabase.inventoryMetadata) {
         mockDatabase.inventoryMetadata = {
             garments: [...initialTiposDePrendaInventario],
@@ -472,5 +486,113 @@ export const InventarioData = {
         if (idx === -1) return { success: false, error: "Talla no encontrada." };
         meta.sizes.splice(idx, 1);
         return { success: true };
+    },
+
+    // Inventarios genéricos (no prendas): metadata desde configInventarioGenerico
+    getMetadataGenerico(inventarioId: string): { nombreItem: string; tipos: string[]; caracteristicas: { nombre: string; valores: string[] }[] } | null {
+        const config = (mockDatabase as any).configInventarioGenerico?.[inventarioId];
+        if (!config) return null;
+        return {
+            nombreItem: config.nombreItem ?? "",
+            tipos: Array.isArray(config.tipos) ? [...config.tipos] : [],
+            caracteristicas: Array.isArray(config.caracteristicas)
+                ? config.caracteristicas.map((c: any) => ({ nombre: c.nombre ?? "", valores: Array.isArray(c.valores) ? [...c.valores] : [] }))
+                : [],
+        };
+    },
+
+    getInventoryGenerico(inventarioId: string): { id: string; tipo: string; attrs: Record<string, string>; quantity: number }[] {
+        const store = (mockDatabase as any).inventarioGenericoStats;
+        if (!store[inventarioId]) return [];
+        return store[inventarioId].items ?? [];
+    },
+
+    getHistoryGenerico(inventarioId: string): HistoryLog[] {
+        const store = (mockDatabase as any).inventarioGenericoHistory;
+        if (!store[inventarioId]) return [];
+        return (store[inventarioId] as HistoryLog[]) ?? [];
+    },
+
+    getHistoryByDateRangeGenerico(inventarioId: string, startDate: Date, endDate: Date): HistoryLog[] {
+        const history = InventarioData.getHistoryGenerico(inventarioId);
+        return history.filter((log) => {
+            const t = new Date(log.timestamp).getTime();
+            return t >= startDate.getTime() && t <= endDate.getTime();
+        });
+    },
+
+    addMovementGenerico(
+        inventarioId: string,
+        movementType: "entry" | "exit",
+        tipo: string,
+        attrs: Record<string, string>,
+        quantity: number,
+        user: { name?: string; username?: string }
+    ): { success: true; newStock: number } | { success: false; error: string } {
+        let stats = (mockDatabase as any).inventarioGenericoStats[inventarioId];
+        if (!stats) {
+            (mockDatabase as any).inventarioGenericoStats[inventarioId] = { items: [] };
+            stats = (mockDatabase as any).inventarioGenericoStats[inventarioId];
+        }
+        let history = (mockDatabase as any).inventarioGenericoHistory[inventarioId];
+        if (!history) {
+            (mockDatabase as any).inventarioGenericoHistory[inventarioId] = [];
+            history = (mockDatabase as any).inventarioGenericoHistory[inventarioId];
+        }
+        const items = stats.items;
+        const id = `${tipo}_${Object.keys(attrs)
+            .sort()
+            .map((k) => attrs[k])
+            .join("_")}`.replace(/[\s/]+/g, "-").toLowerCase();
+        const index = items.findIndex(
+            (i: any) => i.tipo === tipo && Object.keys(attrs).every((k) => (i.attrs[k] ?? "") === (attrs[k] ?? ""))
+        );
+
+        const detailsStr = `${tipo}${Object.keys(attrs).length ? " - " + Object.entries(attrs).map(([k, v]) => `${k}: ${v}`).join(", ") : ""} (Cant: ${quantity})`;
+
+        if (movementType === "exit") {
+            if (index === -1) return { success: false, error: "Item no encontrado en inventario." };
+            if (items[index].quantity < quantity)
+                return { success: false, error: `Stock insuficiente. Disponible: ${items[index].quantity}` };
+            items[index].quantity -= quantity;
+            const newStock = items[index].quantity;
+            history.unshift({
+                id: `log_${Date.now()}_${Math.random().toString(36).slice(2)}`,
+                timestamp: new Date().toISOString(),
+                user: user.name || user.username || "Usuario",
+                action: "Salida",
+                details: detailsStr,
+                quantity,
+                metadata: { type: tipo, ...attrs, quantity, originalActionType: "exit" },
+            });
+            return { success: true, newStock };
+        }
+
+        if (index !== -1) {
+            items[index].quantity += quantity;
+            const newStock = items[index].quantity;
+            history.unshift({
+                id: `log_${Date.now()}_${Math.random().toString(36).slice(2)}`,
+                timestamp: new Date().toISOString(),
+                user: user.name || user.username || "Usuario",
+                action: "Entrada",
+                details: detailsStr,
+                quantity,
+                metadata: { type: tipo, ...attrs, quantity, originalActionType: "entry" },
+            });
+            return { success: true, newStock };
+        }
+
+        items.push({ id, tipo, attrs: { ...attrs }, quantity });
+        history.unshift({
+            id: `log_${Date.now()}_${Math.random().toString(36).slice(2)}`,
+            timestamp: new Date().toISOString(),
+            user: user.name || user.username || "Usuario",
+            action: "Entrada",
+            details: detailsStr,
+            quantity,
+            metadata: { type: tipo, ...attrs, quantity, originalActionType: "entry" },
+        });
+        return { success: true, newStock: quantity };
     },
 };

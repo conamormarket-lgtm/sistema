@@ -162,14 +162,31 @@ export function GestionFlujosTab() {
     setShowFlujoModal(true)
   }
 
-  const handleDeleteFlujo = async (flujo: any) => {
+  const handleDesactivarFlujo = async (flujo: any) => {
     if (!confirm(`¿Está seguro de que desea desactivar el flujo "${flujo.nombre}"?`)) return
-
     try {
       await mockFirestore.doc("flujos", flujo.id).update({ activo: false })
+      refreshFlujos()
     } catch (error: any) {
       console.error("Error al desactivar flujo:", error)
       alert("Error al desactivar el flujo")
+    }
+  }
+
+  const handleEliminarFlujo = async (flujo: any) => {
+    if (!confirm(`¿Está seguro de que desea eliminar el flujo "${flujo.nombre}"? Se eliminarán también todas sus etapas.`)) return
+    try {
+      const etapasDelFlujo = etapas.filter((e: any) => e.flujoId === flujo.id)
+      for (const etapa of etapasDelFlujo) {
+        await mockFirestore.doc("etapas", etapa.id).delete()
+      }
+      await mockFirestore.doc("flujos", flujo.id).delete()
+      refreshFlujos()
+      refreshEtapas()
+      if (selectedFlujo?.id === flujo.id) setSelectedFlujo(null)
+    } catch (error: any) {
+      console.error("Error al eliminar flujo:", error)
+      alert("Error al eliminar el flujo")
     }
   }
 
@@ -300,6 +317,16 @@ export function GestionFlujosTab() {
                           title={flujo.activo ? "Desactivar" : "Activar"}
                         >
                           {flujo.activo ? <EyeOff className="w-3 h-3" /> : <Eye className="w-3 h-3" />}
+                        </button>
+                        <button
+                          onClick={(e: any) => {
+                            e.stopPropagation()
+                            handleEliminarFlujo(flujo)
+                          }}
+                          className="p-1 text-red-600 hover:bg-red-50 rounded"
+                          title="Eliminar"
+                        >
+                          <Trash className="w-3 h-3" />
                         </button>
                       </div>
                     </div>
