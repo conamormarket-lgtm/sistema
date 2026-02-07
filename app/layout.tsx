@@ -34,7 +34,9 @@ export default function RootLayout({
                     try {
                       const elements = document.querySelectorAll(selector);
                       elements.forEach(el => {
-                        if (el && (el.style.bottom === '16px' || el.style.bottom === '0px' || el.getAttribute('data-nextjs-dev-indicator'))) {
+                        if (!el) return;
+                        if (el.closest && el.closest('[data-app-sidebar]')) return;
+                        if (el.style.bottom === '16px' || el.style.bottom === '0px' || el.getAttribute('data-nextjs-dev-indicator')) {
                           el.style.setProperty('display', 'none', 'important');
                           el.style.setProperty('visibility', 'hidden', 'important');
                           el.style.setProperty('opacity', '0', 'important');

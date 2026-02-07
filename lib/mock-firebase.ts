@@ -171,6 +171,13 @@ export const mockDatabase: any = {
         productoCodigoCounter: { lastCodeNumber: 0 },
         pedidoCodigoCounter: { lastCodeNumber: 0 },
     },
+    // Módulo Inventario (portado de conamormarket-lgtm/inventory) — datos en memoria
+    inventoryStats: {
+        items: [] as { type: string; color: string; size: string; quantity: number; id: string }[],
+        lastUpdated: null as string | null,
+    },
+    inventoryHistory: [] as { id: string; timestamp: string; user: string; action: string; details: string; quantity: number; metadata: { type: string; color: string; size: string; quantity: number; originalActionType: string } }[],
+    inventoryMetadata: null as { garments: string[]; colors: { name: string; hex: string }[]; sizes: string[] } | null,
     // Nuevas colecciones para usuarios y roles
     userProfiles: [
         {

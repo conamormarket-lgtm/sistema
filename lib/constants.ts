@@ -339,6 +339,24 @@ export const initialColoresInventario = [
     "Rosado/Celeste",
     "Celeste/Rosado",
 ]
+// Colores con hex para módulo inventario (compatible con repo conamormarket-lgtm/inventory)
+export const initialColoresInventarioConHex: { name: string; hex: string }[] = [
+    { name: "Negro", hex: "#000000" }, { name: "Blanco", hex: "#FFFFFF" }, { name: "Melange 3%", hex: "#E0E0E0" },
+    { name: "Melange 10%", hex: "#9E9E9E" }, { name: "Rata Oscuro", hex: "#424242" }, { name: "Verde Fosforecente", hex: "#39FF14" },
+    { name: "Verde Perico", hex: "#76FF03" }, { name: "Verde Botella", hex: "#1B5E20" }, { name: "Verde Militar", hex: "#556B2F" },
+    { name: "Acero Pal", hex: "#B0C4DE" }, { name: "Azul Marino", hex: "#0D47A1" }, { name: "Azulino", hex: "#2962FF" },
+    { name: "Azul Cielo", hex: "#4FC3F7" }, { name: "Bijou Blue", hex: "#4682B4" }, { name: "Menta bb", hex: "#B9F6CA" },
+    { name: "Celeste", hex: "#81D4FA" }, { name: "Morado", hex: "#9C27B0" }, { name: "Lila bb", hex: "#E1BEE7" },
+    { name: "Rosado bb", hex: "#F8BBD0" }, { name: "Rosado Fuerte", hex: "#F06292" }, { name: "Palo Rosa", hex: "#D8A1A1" },
+    { name: "Palo Rosa Fuerte", hex: "#C27474" }, { name: "Chicle", hex: "#FF80AB" }, { name: "Fucsia Brillante", hex: "#D500F9" },
+    { name: "Rojo", hex: "#D32F2F" }, { name: "Guinda", hex: "#880E4F" }, { name: "Naranja", hex: "#FF9800" },
+    { name: "Amarillo Brazil", hex: "#FFEB3B" }, { name: "Amarillo Oro", hex: "#FFC107" }, { name: "Mostaza", hex: "#FBC02D" },
+    { name: "Camello", hex: "#C19A6B" }, { name: "Kaki", hex: "#F0E68C" }, { name: "Beigue", hex: "#F5F5DC" },
+    { name: "Perla", hex: "#FAFAFA" }, { name: "Panda", hex: "#E0E0E0" }, { name: "Negro/Blanco", hex: "#333333" },
+    { name: "Blanco/Negro", hex: "#F5F5F5" }, { name: "Negro/Rosado", hex: "#333333" }, { name: "Rosado/Negro", hex: "#F8BBD0" },
+    { name: "Rosado/Celeste", hex: "#F8BBD0" }, { name: "Celeste/Rosado", hex: "#81D4FA" },
+];
+
 export const initialTallasInventario = ["2", "4", "6", "8", "10", "12", "14", "16", "S", "M", "L", "XL", "XXL", "XXXL"]
 export const motivosAjusteStock = [
     "Conteo Físico - Sobrante",

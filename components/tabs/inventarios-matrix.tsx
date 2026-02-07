@@ -9,6 +9,7 @@ import {
   initialTiposDePrendaInventario,
   initialTallasInventario,
 } from "@/lib/constants"
+import { InventarioPorted } from "@/components/inventario/InventarioPorted"
 import { Button } from "@/components/ui/button"
 import { Modal, ConfirmationModal } from "@/components/ui/modal"
 import { Input, Select } from "@/components/ui/input"
@@ -53,7 +54,7 @@ export function InventariosMatrix() {
   const renderMainTabContent = () => {
     switch (activeMainTab) {
       case "prendas":
-        return <InventarioPrendasTab />
+        return <InventarioPorted />
       case "productos":
         return <PlaceholderTab title="Inventario de Productos" />
       case "insumos":
@@ -69,24 +70,24 @@ export function InventariosMatrix() {
 
   return (
     <div className="flex flex-col h-full bg-gradient-to-br from-slate-50 to-purple-50/20">
-      <div className="border-b border-white/30 glass-box shadow-sm">
-        <nav className="flex justify-center items-center px-6 py-0 overflow-x-auto" aria-label="Tabs Principales de Inventario">
-          <div className="flex space-x-1">
-            {Object.entries(INVENTARIOS_TABS).map(([key, tab]: [string, any]) => (
-              <button
-                key={key}
-                onClick={() => setActiveMainTab(key)}
-                className={`${activeMainTab === key
-                  ? "bg-blue-600 text-white border-blue-500 shadow-md"
-                  : "bg-transparent text-slate-600 hover:text-indigo-700 hover:bg-indigo-50/50 border-transparent"
-                  } whitespace-nowrap py-3 px-6 border-b-2 font-medium text-sm inline-flex items-center gap-2 transition-all duration-200 rounded-t-lg`}
-              >
-                <span className="w-4 h-4">{tab.icon}</span>
-                {tab.name}
-              </button>
-            ))}
-          </div>
-        </nav>
+      <div className="flex justify-center items-center px-6 py-2 shrink-0">
+        <div className="rounded-full inline-flex items-center gap-0.5 p-1 bg-white/90 border border-slate-200 shadow-sm">
+          {Object.entries(INVENTARIOS_TABS).map(([key, tab]: [string, any]) => (
+            <button
+              key={key}
+              type="button"
+              onClick={() => setActiveMainTab(key)}
+              className={`rounded-full inline-flex items-center gap-2 py-2 px-4 font-medium text-sm transition-all duration-200 ${
+                activeMainTab === key
+                  ? "bg-blue-600 text-white shadow-md"
+                  : "text-slate-600 hover:bg-slate-100 hover:text-slate-800"
+              }`}
+            >
+              <span className="w-4 h-4 shrink-0">{tab.icon}</span>
+              {tab.name}
+            </button>
+          ))}
+        </div>
       </div>
       <div className="flex-grow overflow-y-auto bg-gradient-to-br from-slate-50 to-blue-50/20">{renderMainTabContent()}</div>
     </div>

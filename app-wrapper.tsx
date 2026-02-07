@@ -1,6 +1,7 @@
 "use client"
 
 import React, { useState, useEffect, useMemo } from "react"
+import { createPortal } from "react-dom"
 import {
   MATRIZ_COMPOSICION,
   MAPEO_DESGLOSE_PRODUCTOS,
@@ -725,23 +726,19 @@ function App() {
     []
   )
 
-  return (
-    <div
-      className="flex h-screen font-sans antialiased overflow-hidden"
-      style={rootStyle}
+  const sidebarEl = (
+    <aside
+      data-app-sidebar
+      role={sidebarCollapsed ? "button" : undefined}
+      tabIndex={sidebarCollapsed ? 0 : undefined}
+      title={sidebarCollapsed ? "Clic para expandir menú" : undefined}
+      onClick={sidebarCollapsed ? () => setSidebarCollapsed(false) : undefined}
+      onKeyDown={sidebarCollapsed ? (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSidebarCollapsed(false); } } : undefined}
+      className={`fixed left-0 top-0 h-full min-w-0 transition-[width] duration-300 flex flex-col border-r border-white/30 z-[9999] text-slate-700 overflow-x-hidden overflow-y-auto sidebar-no-h-scroll isolate ${
+        sidebarCollapsed ? "w-20 cursor-pointer" : "w-64"
+      }`}
+      style={{ ...(!sidebarCollapsed ? asideStyleExpanded : asideStyleCollapsed), pointerEvents: 'auto' }}
     >
-      {/* Sidebar: siempre fixed; clic en la barra (cuando colapsada) expande; clic fuera (overlay) colapsa */}
-      <aside
-        role={sidebarCollapsed ? "button" : undefined}
-        tabIndex={sidebarCollapsed ? 0 : undefined}
-        title={sidebarCollapsed ? "Clic para expandir menú" : undefined}
-        onClick={sidebarCollapsed ? () => setSidebarCollapsed(false) : undefined}
-        onKeyDown={sidebarCollapsed ? (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSidebarCollapsed(false); } } : undefined}
-        className={`fixed left-0 top-0 h-full min-w-0 transition-[width] duration-300 flex flex-col border-r border-white/30 z-50 text-slate-700 overflow-x-hidden overflow-y-auto sidebar-no-h-scroll ${
-          sidebarCollapsed ? "w-20 cursor-pointer" : "w-64"
-        }`}
-        style={!sidebarCollapsed ? asideStyleExpanded : asideStyleCollapsed}
-      >
         {/* Logo y Header del Sidebar */}
         <div className="p-6 border-b border-white/30 backdrop-blur-sm">
           <div className="flex items-center gap-3">
@@ -758,9 +755,10 @@ function App() {
         </div>
 
         {/* Navegación Principal */}
-        <nav className="flex-1 min-w-0 overflow-x-hidden overflow-y-auto py-4 px-3 space-y-1 sidebar-no-h-scroll">
+        <nav className="flex-1 min-w-0 overflow-x-hidden overflow-y-auto py-4 px-3 space-y-1 sidebar-no-h-scroll relative z-10" style={{ pointerEvents: 'auto' }}>
           <button
-            onClick={(e) => { if (sidebarCollapsed) e.stopPropagation(); setActiveMatrix("inicio"); }}
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setActiveMatrix("inicio"); }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group ${activeMatrix === "inicio"
               ? "bg-white/30 shadow-lg backdrop-blur-md border border-white/40 ring-1 ring-white/30"
               : "hover:bg-white/20 hover:backdrop-blur-sm border border-transparent hover:border-white/30"
@@ -778,7 +776,8 @@ function App() {
           </button>
 
           <button
-            onClick={(e) => { if (sidebarCollapsed) e.stopPropagation(); setActiveMatrix("flujo"); }}
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setActiveMatrix("flujo"); }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group ${activeMatrix === "flujo"
               ? "bg-white/30 shadow-lg backdrop-blur-md border border-white/40 ring-1 ring-white/30"
               : "hover:bg-white/20 hover:backdrop-blur-sm border border-transparent hover:border-white/30"
@@ -796,7 +795,8 @@ function App() {
           </button>
 
           <button
-            onClick={(e) => { if (sidebarCollapsed) e.stopPropagation(); setActiveMatrix("base-datos"); }}
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setActiveMatrix("base-datos"); }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group ${activeMatrix === "base-datos"
               ? "bg-white/30 shadow-lg backdrop-blur-md border border-white/40 ring-1 ring-white/30"
               : "hover:bg-white/20 hover:backdrop-blur-sm border border-transparent hover:border-white/30"
@@ -814,7 +814,8 @@ function App() {
           </button>
 
           <button
-            onClick={(e) => { if (sidebarCollapsed) e.stopPropagation(); setActiveMatrix("inventarios"); }}
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setActiveMatrix("inventarios"); }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group ${activeMatrix === "inventarios"
               ? "bg-white/30 shadow-lg backdrop-blur-md border border-white/40 ring-1 ring-white/30"
               : "hover:bg-white/20 hover:backdrop-blur-sm border border-transparent hover:border-white/30"
@@ -832,7 +833,8 @@ function App() {
           </button>
 
           <button
-            onClick={(e) => { if (sidebarCollapsed) e.stopPropagation(); setActiveMatrix("finanzas"); }}
+            type="button"
+            onClick={(e) => { e.stopPropagation(); setActiveMatrix("finanzas"); }}
             className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group ${activeMatrix === "finanzas"
               ? "bg-white/30 shadow-lg backdrop-blur-md border border-white/40 ring-1 ring-white/30"
               : "hover:bg-white/20 hover:backdrop-blur-sm border border-transparent hover:border-white/30"
@@ -851,7 +853,8 @@ function App() {
 
           {isOwner() && (
             <button
-              onClick={(e) => { if (sidebarCollapsed) e.stopPropagation(); setActiveMatrix("configuracion"); }}
+              type="button"
+              onClick={(e) => { e.stopPropagation(); setActiveMatrix("configuracion"); }}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group mt-4 border-t border-white/30 pt-4 backdrop-blur-sm ${activeMatrix === "configuracion"
                 ? "bg-white/30 shadow-lg backdrop-blur-md border border-white/40 ring-1 ring-white/30"
                 : "hover:bg-white/20 hover:backdrop-blur-sm border border-transparent hover:border-white/30"
@@ -914,21 +917,35 @@ function App() {
           </DropdownMenu>
         </div>
       </aside>
+  )
 
-      {/* Contenido Principal: una sola sección con scroll; fondo transparente para que se vea el degradado global */}
-      <div className="flex-1 flex flex-col overflow-hidden min-w-0 relative pl-20" style={{ background: 'transparent' }}>
-        {/* Overlay con desenfoque del resto de la interfaz cuando el menú está expandido; clic cierra el menú */}
-        {!sidebarCollapsed && (
+  return (
+    <div
+      className="flex h-screen font-sans antialiased overflow-hidden relative"
+      style={rootStyle}
+    >
+      {typeof document !== "undefined" ? createPortal(sidebarEl, document.body) : sidebarEl}
+      {/* Overlay: pantalla completa para el desenfoque (también durante la animación de expansión); capa clicable solo sobre contenido para colapsar */}
+      {!sidebarCollapsed && (
+        <>
           <div
-            className="fixed inset-0 z-40 transition-opacity duration-300"
+            className="fixed inset-0 z-40 transition-opacity duration-300 pointer-events-none"
             style={{
-              background: 'rgba(0,0,0,0.2)',
-              backdropFilter: 'blur(12px) saturate(0.9)',
-              WebkitBackdropFilter: 'blur(12px) saturate(0.9)',
+              background: "rgba(0,0,0,0.2)",
+              backdropFilter: "blur(12px) saturate(0.9)",
+              WebkitBackdropFilter: "blur(12px) saturate(0.9)",
             }}
-            onClick={() => setSidebarCollapsed(true)}
+            aria-hidden
           />
-        )}
+          <div
+            className="fixed top-0 right-0 bottom-0 left-64 z-40 cursor-pointer"
+            onClick={() => setSidebarCollapsed(true)}
+            aria-hidden
+          />
+        </>
+      )}
+      {/* Contenido Principal: z-index bajo para quedar siempre detrás del sidebar */}
+      <div className="flex-1 flex flex-col overflow-hidden min-w-0 relative pl-20 z-0" style={{ background: "transparent" }}>
         <main className="flex-1 overflow-auto min-h-0" style={{ background: 'transparent' }}>
           <div className="min-h-full flex flex-col">
             {/* Header Superior - dentro de la misma sección que el contenido */}

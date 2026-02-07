@@ -56,6 +56,14 @@ body {
   animation: stage-fade-in 0.3s cubic-bezier(0.4, 0, 0.2, 1) forwards;
 }
 
+/* Sidebar de la app: asegurar que siempre reciba clics (no ser ocultado por reglas de Next.js) */
+[data-app-sidebar] {
+  pointer-events: auto !important;
+}
+[data-app-sidebar] * {
+  pointer-events: auto !important;
+}
+
 /* Sidebar: no mostrar barra de desplazamiento horizontal durante la animación */
 .sidebar-no-h-scroll {
   overflow-x: hidden !important;
@@ -211,9 +219,9 @@ a[data-nextjs-dev-indicator] {
   overflow: hidden !important;
 }
 
-/* Ocultar cualquier elemento flotante de Next.js en la esquina inferior izquierda */
-body > div[style*="position: fixed"][style*="bottom"][style*="left"],
-body > div[style*="position:fixed"][style*="bottom"][style*="left"],
+/* Ocultar cualquier elemento flotante de Next.js en la esquina inferior izquierda (no aplicar a hijos directos del sidebar) */
+body > div[style*="position: fixed"][style*="bottom"][style*="left"]:not([data-app-sidebar]),
+body > div[style*="position:fixed"][style*="bottom"][style*="left"]:not([data-app-sidebar]),
 div[style*="position: fixed"][style*="bottom: 0"][style*="left: 0"],
 div[style*="position:fixed"][style*="bottom:0"][style*="left:0"],
 div[style*="bottom: 16px"][style*="left: 16px"],

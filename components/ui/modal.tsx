@@ -35,7 +35,7 @@ export function Modal({ isOpen, onClose, title, children, size = "md", zIndex = 
                         <XCircle className="w-6 h-6" />
                     </button>
                 </div>
-                <div className="p-6 overflow-y-auto flex-grow bg-white">{children}</div>
+                <div className="p-6 overflow-y-auto flex-grow bg-white rounded-b-2xl">{children}</div>
             </div>
         </div>
     )
