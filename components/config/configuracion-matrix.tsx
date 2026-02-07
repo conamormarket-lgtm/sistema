@@ -1,6 +1,6 @@
 "use client"
 
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect, useMemo } from "react"
 import { useAuth } from "@/contexts/auth-context"
 import { mockDatabase, mockFirestore } from "@/lib/mock-firebase"
 import { SPECIAL_PERMISSIONS, OWNER_EMAIL, AVAILABLE_MODULES, vendedores as vendedoresDefault } from "@/lib/constants"
@@ -517,7 +517,7 @@ function ProfileFormModal({ isOpen, onClose, profile, onSave }: any) {
 
   const isModuleActionChecked = (module: any, action: any) => {
     const modulePerm = formData.permissions.find((p: any) => p.module === module)
-    return modulePerm && modulePerm.actions.includes(action)
+    return Boolean(modulePerm && modulePerm.actions.includes(action))
   }
 
   const handleSubmit = async (e: any) => {
@@ -641,10 +641,23 @@ function UsersManagementTab() {
   const [editingUser, setEditingUser] = useState<any>(null)
   const [searchTerm, setSearchTerm] = useState("")
 
-  const filteredUsers = users.filter((user: any) =>
-    user.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    user.email.toLowerCase().includes(searchTerm.toLowerCase()),
-  )
+  const filteredUsers = useMemo(() => {
+    const list = users.filter((user: any) => {
+      if (!user) return false
+      const name = (user.name ?? "").toString().toLowerCase()
+      const email = (user.email ?? "").toString().toLowerCase()
+      const term = searchTerm.toLowerCase()
+      return name.includes(term) || email.includes(term)
+    })
+    // Evitar duplicados por id (p. ej. user-admin-123)
+    const seen = new Set<string>()
+    return list.filter((u: any) => {
+      const id = u?.id ?? ""
+      if (seen.has(id)) return false
+      seen.add(id)
+      return true
+    })
+  }, [users, searchTerm])
 
   const handleCreateUser = () => {
     setEditingUser(null)
@@ -716,8 +729,8 @@ function UsersManagementTab() {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200">
-            {filteredUsers.map((user: any) => (
-              <tr key={user.id} className="hover:bg-slate-50">
+            {filteredUsers.map((user: any, index: number) => (
+              <tr key={`${user?.id ?? "u"}-${index}`} className="hover:bg-slate-50">
                 <td className="px-4 py-3 text-sm text-slate-900">{user.name}</td>
                 <td className="px-4 py-3 text-sm text-slate-600">{user.email}</td>
                 <td className="px-4 py-3 text-sm">

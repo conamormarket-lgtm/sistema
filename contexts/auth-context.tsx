@@ -105,8 +105,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     useEffect(() => {
         const unsub = mockFirestore.collection("users").onSnapshot(() => {})
         const ensureOwner = () => {
-            const hasOwner = mockDatabase.users?.some((u: any) => u.email === OWNER_EMAIL)
-            if (!hasOwner && Array.isArray(mockDatabase.users)) {
+            if (!Array.isArray(mockDatabase.users)) return
+            const hasOwnerById = mockDatabase.users.some((u: any) => u?.id === "user-admin-123")
+            const hasOwnerByEmail = mockDatabase.users.some((u: any) => u?.email === OWNER_EMAIL)
+            if (!hasOwnerById && !hasOwnerByEmail) {
                 mockDatabase.users.push({ ...DEFAULT_OWNER_USER })
             }
         }
