@@ -48,6 +48,7 @@ import { RepartoTab } from "@/components/tabs/reparto-tab"
 import { FinalizadosTab } from "@/components/tabs/finalizados-tab"
 import { RegistrarPedidoModal } from "@/components/modals/registrar-pedido-modal"
 import { AuthProvider, useAuth } from "@/contexts/auth-context"
+import { LoginPage } from "@/components/login-page"
 import {
   SPECIAL_PERMISSIONS,
   OWNER_EMAIL,
@@ -110,6 +111,7 @@ import {
 import { ProductoFormModal } from "@/components/modals/producto-form-modal"
 import { UserFormModal } from "@/components/modals/user-form-modal"
 import { handleGuardarCampo } from "@/lib/actions"
+import { loadInventarioConfig } from "@/lib/inventario-config-persistence"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import {
   Command,
@@ -292,6 +294,10 @@ function App() {
   const [inventarioTab, setInventarioTab] = useState<string>("movimientos")
 
   // Asegurar que las columnas se inicialicen
+  useEffect(() => {
+    loadInventarioConfig(mockDatabase)
+  }, [])
+
   useEffect(() => {
     try {
       if (mockDatabase.columnasPedidos.length === 0) {
@@ -706,6 +712,7 @@ function App() {
 
   const [sidebarCollapsed, setSidebarCollapsed] = useState(true)
   const sidebarIconsZoneRef = useRef<HTMLDivElement | null>(null)
+  const sidebarRef = useRef<HTMLElement | null>(null)
 
   const inventariosBg =
     "linear-gradient(135deg, #f8fbfe 0%, #f0f6fd 35%, #fafbfc 50%, #f2f5fd 65%, #f8fbfe 100%)"
@@ -763,7 +770,12 @@ function App() {
         }
         setSidebarCollapsed(false)
       }}
-      onMouseLeave={() => setSidebarCollapsed(true)}
+      onMouseLeave={(e) => {
+        const related = e.relatedTarget as Node | null
+        if (related && sidebarRef.current?.contains(related)) return
+        setSidebarCollapsed(true)
+      }}
+      ref={sidebarRef}
       className={`fixed left-0 top-0 h-full min-w-0 transition-[width] duration-300 flex flex-col border-r border-white/10 z-[9999] text-slate-700 overflow-x-hidden overflow-y-auto sidebar-no-h-scroll isolate ${
         sidebarCollapsed ? "w-20 cursor-pointer" : "w-64"
       }`}
@@ -1136,14 +1148,23 @@ function App() {
   )
 }
 
+// Mostrar login si no hay sesión, sino la app
+function AuthGate() {
+  const { currentUser } = useAuth()
+  if (!currentUser) return <LoginPage />
+  return (
+    <div className="min-h-screen min-w-full" style={{ minHeight: '100vh', background: 'transparent' }}>
+      <App />
+    </div>
+  )
+}
+
 // Envolver App con AuthProvider
 const AppWrapper = () => {
   try {
     return (
       <AuthProvider>
-        <div className="min-h-screen min-w-full" style={{ minHeight: '100vh', background: 'transparent' }}>
-          <App />
-        </div>
+        <AuthGate />
       </AuthProvider>
     )
   } catch (error: any) {

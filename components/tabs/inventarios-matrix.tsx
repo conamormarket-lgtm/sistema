@@ -3,6 +3,7 @@
 import React, { useState, useMemo, useEffect } from "react"
 import { useAuth } from "@/contexts/auth-context"
 import { mockDatabase, mockFirestore } from "@/lib/mock-firebase"
+import { saveInventarioConfig } from "@/lib/inventario-config-persistence"
 import { parseMontoRobust } from "@/lib/business-logic"
 import { formatMoneyStrict } from "@/lib/utils"
 import {
@@ -473,6 +474,7 @@ function ConfigPanelPrendas({
     c.colores = nextColores
     c.tallas = nextTallas
     ;(mockDatabase as any).inventoryMetadata = null
+    saveInventarioConfig(mockDatabase)
     onRefresh()
   }
 
@@ -638,6 +640,7 @@ function ConfigPanelInventarioGenerico({
     let config = (mockDatabase as any).configInventarioGenerico
     if (!config) config = (mockDatabase as any).configInventarioGenerico = {}
     config[id] = { ...data }
+    saveInventarioConfig(mockDatabase)
     onRefresh()
   }
 

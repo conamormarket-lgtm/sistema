@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, createContext, useContext } from "react"
 import { OWNER_EMAIL, AVAILABLE_MODULES, SPECIAL_PERMISSIONS } from "../lib/constants"
-import { mockDatabase, mockFirestore, inicializarColumnasPorDefecto } from "../lib/mock-firebase"
+import { mockDatabase, mockFirestore, inicializarColumnasPorDefecto, DEFAULT_OWNER_USER } from "../lib/mock-firebase"
 import { migrateFlujosExistentes, aplicarCondicionesPorDefectoEtapas } from "../lib/business-logic"
 
 // Función para calcular permisos de un usuario
@@ -99,31 +99,50 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     const [loadingAuth, setLoadingAuth] = useState(false)
     const [userPermissions, setUserPermissions] = useState<{ permissions: any[], specialPermissions: string[] }>({ permissions: [], specialPermissions: [] })
 
-    // Inicializar con usuario admin por defecto
+    const SESSION_KEY = "sistema_gestion_user_id"
+
+    // Cargar usuarios desde Firestore (si está conectado) y asegurar que exista el dueño por defecto
+    useEffect(() => {
+        const unsub = mockFirestore.collection("users").onSnapshot(() => {})
+        const ensureOwner = () => {
+            const hasOwner = mockDatabase.users?.some((u: any) => u.email === OWNER_EMAIL)
+            if (!hasOwner && Array.isArray(mockDatabase.users)) {
+                mockDatabase.users.push({ ...DEFAULT_OWNER_USER })
+            }
+        }
+        ensureOwner()
+        const t = setTimeout(ensureOwner, 2000)
+        return () => {
+            unsub()
+            clearTimeout(t)
+        }
+    }, [])
+
+    useEffect(() => {
+        function tryRestore() {
+            try {
+                const savedId = typeof sessionStorage !== "undefined" ? sessionStorage.getItem(SESSION_KEY) : null
+                if (!savedId) return
+                const user = mockDatabase.users.find((u: any) => u.id === savedId)
+                if (user && user.status === "active") {
+                    setCurrentUser({ uid: user.id, email: user.email })
+                    setUserData(user)
+                    setUserPermissions(calculateUserPermissions(user))
+                }
+            } catch (_) {}
+        }
+        tryRestore()
+        const t = setTimeout(tryRestore, 1500)
+        return () => clearTimeout(t)
+    }, [])
+
     useEffect(() => {
         try {
-            const adminUser = mockDatabase.users.find((u: any) => u.email === OWNER_EMAIL)
-            if (adminUser) {
-                setCurrentUser({ uid: adminUser.id, email: adminUser.email })
-                setUserData(adminUser)
-                const perms = calculateUserPermissions(adminUser)
-                setUserPermissions(perms)
-            }
-            // Migrar flujos existentes si es necesario
-            try {
-                migrateFlujosExistentes()
-                aplicarCondicionesPorDefectoEtapas()
-            } catch (error: any) {
-                console.error("Error al migrar flujos existentes:", error)
-            }
-            // Inicializar columnas por defecto si es necesario
-            try {
-                inicializarColumnasPorDefecto()
-            } catch (error: any) {
-                console.error("Error al inicializar columnas por defecto:", error)
-            }
+            migrateFlujosExistentes()
+            aplicarCondicionesPorDefectoEtapas()
+            inicializarColumnasPorDefecto()
         } catch (error: any) {
-            console.error("Error en inicialización de AuthProvider:", error)
+            console.error("Error en inicialización:", error)
         }
     }, [])
 
@@ -148,8 +167,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
             setCurrentUser({ uid: user.id, email: user.email })
             setUserData(user)
-            const perms = calculateUserPermissions(user)
-            setUserPermissions(perms)
+            setUserPermissions(calculateUserPermissions(user))
+            try {
+                sessionStorage.setItem(SESSION_KEY, user.id)
+            } catch (_) {}
             return { success: true }
         } catch (error: any) {
             return { success: false, error: error.message }
@@ -160,6 +181,9 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     // Función de logout
     const logout = () => {
+        try {
+            sessionStorage.removeItem(SESSION_KEY)
+        } catch (_) {}
         setCurrentUser(null)
         setUserData(null)
         setUserPermissions({ permissions: [], specialPermissions: [] })

@@ -7,13 +7,13 @@ import { getFirestore, Firestore } from "firebase/firestore"
 import { getAuth, Auth } from "firebase/auth"
 
 const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY ?? "AIzaSyA8ucZlgKwIyxBiGk_mVtM5_16bDSLoxr8",
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN ?? "base-de-datos-30caf.firebaseapp.com",
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID ?? "base-de-datos-30caf",
-  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET ?? "base-de-datos-30caf.firebasestorage.app",
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID ?? "226160803440",
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID ?? "1:226160803440:web:9bef2d7a901851ac323eb5",
-  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID ?? "G-YLXB9XPV8H",
+  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
+  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
+  measurementId: process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID,
 }
 
 let app: FirebaseApp | null = null
@@ -22,9 +22,9 @@ let auth: Auth | null = null
 
 export function getFirebaseApp(): FirebaseApp | null {
   if (typeof window === "undefined") return null
-  if (!app) {
+  if (!app && firebaseConfig.apiKey && firebaseConfig.projectId) {
     if (getApps().length > 0) app = getApps()[0] as FirebaseApp
-    else app = initializeApp(firebaseConfig)
+    else app = initializeApp(firebaseConfig as any)
   }
   return app
 }

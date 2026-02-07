@@ -19,6 +19,22 @@ export const SPECIAL_PERMISSIONS = [
 // Email del dueño (configurable)
 export const OWNER_EMAIL = "admin@sistema.com"
 
+/** Usuario dueño por defecto; se usa cuando Firestore no tiene usuarios (para poder iniciar sesión la primera vez). */
+export const DEFAULT_OWNER_USER = {
+    id: "user-admin-123",
+    email: OWNER_EMAIL,
+    name: "Dueño",
+    password: "admin123",
+    phone: "",
+    status: "active",
+    profiles: [] as string[],
+    customPermissions: [] as any[],
+    specialPermissions: SPECIAL_PERMISSIONS,
+    createdAt: new Date("2024-01-01"),
+    lastLogin: new Date(),
+    createdBy: "system",
+}
+
 export const TIPOS_CONDICIONES = [
     { id: "diseñador_asignado", nombre: "Diseñador Asignado", descripcion: "Verifica que se haya asignado un diseñador", requiereInventario: false },
     { id: "url_agregado", nombre: "URL Agregado", descripcion: "Verifica que se haya agregado la URL del diseño", requiereInventario: false },
@@ -272,20 +288,7 @@ export const mockDatabase: any = {
         },
     ],
     users: [
-        {
-            id: "user-admin-123",
-            email: OWNER_EMAIL,
-            name: "Dueño",
-            password: "admin123", // En producción debería estar hasheado
-            phone: "",
-            status: "active",
-            profiles: [],
-            customPermissions: [],
-            specialPermissions: SPECIAL_PERMISSIONS, // Admin maestro tiene todos los permisos especiales
-            createdAt: new Date("2024-01-01"),
-            lastLogin: new Date(),
-            createdBy: "system",
-        },
+        { ...DEFAULT_OWNER_USER },
     ],
     clientes: [], // Colección de clientes
     leads: [], // Colección de leads (personas que no son clientes aún)

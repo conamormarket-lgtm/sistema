@@ -183,8 +183,8 @@ export function createFirestoreAdapter(db: Firestore, mockDatabase: any) {
           }
         },
         update: async (data: any) => {
-          const payload = { ...data, updatedAt: serverTimestamp() }
-          await updateDoc(docRef, payload)
+          const payload = { ...data, id, updatedAt: serverTimestamp() }
+          await setDoc(docRef, payload, { merge: true })
           if (key) {
             ensureCollectionInMock(key)
             const col = mockDatabase[key] as any[]
