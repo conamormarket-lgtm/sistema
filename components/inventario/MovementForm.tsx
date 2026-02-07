@@ -171,16 +171,16 @@ export function MovementForm({ currentUser, onMovementDone }: MovementFormProps)
 
   return (
     <div className="flex justify-center">
-      <div className="glass-box p-5 rounded-2xl w-full max-w-md">
+      <div className="glass-box-flujos p-5 rounded-2xl w-full max-w-md shadow-md">
         {/* Tipo de movimiento: Entrada / Salida */}
         <div className="flex gap-2 mb-4">
           <button
             type="button"
             onClick={() => setMovementType("entry")}
-            className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium text-sm transition-all ${
+            className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium text-sm transition-all border ${
               movementType === "entry"
-                ? "bg-emerald-500 text-white shadow-md"
-                : "bg-white border border-slate-200 text-slate-500 hover:bg-slate-50"
+                ? "bg-emerald-500 text-white shadow-md border-emerald-600"
+                : "glass-box-flujos border-slate-200/80 text-slate-600 hover:bg-blue-50/70 hover:border-slate-200"
             }`}
           >
             <ArrowDownLeft className="w-4 h-4" />
@@ -189,10 +189,10 @@ export function MovementForm({ currentUser, onMovementDone }: MovementFormProps)
           <button
             type="button"
             onClick={() => setMovementType("exit")}
-            className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium text-sm transition-all ${
+            className={`flex-1 flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium text-sm transition-all border ${
               movementType === "exit"
-                ? "bg-red-500 text-white shadow-md"
-                : "bg-white border border-slate-200 text-slate-500 hover:bg-slate-50"
+                ? "bg-red-500 text-white shadow-md border-red-600"
+                : "glass-box-flujos border-slate-200/80 text-slate-600 hover:bg-blue-50/70 hover:border-slate-200"
             }`}
           >
             <ArrowUpRight className="w-4 h-4" />

@@ -86,7 +86,7 @@ import { EstampadoTab } from "@/components/tabs/estampado-tab"
 import { GestionColumnasTab } from "@/components/tabs/gestion-columnas-tab"
 import { EmpaquetadoTab } from "@/components/tabs/empaquetado-tab"
 import { BaseDatosMatrix } from "@/components/tabs/base-datos-matrix"
-import { InventariosMatrix } from "@/components/tabs/inventarios-matrix"
+import { InventariosMatrix, GestionInventariosTab, INVENTARIOS_TABS_HEADER } from "@/components/tabs/inventarios-matrix"
 import { ConfiguracionMatrix } from "@/components/config/configuracion-matrix"
 import {
   GestionFlujosTab,
@@ -287,6 +287,8 @@ function App() {
   const [pedidos, setPedidos] = useState<any[]>([])
   const [flujosDisponibles, setFlujosDisponibles] = useState<any[]>([]) // Todos los flujos activos
   const [flowStageForBackground, setFlowStageForBackground] = useState<string>("diseño")
+  const [mostrarGestionInventarios, setMostrarGestionInventarios] = useState(false)
+  const [inventarioSeleccionado, setInventarioSeleccionado] = useState<string>("prendas")
 
   // Asegurar que las columnas se inicialicen
   useEffect(() => {
@@ -665,6 +667,7 @@ function App() {
           </div>
         )
       case "inventarios":
+        if (mostrarGestionInventarios) return <GestionInventariosTab />
         return <InventariosMatrix />
       case "finanzas":
         return (
@@ -696,15 +699,18 @@ function App() {
 
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false)
 
+  const inventariosBg =
+    "linear-gradient(135deg, rgba(191, 219, 254, 0.92) 0%, rgba(224, 242, 254, 0.88) 50%, rgba(186, 230, 253, 0.85) 100%)"
+
   const rootStyle = useMemo(
     () => ({
-      backgroundImage: stageBg.background,
-      backgroundSize: stageBg.backgroundSize,
-      backgroundPosition: '0 0',
-      backgroundRepeat: 'no-repeat' as const,
-      backgroundAttachment: 'fixed' as const,
+      backgroundImage: activeMatrix === "inventarios" ? inventariosBg : stageBg.background,
+      backgroundSize: "100% 100%" as const,
+      backgroundPosition: "0 0" as const,
+      backgroundRepeat: "no-repeat" as const,
+      backgroundAttachment: "fixed" as const,
     }),
-    [stageBg.background, stageBg.backgroundSize]
+    [activeMatrix, stageBg.background]
   )
 
   const asideStyleExpanded = useMemo(
@@ -718,10 +724,11 @@ function App() {
   )
   const asideStyleCollapsed = useMemo(
     () => ({
-      background: 'linear-gradient(135deg, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.06) 50%, rgba(255,255,255,0.12) 100%)',
-      backdropFilter: 'blur(16px) saturate(180%)',
-      WebkitBackdropFilter: 'blur(16px) saturate(180%)',
-      boxShadow: 'inset 0 1px 0 0 rgba(255,255,255,0.25), 4px 0 24px -6px rgba(0,0,0,0.35)',
+      background: 'transparent',
+      backdropFilter: 'none',
+      WebkitBackdropFilter: 'none',
+      boxShadow: 'none',
+      borderRight: '1px solid rgba(255,255,255,0.08)',
     }),
     []
   )
@@ -734,13 +741,13 @@ function App() {
       title={sidebarCollapsed ? "Clic para expandir menú" : undefined}
       onClick={sidebarCollapsed ? () => setSidebarCollapsed(false) : undefined}
       onKeyDown={sidebarCollapsed ? (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); setSidebarCollapsed(false); } } : undefined}
-      className={`fixed left-0 top-0 h-full min-w-0 transition-[width] duration-300 flex flex-col border-r border-white/30 z-[9999] text-slate-700 overflow-x-hidden overflow-y-auto sidebar-no-h-scroll isolate ${
+      className={`fixed left-0 top-0 h-full min-w-0 transition-[width] duration-300 flex flex-col border-r border-white/10 z-[9999] text-slate-700 overflow-x-hidden overflow-y-auto sidebar-no-h-scroll isolate ${
         sidebarCollapsed ? "w-20 cursor-pointer" : "w-64"
       }`}
       style={{ ...(!sidebarCollapsed ? asideStyleExpanded : asideStyleCollapsed), pointerEvents: 'auto' }}
     >
         {/* Logo y Header del Sidebar */}
-        <div className="p-6 border-b border-white/30 backdrop-blur-sm">
+        <div className={`p-6 border-b border-white/10 ${sidebarCollapsed ? "" : "backdrop-blur-sm"}`}>
           <div className="flex items-center gap-3">
             <div className="w-10 h-10 bg-slate-200/40 backdrop-blur-md rounded-xl flex items-center justify-center border border-slate-300/50 flex-shrink-0 ring-1 ring-slate-300/30">
               <Box className="w-6 h-6 text-slate-700" />
@@ -855,7 +862,7 @@ function App() {
             <button
               type="button"
               onClick={(e) => { e.stopPropagation(); setActiveMatrix("configuracion"); }}
-              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group mt-4 border-t border-white/30 pt-4 backdrop-blur-sm ${activeMatrix === "configuracion"
+              className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all duration-200 group mt-4 border-t border-white/10 pt-4 backdrop-blur-sm ${activeMatrix === "configuracion"
                 ? "bg-white/30 shadow-lg backdrop-blur-md border border-white/40 ring-1 ring-white/30"
                 : "hover:bg-white/20 hover:backdrop-blur-sm border border-transparent hover:border-white/30"
                 }`}
@@ -874,7 +881,7 @@ function App() {
         </nav>
 
         {/* Footer del Sidebar - Usuario */}
-        <div className="p-4 border-t border-white/30 backdrop-blur-sm">
+        <div className={`p-4 border-t border-white/10 ${sidebarCollapsed ? "" : "backdrop-blur-sm"}`}>
           <DropdownMenu>
             <DropdownMenuTrigger asChild>
               <button
@@ -947,7 +954,7 @@ function App() {
       {/* Contenido Principal: z-index bajo para quedar siempre detrás del sidebar */}
       <div className="flex-1 flex flex-col overflow-hidden min-w-0 relative pl-20 z-0" style={{ background: "transparent" }}>
         <main className="flex-1 overflow-auto min-h-0" style={{ background: 'transparent' }}>
-          <div className="min-h-full flex flex-col">
+          <div className="min-h-full flex flex-col" style={{ background: "transparent" }}>
             {/* Header Superior - dentro de la misma sección que el contenido */}
             <header className="bg-transparent px-6 py-4 flex-shrink-0">
               <div className="flex items-center justify-between">
@@ -1037,9 +1044,48 @@ function App() {
                         </DropdownMenuContent>
                       </DropdownMenu>
                     </div>
+                  ) : activeMatrix === "inventarios" ? (
+                    <DropdownMenu key={`inv-${inventarioSeleccionado}-${mostrarGestionInventarios}`}>
+                      <DropdownMenuTrigger asChild>
+                        <button className="text-xl font-bold text-slate-800 hover:text-slate-900 flex items-center gap-2 px-3 py-1 rounded-lg hover:bg-slate-100 transition-colors">
+                          {mostrarGestionInventarios ? "Gestión de Inventarios" : (INVENTARIOS_TABS_HEADER as Record<string, { name: string }>)[inventarioSeleccionado]?.name ?? "Prendas"}
+                          <ChevronDown className="w-4 h-4" />
+                        </button>
+                      </DropdownMenuTrigger>
+                      <DropdownMenuContent align="start" className="w-56">
+                        {isOwner?.() && (
+                          <>
+                            <DropdownMenuItem
+                              onClick={(e: any) => {
+                                e.preventDefault()
+                                setMostrarGestionInventarios(true)
+                              }}
+                              className="cursor-pointer"
+                            >
+                              Gestión de Inventarios
+                            </DropdownMenuItem>
+                            <DropdownMenuSeparator />
+                          </>
+                        )}
+                        {Object.entries(INVENTARIOS_TABS_HEADER).map(([key, tab]: [string, any]) => (
+                          <DropdownMenuItem
+                            key={key}
+                            onClick={(e: any) => {
+                              e.preventDefault()
+                              setMostrarGestionInventarios(false)
+                              setInventarioSeleccionado(key)
+                            }}
+                            className="cursor-pointer flex items-center gap-2"
+                          >
+                            <span className="w-4 h-4">{tab.icon}</span>
+                            {tab.name}
+                          </DropdownMenuItem>
+                        ))}
+                      </DropdownMenuContent>
+                    </DropdownMenu>
                   ) : (
                     <h2 className="text-xl font-bold text-slate-800">
-                      {activeMatrix === "inventarios" ? "Inventarios" : "Sistema de Gestión"}
+                      Sistema de Gestión
                     </h2>
                   )}
                   {/* Espacio para flexibilidad */}

@@ -45,7 +45,7 @@ export function InventarioPorted() {
   }
 
   return (
-    <div className="px-6 pt-2 pb-6 bg-gradient-to-br from-slate-50 via-blue-50/10 to-slate-50 min-h-screen">
+    <div className="px-6 pt-2 pb-6 min-h-screen">
       <div className="mb-2">
         <h2 className="text-3xl font-bold text-slate-800">Control de inventario (Prendas)</h2>
         <p className="text-slate-600 mt-1">Registra entradas y salidas, revisa resumen e historial.</p>
@@ -56,10 +56,10 @@ export function InventarioPorted() {
             key={tab.key}
             type="button"
             onClick={() => setActiveTab(tab.key)}
-            className={`rounded-full inline-flex items-center gap-2 py-2.5 px-4 font-medium text-sm transition-all duration-200 ${
+            className={`rounded-full inline-flex items-center gap-2 py-2.5 px-4 font-medium text-sm transition-all duration-200 border ${
               activeTab === tab.key
-                ? "bg-blue-600 text-white shadow-md border border-blue-500"
-                : "bg-white/80 text-slate-600 border border-slate-200 hover:bg-indigo-50/50 hover:text-indigo-700 hover:border-indigo-200"
+                ? "bg-blue-600 text-white shadow-md border-blue-500"
+                : "bg-white/70 text-slate-600 border-slate-200/80 hover:bg-blue-50/80 hover:text-indigo-700 hover:border-slate-200 shadow-sm"
             }`}
           >
             {tab.icon}

@@ -252,7 +252,7 @@ export function StatsPanel() {
           <RefreshCw className="w-5 h-5 text-slate-500" />
           <h2 className="text-2xl font-bold text-slate-800">Resumen de Stock</h2>
         </div>
-        <div className="glass-box p-8 rounded-2xl text-center text-slate-600">
+        <div className="glass-box-flujos p-8 rounded-2xl text-center text-slate-600">
           No hay datos de stock. Registra entradas o salidas en Movimientos.
         </div>
       </div>
@@ -270,7 +270,7 @@ export function StatsPanel() {
       {/* Top row: dos cards */}
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
         {/* Card izquierda: Distribución por Tipo de Prenda (donut) */}
-        <div className="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6">
+        <div className="glass-box-flujos rounded-2xl shadow-sm p-6">
           <h3 className="text-lg font-semibold text-slate-800 mb-2">Distribución por Tipo de Prenda</h3>
           <div className="flex flex-col items-center">
             <div className="w-full max-w-[280px] h-[220px]">
@@ -311,7 +311,7 @@ export function StatsPanel() {
         </div>
 
         {/* Card derecha: Top Colores con más Stock (barras horizontales) */}
-        <div className="bg-white rounded-2xl border border-slate-200/80 shadow-sm p-6">
+        <div className="glass-box-flujos rounded-2xl shadow-sm p-6">
           <h3 className="text-lg font-semibold text-slate-800 mb-1">Top Colores con más Stock</h3>
           <p className="text-sm text-slate-500 mb-3">Top Colores</p>
           <div className="h-[260px] w-full">
@@ -338,7 +338,7 @@ export function StatsPanel() {
 
       {/* Tabs: Por Color | Por Talla (Matriz) | Por Prenda */}
       <div className="flex justify-center">
-        <div className="flex flex-wrap gap-0 p-1 rounded-xl bg-white/90 border border-slate-200 shadow-sm w-fit">
+        <div className="flex flex-wrap gap-0 p-1 rounded-xl glass-box-flujos shadow-sm w-fit">
         <button
           type="button"
           onClick={() => setSubView("color")}
@@ -379,7 +379,7 @@ export function StatsPanel() {
       </div>
 
       {/* Tabla / contenido según vista */}
-      <div className="bg-white rounded-2xl border border-slate-200/80 shadow-sm overflow-hidden">
+      <div className="glass-box-flujos rounded-2xl shadow-sm overflow-hidden">
         {subView === "color" && (
           <div className="overflow-x-auto">
             <table className="w-full text-sm">
@@ -466,7 +466,7 @@ export function StatsPanel() {
                     setPrendaFilterStockMin("0")
                     setPrendaFilterStockMax("∞")
                   }}
-                  className="flex flex-col items-center gap-2 p-4 rounded-xl bg-white border border-slate-200 shadow-sm hover:bg-violet-50 hover:border-violet-200 hover:shadow-md transition-all text-violet-700"
+                  className="flex flex-col items-center gap-2 p-4 rounded-xl glass-box-flujos shadow-sm hover:shadow-md transition-all text-violet-700"
                 >
                   <Shirt className="w-10 h-10 shrink-0" />
                   <span className="font-medium text-sm text-center">{row.name}</span>
@@ -490,7 +490,7 @@ export function StatsPanel() {
               <h3 className="text-lg font-semibold text-slate-800">TOTAL: {selectedPrendaType.toUpperCase()}</h3>
               <p className="text-4xl font-bold text-green-600 mt-1">{prendaDetailData.total}</p>
             </div>
-            <div className="bg-white rounded-xl border border-slate-200 p-4 mb-4">
+            <div className="glass-box-flujos rounded-xl p-4 mb-4">
               <h4 className="text-sm font-semibold text-slate-700 mb-3">Filtrar Detalles</h4>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3">
                 <Select

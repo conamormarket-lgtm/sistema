@@ -40,7 +40,7 @@ export function HistoryPanel() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {/* Panel Entradas */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div className="glass-box-flujos rounded-2xl shadow-sm overflow-hidden">
           <div className="flex items-center gap-2 px-4 py-3 bg-green-600 text-white">
             <ArrowLeft className="w-4 h-4 shrink-0" />
             <h3 className="font-semibold text-base">Entradas</h3>
@@ -57,7 +57,7 @@ export function HistoryPanel() {
         </div>
 
         {/* Panel Salidas */}
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+        <div className="glass-box-flujos rounded-2xl shadow-sm overflow-hidden">
           <div className="flex items-center gap-2 px-4 py-3 bg-red-600 text-white">
             <ArrowRight className="w-4 h-4 shrink-0" />
             <h3 className="font-semibold text-base">Salidas</h3>

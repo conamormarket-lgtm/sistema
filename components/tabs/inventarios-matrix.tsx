@@ -36,60 +36,62 @@ const INVENTARIOS_TABS = {
   historial: { name: "Historial Movimientos", icon: <History className="w-4 h-4 mr-2" /> },
 }
 
-function PlaceholderTab({ title }: { title: string }) {
+export function InventariosMatrix() {
   return (
-    <div className="p-6 bg-gradient-to-br from-slate-50 via-blue-50/10 to-slate-50 min-h-screen">
-      <h2 className="text-3xl font-bold text-slate-800 mb-6">{title}</h2>
-      <div className="glass-box p-8 rounded-2xl text-center">
-        <AlertTriangle className="w-16 h-16 text-amber-400 mx-auto mb-4" />
-        <p className="text-slate-700 font-medium">Funcionalidad para &quot;{title}&quot; en desarrollo.</p>
+    <div className="flex flex-col h-full">
+      <div className="flex-grow overflow-y-auto">
+        <InventarioPorted />
       </div>
     </div>
   )
 }
 
-export function InventariosMatrix() {
-  const [activeMainTab, setActiveMainTab] = useState("prendas")
+export const INVENTARIOS_TABS_HEADER = INVENTARIOS_TABS
 
-  const renderMainTabContent = () => {
-    switch (activeMainTab) {
-      case "prendas":
-        return <InventarioPorted />
-      case "productos":
-        return <PlaceholderTab title="Inventario de Productos" />
-      case "insumos":
-        return <PlaceholderTab title="Inventario de Insumos" />
-      case "activos":
-        return <PlaceholderTab title="Inventario de Activos" />
-      case "historial":
-        return <PlaceholderTab title="Historial de Movimientos" />
-      default:
-        return <InventarioPrendasTab />
-    }
+export function GestionInventariosTab() {
+  const { isOwner } = useAuth()
+  const tiposInventario = Object.entries(INVENTARIOS_TABS).map(([key, tab]) => ({ id: key, name: tab.name, icon: tab.icon }))
+
+  if (!isOwner?.()) {
+    return (
+      <div className="p-6">
+        <div className="glass-box-flujos rounded-2xl p-6 text-center">
+          <AlertTriangle className="w-12 h-12 text-amber-500 mx-auto mb-3" />
+          <p className="text-slate-700 font-medium">No tienes permisos para acceder a esta sección.</p>
+        </div>
+      </div>
+    )
   }
 
   return (
-    <div className="flex flex-col h-full bg-gradient-to-br from-slate-50 to-purple-50/20">
-      <div className="flex justify-center items-center px-6 py-2 shrink-0">
-        <div className="rounded-full inline-flex items-center gap-0.5 p-1 bg-white/90 border border-slate-200 shadow-sm">
-          {Object.entries(INVENTARIOS_TABS).map(([key, tab]: [string, any]) => (
-            <button
-              key={key}
-              type="button"
-              onClick={() => setActiveMainTab(key)}
-              className={`rounded-full inline-flex items-center gap-2 py-2 px-4 font-medium text-sm transition-all duration-200 ${
-                activeMainTab === key
-                  ? "bg-blue-600 text-white shadow-md"
-                  : "text-slate-600 hover:bg-slate-100 hover:text-slate-800"
-              }`}
-            >
-              <span className="w-4 h-4 shrink-0">{tab.icon}</span>
-              {tab.name}
-            </button>
-          ))}
-        </div>
+    <div className="p-6 min-h-screen">
+      <div className="mb-6 flex items-center justify-between">
+        <h2 className="text-3xl font-bold text-slate-800">Gestión de Inventarios</h2>
       </div>
-      <div className="flex-grow overflow-y-auto bg-gradient-to-br from-slate-50 to-blue-50/20">{renderMainTabContent()}</div>
+      <div className="glass-box-flujos rounded-2xl p-6 max-w-2xl">
+        <h3 className="text-lg font-semibold text-slate-800 mb-4">Tipos de inventario disponibles</h3>
+        <p className="text-sm text-slate-600 mb-6">
+          Configura los módulos de inventario disponibles en el menú de Inventarios (Prendas, Productos, Insumos, etc.).
+        </p>
+        <ul className="space-y-3">
+          {tiposInventario.map((tipo: any) => (
+            <li
+              key={tipo.id}
+              className="flex items-center gap-3 p-4 rounded-xl border border-slate-200/80 bg-white/30 hover:bg-white/50 transition-colors"
+            >
+              <span className="w-10 h-10 rounded-lg bg-slate-100 flex items-center justify-center text-slate-600">
+                {tipo.icon}
+              </span>
+              <div className="flex-1">
+                <span className="font-medium text-slate-800">{tipo.name}</span>
+              </div>
+            </li>
+          ))}
+        </ul>
+        <p className="mt-6 text-sm text-slate-500">
+          Crear, editar o reordenar tipos de inventario estará disponible en una próxima actualización.
+        </p>
+      </div>
     </div>
   )
 }
@@ -262,7 +264,7 @@ function InventarioPrendasTab() {
   }
 
   return (
-    <div className="p-6 bg-gradient-to-br from-slate-50 via-blue-50/10 to-slate-50 min-h-screen">
+    <div className="p-6 min-h-screen">
       <div className="flex flex-wrap justify-between items-center mb-6 gap-2">
         <h2 className="text-3xl font-bold text-slate-800">Stock Actual de Prendas</h2>
         <div className="flex flex-col sm:items-end space-y-2">
@@ -292,7 +294,7 @@ function InventarioPrendasTab() {
       </div>
 
       {/* Resumen General de Totales */}
-      <div className="glass-box p-4 rounded-2xl mb-6 overflow-x-auto">
+      <div className="glass-box-flujos p-4 rounded-2xl mb-6 overflow-x-auto">
         <div className="flex justify-between items-center mb-3">
           <h3 className="text-lg font-bold text-slate-800">TOTALES GENERALES</h3>
           <Button
@@ -331,7 +333,7 @@ function InventarioPrendasTab() {
       </div>
 
       {/* Filtros y Buscador */}
-      <div className="glass-box p-4 rounded-2xl mb-6">
+      <div className="glass-box-flujos p-4 rounded-2xl mb-6">
         <h3 className="text-lg font-bold text-slate-800 mb-3">Filtros y Búsqueda Detallada</h3>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
           <Select
@@ -370,7 +372,7 @@ function InventarioPrendasTab() {
       </div>
 
       {/* Tabla de Inventario Detallada */}
-      <div className="glass-box p-4 rounded-2xl overflow-x-auto">
+      <div className="glass-box-flujos p-4 rounded-2xl overflow-x-auto">
         <h3 className="text-lg font-medium text-gray-700 mb-4">Inventario Detallado de Prendas</h3>
         <table className="min-w-full divide-y divide-gray-200">
           <thead className="bg-slate-50">

@@ -293,7 +293,7 @@ export function ReportsPanel() {
       </div>
 
       {/* Filtro por fechas - contenedor más cuadrado */}
-      <div className="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 max-w-3xl mx-auto">
+      <div className="glass-box-flujos rounded-2xl shadow-sm p-5 max-w-3xl mx-auto">
         <h3 className="flex items-center gap-2 text-base font-semibold text-slate-800 mb-4">
           <SlidersHorizontal className="w-4 h-4 text-slate-500" />
           FILTRO POR FECHAS
@@ -373,8 +373,8 @@ export function ReportsPanel() {
       </div>
 
       {reportGenerated && (
-        <div className="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
-          <div className="px-5 py-4 border-b border-slate-200 bg-slate-50/80">
+        <div className="glass-box-flujos rounded-2xl shadow-sm overflow-hidden">
+          <div className="px-5 py-4 border-b border-white/30 bg-white/10 backdrop-blur-sm">
             <h3 className="text-lg font-bold text-slate-800">
               {reportType === "entradas" ? "Reporte de Entradas" : "Reporte de Salidas"}
             </h3>
@@ -427,18 +427,18 @@ export function ReportsPanel() {
 
       {/* Zona Administrador - contenedor más cuadrado */}
       {isAdmin && (
-        <div className="border-2 border-dashed border-red-300 rounded-2xl bg-red-50/30 p-6 max-w-3xl mx-auto">
+        <div className="glass-box-flujos rounded-2xl p-6 max-w-3xl mx-auto border-2 border-dashed border-red-300/70">
           <h3 className="flex items-center gap-2 text-lg font-bold text-slate-800 mb-4">
             <AlertTriangle className="w-5 h-5 text-red-600" />
             ZONA ADMINISTRADOR
           </h3>
           {adminMessage && (
-            <p className="mb-4 text-sm text-slate-700 bg-white/80 rounded-lg px-3 py-2">{adminMessage}</p>
+            <p className="mb-4 text-sm text-slate-700 glass-box-flujos rounded-lg px-3 py-2">{adminMessage}</p>
           )}
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {/* Copia de Seguridad */}
-            <div className="bg-white rounded-xl border border-slate-200 p-4">
+            <div className="glass-box-flujos rounded-xl p-4">
               <h4 className="flex items-center gap-2 font-semibold text-slate-800 mb-2">
                 <FileArchive className="w-4 h-4 text-slate-500" />
                 Copia de Seguridad
@@ -469,7 +469,7 @@ export function ReportsPanel() {
             </div>
 
             {/* Importar Stock Masivo */}
-            <div className="bg-white rounded-xl border border-slate-200 p-4">
+            <div className="glass-box-flujos rounded-xl p-4">
               <h4 className="flex items-center gap-2 font-semibold text-slate-800 mb-2">
                 <FolderInput className="w-4 h-4 text-slate-500" />
                 Importar Stock Masivo
@@ -495,7 +495,7 @@ export function ReportsPanel() {
             </div>
 
             {/* Limpieza de Historial */}
-            <div className="bg-white rounded-xl border border-slate-200 p-4">
+            <div className="glass-box-flujos rounded-xl p-4">
               <h4 className="flex items-center gap-2 font-semibold text-slate-800 mb-2">
                 <Trash2 className="w-4 h-4 text-slate-500" />
                 Limpieza de Historial
@@ -529,7 +529,7 @@ export function ReportsPanel() {
             </div>
 
             {/* Gestión de Stock */}
-            <div className="bg-white rounded-xl border border-slate-200 p-4">
+            <div className="glass-box-flujos rounded-xl p-4">
               <h4 className="flex items-center gap-2 font-semibold text-slate-800 mb-2">
                 <RotateCcw className="w-4 h-4 text-slate-500" />
                 Gestión de Stock
@@ -547,7 +547,7 @@ export function ReportsPanel() {
             </div>
 
             {/* Optimización */}
-            <div className="bg-white rounded-xl border-2 border-dashed border-violet-300 p-4">
+            <div className="glass-box-flujos rounded-xl p-4 border-2 border-dashed border-violet-300/70">
               <h4 className="flex items-center gap-2 font-semibold text-slate-800 mb-2">
                 <Sparkles className="w-4 h-4 text-violet-500" />
                 Optimización
