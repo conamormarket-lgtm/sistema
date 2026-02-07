@@ -4,6 +4,8 @@
 // TODO: Habilitar chequeo estricto y corregir tipos
 
 import { initialTiposDePrendaInventario, initialColoresInventario, initialTallasInventario } from "./constants"
+import { getDb, useFirebase } from "./firebase"
+import { createFirestoreAdapter } from "./firestore-adapter"
 
 export const SPECIAL_PERMISSIONS = [
     "configuracion",
@@ -1172,7 +1174,7 @@ function createSnapshotForPath(pathKey: string) {
     }
 }
 
-export const mockFirestore = {
+const mockFirestoreInMemory = {
     collection: (path: string) => ({
         add: async (data: any) => {
             let id = data.id || "mock_" + Date.now() + "_" + Math.random().toString(36).substr(2, 9)
@@ -1415,6 +1417,9 @@ export const mockFirestore = {
         },
     }),
 }
+
+const _firestoreDb = typeof window !== "undefined" && useFirebase ? getDb() : null
+export const mockFirestore = _firestoreDb ? createFirestoreAdapter(_firestoreDb, mockDatabase) : mockFirestoreInMemory
 
 // =================================================================
 // FUNCIONES AUXILIARES PARA COLUMNAS DINÁMICAS
