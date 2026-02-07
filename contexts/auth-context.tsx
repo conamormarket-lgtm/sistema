@@ -101,15 +101,27 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
     const SESSION_KEY = "sistema_gestion_user_id"
 
-    // Cargar usuarios desde Firestore (si está conectado) y asegurar que exista el dueño por defecto
+    // Cargar usuarios desde Firestore y asegurar que el dueño exista con datos completos (y en Firebase)
     useEffect(() => {
         const unsub = mockFirestore.collection("users").onSnapshot(() => {})
-        const ensureOwner = () => {
+        const ensureOwner = async () => {
             if (!Array.isArray(mockDatabase.users)) return
-            const hasOwnerById = mockDatabase.users.some((u: any) => u?.id === "user-admin-123")
-            const hasOwnerByEmail = mockDatabase.users.some((u: any) => u?.email === OWNER_EMAIL)
-            if (!hasOwnerById && !hasOwnerByEmail) {
+            const owner = mockDatabase.users.find((u: any) => u?.id === "user-admin-123" || u?.email === OWNER_EMAIL)
+            if (!owner) {
                 mockDatabase.users.push({ ...DEFAULT_OWNER_USER })
+                try {
+                    await mockFirestore.doc("users", "user-admin-123").set({ ...DEFAULT_OWNER_USER })
+                } catch (_) {}
+                return
+            }
+            const needsFix = !owner.name || !owner.email || owner.password == null || owner.password === ""
+            if (needsFix) {
+                const full = { ...DEFAULT_OWNER_USER, password: owner.password ?? DEFAULT_OWNER_USER.password }
+                const idx = mockDatabase.users.findIndex((u: any) => u?.id === "user-admin-123" || u?.email === OWNER_EMAIL)
+                if (idx >= 0) mockDatabase.users[idx] = { ...mockDatabase.users[idx], name: full.name, email: full.email, status: full.status, password: full.password }
+                try {
+                    await mockFirestore.doc("users", "user-admin-123").update({ name: full.name, email: full.email, status: full.status, password: full.password })
+                } catch (_) {}
             }
         }
         ensureOwner()

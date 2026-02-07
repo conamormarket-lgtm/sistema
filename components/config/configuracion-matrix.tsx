@@ -755,13 +755,19 @@ function UsersManagementTab() {
             </tr>
           </thead>
           <tbody className="divide-y divide-slate-200">
-            {filteredUsers.map((user: any, index: number) => (
+            {filteredUsers.map((user: any, index: number) => {
+              const isOwner = user?.id === "user-admin-123" || user?.email === OWNER_EMAIL
+              const displayName = isOwner ? (user?.name || "Dueño") : user?.name
+              const displayEmail = isOwner ? (user?.email || OWNER_EMAIL) : user?.email
+              return (
               <tr key={`${user?.id ?? "u"}-${index}`} className="hover:bg-slate-50">
-                <td className="px-4 py-3 text-sm text-slate-900">{user.name}</td>
-                <td className="px-4 py-3 text-sm text-slate-600">{user.email}</td>
+                <td className="px-4 py-3 text-sm text-slate-900">{displayName}</td>
+                <td className="px-4 py-3 text-sm text-slate-600">{displayEmail}</td>
                 <td className="px-4 py-3 text-sm">
                   <div className="flex flex-wrap gap-1">
-                    {user.profiles && user.profiles.length > 0 ? (
+                    {isOwner ? (
+                      <span className="text-xs bg-amber-100 text-amber-800 px-2 py-1 rounded">Dueño (todos los permisos)</span>
+                    ) : user.profiles && user.profiles.length > 0 ? (
                       user.profiles.map((profileId: any) => {
                         const profile = mockDatabase.userProfiles.find((p: any) => p.id === profileId)
                         return profile ? (
@@ -811,7 +817,8 @@ function UsersManagementTab() {
                   </div>
                 </td>
               </tr>
-            ))}
+              )
+            })}
           </tbody>
         </table>
         {filteredUsers.length === 0 && (
